@@ -21,6 +21,14 @@ struct ContentView: View {
             Text("Its good to be here!")
                 .foregroundColor(Color.blue)
             Text("Yessir")
+            Text("Hello, world!")
+            Text("Its good to be here!")
+                .foregroundColor(Color.blue)
+            Text("Yessir")
+            Text("Hello, world!")
+            Text("Its good to be here!")
+                .foregroundColor(Color.blue)
+            Text("Yessir")
         }
         .padding()
     }
