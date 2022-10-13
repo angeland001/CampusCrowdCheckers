@@ -9,20 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-            Text("Its good to be here!")
-                .foregroundColor(Color.blue)
-            Text("Yessir")
-            Text("Hello, world!")
-            Text("Its good to be here!")
-                .foregroundColor(Color.blue)
-            Text("Yessir")
-        }
-        .padding()
+        ImageIcons()
     }
 }
 
