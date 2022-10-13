@@ -7,9 +7,27 @@
 
 import SwiftUI
 
+var ImageNames:[String] = ["chickfilalogo","MoesLogo","PandaLogo","podlogo","RRLogo"]
+
 struct ContentView: View {
+    
     var body: some View {
-        ImageIcons()
+        ZStack {
+            HStack(spacing:2) {
+                ImageIcons(IconName: "chickfilalogo")
+                ImageIcons(IconName: "MoesLogo")
+                ImageIcons(IconName: "PandaLogo")
+                ImageIcons(IconName: "podlogo")
+                ImageIcons(IconName: "RRLogo")
+                
+                
+                            
+            }
+            .offset(y:-310)
+        }
+        
+        
+        
     }
 }
 

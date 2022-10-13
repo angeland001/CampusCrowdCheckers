@@ -28,76 +28,37 @@ func GetToScreen(ImageIcon:String) {
 
 
 struct ImageIcons: View {
-    var body: some View {
-        ZStack {
-            Color.black
-                .ignoresSafeArea()
-                VStack {
-                        
-                        HStack(spacing: 5.0) {
-                            Button(action: {
-                                GetToScreen(ImageIcon: "ChickFilALogo")
-                            }){
-                                Image("ChickFilALogo")
-                                    .resizable()
-                                    .clipShape(Circle())
-                                    .frame(width:70,height:70)
-                            }
-                            Button(action: {
-                                GetToScreen(ImageIcon: "MoesLogo")
-                            }) {
-                                Image("MoesLogo")
-                                    .resizable()
-                                    .frame(width:70,height:70)
-                                    .clipShape(Circle())
-                            }
-                            Button(action: {
-                                GetToScreen(ImageIcon: "PandaLogo")
-                            }) {
-                                Image("PandaLogo")
-                                    .resizable()
-                                    .frame(width:70,height:70)
-                            }
-                            Button(action: {
-                                GetToScreen(ImageIcon: "PodLogo")
-                            }) {
-                                Image("PodLogo")
-                                    .resizable()
-                                    .frame(width: 70,height:70)
-                                    .clipShape(Circle())
-                            }
-                            Button(action: {
-                                GetToScreen(ImageIcon: "RRLogo")
-                            }) {
-                                Image("RRLogo")
-                                    .resizable()
-                                    .frame(width:70,height:70)
-                                    .clipShape(Circle())
-                            }
-                            
-                            
-                            
-                        }
-                        .background(Color.gray)
-                        .cornerRadius(15)
-                        Spacer()
-                            
-                    }
-                    .padding(.top)
-                    
-                           
-                                
-                            
-                                
-                            
-                            
-                    }
+    var IconName: String
+    
 
+    var body: some View {
+        HStack {
+            Button(action: {
+                GetToScreen(ImageIcon: IconName)
+            }) {
+                if (IconName == "MoesLogo") {
+                    Image(IconName)
+                        .resizable()
+                        .clipShape(Circle())
+                        .frame(width:80,height:80)
+                }
+                else {
+                    Image(IconName)
+                        .resizable()
+                        .clipShape(Circle())
+                        .frame(width:70,height:70)
+                }
+                
             }
+        }
+        
+        
+
+        }
 }
 
 struct ImageIcons_Previews: PreviewProvider {
     static var previews: some View {
-        ImageIcons()
+        ImageIcons(IconName: "chickfilalogo")
     }
 }
