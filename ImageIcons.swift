@@ -30,6 +30,8 @@ func GetToScreen(ImageIcon:String) {
 struct ImageIcons: View {
     var body: some View {
         ZStack {
+            Color.black
+                .ignoresSafeArea()
                 VStack {
                         
                         HStack(spacing: 5.0) {
