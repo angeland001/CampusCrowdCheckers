@@ -30,13 +30,16 @@ func GetToScreen(ImageIcon:String) {
 struct ImageIcons: View {
     var body: some View {
         ZStack {
+            LinearGradient(gradient: Gradient (colors: [Color.black, Color.gray]), startPoint:
+                    .leading, endPoint: .trailing)
+            .ignoresSafeArea()
                 VStack {
                         
                         HStack(spacing: 5.0) {
                             Button(action: {
                                 GetToScreen(ImageIcon: "ChickFilALogo")
                             }){
-                                Image("ChickFilALogo")
+                                Image("chickfilalogo")
                                     .resizable()
                                     .clipShape(Circle())
                                     .frame(width:70,height:70)
@@ -57,9 +60,9 @@ struct ImageIcons: View {
                                     .frame(width:70,height:70)
                             }
                             Button(action: {
-                                GetToScreen(ImageIcon: "PodLogo")
+                                GetToScreen(ImageIcon: "podlogo")
                             }) {
-                                Image("PodLogo")
+                                Image("podlogo")
                                     .resizable()
                                     .frame(width: 70,height:70)
                                     .clipShape(Circle())
@@ -76,7 +79,7 @@ struct ImageIcons: View {
                             
                             
                         }
-                        .background(Color.gray)
+                        .background(Color.white)
                         .cornerRadius(15)
                         Spacer()
                             
