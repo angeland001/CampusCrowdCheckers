@@ -11,7 +11,7 @@ struct LoginScreen: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.theme.gradient
+                Color.theme.BackGradient
                     .ignoresSafeArea()
                 Circle()
                     .scale(1.7)
@@ -21,10 +21,10 @@ struct LoginScreen: View {
                     .scale(1.5)
                     .foregroundColor(Color.theme.circle)
                     .offset(y:280)
-                Image(systemName: "figure.walk")
-                    .resizable()
-                    .frame(width: 50,height: 70)
-                    .offset(x:-50,y:80)
+                Image(systemName: "figure.run")
+                    .foregroundColor(Color.theme.peopleImages)
+                    .offset(x:-100,y:300)
+                    
                 Circle()
                     .scale(1.3)
                     .foregroundColor(Color.gray)
@@ -40,7 +40,30 @@ struct LoginScreen: View {
                         .bold()
                         .foregroundColor(Color.theme.secondaryText)
                     
-                        
+                    Button(action: {
+                        Text("Hello")
+                    }) {
+                        Text("Sign In")
+                            .bold()
+                            .frame(width:200,height:50)
+                            .foregroundColor(Color.theme.secondaryText)
+                            .background(Color.theme.GradientLoginButton)
+                            .clipShape(Capsule())
+                            
+                    }
+                    .offset(y:420)
+                    Button(action: {
+                        Text("Hello")
+                    }) {
+                        Text("Sign Up")
+                            .bold()
+                            .frame(width:200,height:50)
+                            .foregroundColor(Color.theme.secondaryText)
+                            .background(Color.theme.GradientSignUpButton)
+                            .clipShape(Capsule())
+                            
+                    }
+                    .offset(y:430)
                         
                     
                     
@@ -49,7 +72,7 @@ struct LoginScreen: View {
                     
                     
                 }
-                .offset(y:-270)
+                .offset(y:-230)
                 
                 
                 
