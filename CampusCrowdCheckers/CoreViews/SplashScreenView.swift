@@ -23,10 +23,10 @@ struct SplashScreenView: View {
                 VStack{
                     VStack(spacing:5){
                         Image(systemName: "figure.wave")
-                            .font(.system(size: 80)).foregroundColor(.black)
+                            .font(.system(size: 80)).foregroundColor(.white)
                         Text("Campus Crowd Check")
                             .font(Font.custom("Baskerville-Bold", size: 26))
-                            .foregroundColor(Color.theme.secondaryText)
+                            .foregroundColor(Color.white)
                     }
                     .scaleEffect(size)
                     .opacity(opacity)

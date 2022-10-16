@@ -17,4 +17,12 @@ struct ColorTheme {
     let accent = Color("AccentColor")
     let background = Color("BackgroundColor")
     let secondaryText = Color("SecondaryTextColor")
+    let gradient = LinearGradient(gradient: Gradient(colors: [Color.black,Color.white]),
+                                  startPoint: .topLeading, endPoint: .bottomLeading)
+    let circle = Color("CircleColor")
+    let lessopacitycircle = Color("LessOpacityCircle")
+    
+    
+        
+        
 }
