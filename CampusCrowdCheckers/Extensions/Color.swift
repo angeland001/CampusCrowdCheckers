@@ -17,10 +17,15 @@ struct ColorTheme {
     let accent = Color("AccentColor")
     let background = Color("BackgroundColor")
     let secondaryText = Color("SecondaryTextColor")
-    let gradient = LinearGradient(gradient: Gradient(colors: [Color.black,Color.white]),
-                                  startPoint: .topLeading, endPoint: .bottomLeading)
+    let BackGradient = LinearGradient(gradient: Gradient(colors: [Color.black,Color.white]),
+                                  startPoint: .topLeading, endPoint: .bottomTrailing)
+    let GradientLoginButton = LinearGradient(gradient: Gradient(colors: [Color.black,Color.orange]),
+                                  startPoint: .leading, endPoint: .trailing)
+    let GradientSignUpButton = LinearGradient(gradient: Gradient(colors: [Color.black,Color.yellow]),
+                                  startPoint: .leading, endPoint: .trailing)
     let circle = Color("CircleColor")
     let lessopacitycircle = Color("LessOpacityCircle")
+    let peopleImages = Color("PeopleColor")
     
     
         
