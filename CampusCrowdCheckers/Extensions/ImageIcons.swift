@@ -39,7 +39,7 @@ struct ImageIcons: View {
                             Image(IconName)
                                 .resizable()
                                 .clipShape(Circle())
-                                .frame(width:80,height:80)
+                                .frame(width:75,height:75)
                         }
                         else {
                             Image(IconName)

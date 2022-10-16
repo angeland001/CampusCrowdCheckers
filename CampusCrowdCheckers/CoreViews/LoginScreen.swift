@@ -11,7 +11,7 @@ struct LoginScreen: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.theme.gradient
+                Color.theme.BackGradient
                     .ignoresSafeArea()
                 Circle()
                     .scale(1.7)
@@ -21,10 +21,11 @@ struct LoginScreen: View {
                     .scale(1.5)
                     .foregroundColor(Color.theme.circle)
                     .offset(y:280)
-                Image(systemName: "figure.walk")
+                Image(systemName: "figure.run")
                     .resizable()
-                    .frame(width: 50,height: 70)
-                    .offset(x:-50,y:80)
+                    .frame(width: 30,height:40)
+                    .offset(x:-70,y:120)
+                    .foregroundColor(Color.theme.peopleImages)
                 Circle()
                     .scale(1.3)
                     .foregroundColor(Color.gray)
@@ -36,20 +37,32 @@ struct LoginScreen: View {
                         
                         
                     Text("CrowdCheckers")
-                        .font(.title2)
+                        .font(.title)
                         .bold()
                         .foregroundColor(Color.theme.secondaryText)
                     
-                        
-                        
+                    NavigationLink(destination: LoginView()) {
+                        Text("Login")
+                            .bold()
+                            .frame(width:200,height:50)
+                            .foregroundColor(Color.theme.secondaryText)
+                            .background(Color.theme.GradientLoginButton)
+                            .clipShape(Capsule())
+                                    }
+                    .offset(y:420)
+                    NavigationLink(destination: SignUpView()) {
+                        Text("Sign Up")
+                            .bold()
+                            .frame(width:200,height:50)
+                            .foregroundColor(Color.theme.secondaryText)
+                            .background(Color.theme.GradientSignUpButton)
+                            .clipShape(Capsule())
+                                    }
+                    .offset(y:430)
                     
-                    
-                    
-                        
-                    
-                    
+             
                 }
-                .offset(y:-270)
+                .offset(y:-240)
                 
                 
                 

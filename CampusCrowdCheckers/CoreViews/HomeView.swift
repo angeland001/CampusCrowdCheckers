@@ -10,26 +10,29 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         ZStack {
-            Color.theme.background
+            Color.theme.BackGradient
                 .ignoresSafeArea()
+            
+                HStack(spacing:2) {
+                    ImageIcons(IconName: "chickfilalogo")
+                    ImageIcons(IconName: "MoesLogo")
+                    ImageIcons(IconName: "PandaLogo")
+                    ImageIcons(IconName: "podlogo")
+                    ImageIcons(IconName: "RRLogo")
                     
-            HStack(spacing:2) {
-                ImageIcons(IconName: "chickfilalogo")
-                ImageIcons(IconName: "MoesLogo")
-                ImageIcons(IconName: "PandaLogo")
-                ImageIcons(IconName: "podlogo")
-                ImageIcons(IconName: "RRLogo")
-                        
-                        
-                                    
-                    }
-                    .offset(y:-310)
+                    
+                    
                 }
+                .background(Color.accentColor)
+                .clipShape(Capsule())
+                .offset(y:-310)
+            }
+        }
         
         
         
-    }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
