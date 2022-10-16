@@ -54,6 +54,15 @@ struct ImageIcons: View {
         }
 }
 
+struct IconsForLogin: View {
+    
+    var body: some View {
+        VStack {
+            Text("Hello")
+        }
+    }
+}
+
 struct ImageIcons_Previews: PreviewProvider {
     static var previews: some View {
         ImageIcons(IconName: "MoesLogo")
