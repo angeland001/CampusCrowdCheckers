@@ -19,9 +19,9 @@ struct ColorTheme {
     let secondaryText = Color("SecondaryTextColor")
     let BackGradient = LinearGradient(gradient: Gradient(colors: [Color.black,Color.white]),
                                   startPoint: .topLeading, endPoint: .bottomTrailing)
-    let GradientLoginButton = LinearGradient(gradient: Gradient(colors: [Color.black,Color.orange]),
-                                  startPoint: .leading, endPoint: .trailing)
-    let GradientSignUpButton = LinearGradient(gradient: Gradient(colors: [Color.black,Color.yellow]),
+    let GradientLoginButton = LinearGradient(gradient: Gradient(colors: [Color.white,Color.black]),
+                                  startPoint: .topLeading, endPoint: .bottomTrailing)
+    let GradientSignUpButton = LinearGradient(gradient: Gradient(colors: [Color.white,Color.black]),
                                   startPoint: .leading, endPoint: .trailing)
     let circle = Color("CircleColor")
     let lessopacitycircle = Color("LessOpacityCircle")
