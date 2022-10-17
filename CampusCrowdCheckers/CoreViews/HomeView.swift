@@ -8,28 +8,40 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var selectedTab: Tab = .house
+    
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+    
     var body: some View {
         ZStack {
-            Color.theme.background
-                .ignoresSafeArea()
-                    
-            HStack(spacing:2) {
-                ImageIcons(IconName: "chickfilalogo")
-                ImageIcons(IconName: "MoesLogo")
-                ImageIcons(IconName: "PandaLogo")
-                ImageIcons(IconName: "podlogo")
-                ImageIcons(IconName: "RRLogo")
-                        
-                        
-                                    
+            TabView(selection: $selectedTab) {
+                ForEach(Tab.allCases, id:\.rawValue) { tab in
+                    HStack {
+                        Text("Hello!")
                     }
-                    .offset(y:-310)
+                    
+                    
                 }
+            }
+            ZStack {
+                VStack {
+                    Spacer()
+                    TabBar(selectedTab: $selectedTab)
+                    
+                }
+            }
+            .background(Color.theme.BackGradient)
+            
+            
+            }
+        }
         
         
         
-    }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

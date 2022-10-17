@@ -11,6 +11,9 @@
 		493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306928FB2F2000E3C3C8 /* Color.swift */; };
 		493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306B28FB329D00E3C3C8 /* LoginScreen.swift */; };
 		49A6D07A28F7163500B82FDF /* ImageIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D07928F7163500B82FDF /* ImageIcons.swift */; };
+		49E024DD28FCF0EF00FEA2BB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E024DC28FCF0EF00FEA2BB /* SignUpView.swift */; };
+		49E024DF28FCF2FB00FEA2BB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E024DE28FCF2FB00FEA2BB /* LoginView.swift */; };
+		49E024E128FCFDB000FEA2BB /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E024E028FCFDB000FEA2BB /* TabBar.swift */; };
 		49FC30E228F0C4030006D87F /* CampusCrowdCheckersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */; };
 		49FC30E428F0C4030006D87F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC30E328F0C4030006D87F /* HomeView.swift */; };
 		49FC30E628F0C4060006D87F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FC30E528F0C4060006D87F /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 		493B306928FB2F2000E3C3C8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		493B306B28FB329D00E3C3C8 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		49A6D07928F7163500B82FDF /* ImageIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIcons.swift; sourceTree = "<group>"; };
+		49E024DC28FCF0EF00FEA2BB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		49E024DE28FCF2FB00FEA2BB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		49E024E028FCFDB000FEA2BB /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		49FC30DE28F0C4030006D87F /* CampusCrowdCheckers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusCrowdCheckers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusCrowdCheckersApp.swift; sourceTree = "<group>"; };
 		49FC30E328F0C4030006D87F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -45,6 +51,7 @@
 			children = (
 				49A6D07928F7163500B82FDF /* ImageIcons.swift */,
 				493B306928FB2F2000E3C3C8 /* Color.swift */,
+				49E024E028FCFDB000FEA2BB /* TabBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -55,6 +62,8 @@
 				49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */,
 				49FC30E328F0C4030006D87F /* HomeView.swift */,
 				493B306B28FB329D00E3C3C8 /* LoginScreen.swift */,
+				49E024DE28FCF2FB00FEA2BB /* LoginView.swift */,
+				49E024DC28FCF0EF00FEA2BB /* SignUpView.swift */,
 				493B306628F86B4500E3C3C8 /* SplashScreenView.swift */,
 			);
 			path = CoreViews;
@@ -165,11 +174,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E024E128FCFDB000FEA2BB /* TabBar.swift in Sources */,
 				49A6D07A28F7163500B82FDF /* ImageIcons.swift in Sources */,
 				49FC30E428F0C4030006D87F /* HomeView.swift in Sources */,
 				49FC30E228F0C4030006D87F /* CampusCrowdCheckersApp.swift in Sources */,
+				49E024DD28FCF0EF00FEA2BB /* SignUpView.swift in Sources */,
 				493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */,
 				493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */,
+				49E024DF28FCF2FB00FEA2BB /* LoginView.swift in Sources */,
 				493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
