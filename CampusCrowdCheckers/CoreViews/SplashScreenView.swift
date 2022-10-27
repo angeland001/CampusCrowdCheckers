@@ -14,7 +14,7 @@ struct SplashScreenView: View {
     
     var body: some View {
         if isActive{
-                    HomeView()
+                    LoginScreen()
         } else{
             ZStack {
                 Color.theme.SplashScreen
