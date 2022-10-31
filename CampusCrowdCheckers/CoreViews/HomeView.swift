@@ -8,35 +8,19 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var selectedTab: Tab = .house
-    
-    init() {
-        UITabBar.appearance().isHidden = true
-    }
     
     var body: some View {
         ZStack {
-            TabView(selection: $selectedTab) {
-                ForEach(Tab.allCases, id:\.rawValue) { tab in
-                    HStack {
-                        Text("Hello!")
-                    }
-                    
-                    
-                }
-            }
-            ZStack {
-                VStack {
-                    Spacer()
-                    TabBar(selectedTab: $selectedTab)
-                    
-                }
-            }
-            .background(Color.theme.BackGradient)
+            Color.theme.BackGradient
+                .ignoresSafeArea()
             
             
-            }
         }
+        
+         
+            
+    }
+        
         
         
         
