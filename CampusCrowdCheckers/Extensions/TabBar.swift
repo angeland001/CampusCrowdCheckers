@@ -2,75 +2,83 @@
 //  TabBar.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 10/16/22.
+//  Created by Andrew on 11/1/22.
 //
+//With this, see if you can implement it into the project we have now.
+//If you can change the tab bar color to grey or black, I think that would be cool
+//If you figure out the icon colors, I think a dark purple (like in the code below) would be sick too.
+//I think the home should be what we have so far
 
 import SwiftUI
 
-enum Tab: String, CaseIterable {
-    case house
-    case message
-    case person
-    case leaf
-    case gearshape
-    case eraser
-    
+struct ChatTab: View {
+    var body: some View {
+        NavigationView {
+            ZStack{
+                Color.yellow
+            }
+            .navigationTitle("Chat")
+        }
+    }
 }
 
-struct TabBar: View {
-    @Binding var selectedTab: Tab
-    
-    private var fillImage: String {
-        selectedTab.rawValue + ".fill"
-    }
-    
-    private var tabColor: Color {
-            switch selectedTab {
-            case .house:
-                return .blue
-            case .message:
-                return .indigo
-            case .person:
-                return .purple
-            case .leaf:
-                return .green
-            case .gearshape:
-                return .orange
-            case .eraser:
-                return .pink
+struct HomeTab: View {
+    var body: some View {
+        NavigationView {
+            ZStack {
+                Color.red
             }
+            .navigationTitle("Home")
+        }
+    }
+}
+
+struct FAQTab: View {
+    var body: some View {
+        NavigationView {
+            ZStack {
+                Color.orange
+            }
+            .navigationTitle("FAQ")
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+struct TabBar: View {
+    var body: some View {
+        TabView {
+            ChatTab()
+                .tabItem{
+                    Image(systemName: "bubble.left.fill")
+                    Text("Chat")
+                }
+            HomeTab()
+                .tabItem{
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+            FAQTab()
+                .tabItem{
+                    Image(systemName: "questionmark.circle")
+                    Text("FAQ")
+                }
+            
+                
             
         }
-    
-    var body: some View {
-            VStack {
-                HStack {
-                    ForEach(Tab.allCases, id: \.rawValue) { tab in
-                        Spacer()
-                        Image(systemName: selectedTab == tab ? fillImage : tab.rawValue)
-                            .scaleEffect(tab == selectedTab ? 1.25 : 1.0)
-                            .foregroundColor(tab == selectedTab ? tabColor : .gray)
-                            .font(.system(size: 20))
-                            .onTapGesture {
-                                withAnimation(.easeInOut(duration: 0.1)) {
-                                    selectedTab = tab
-                                }
-                            }
-                        Spacer()
-                    }
-                }
-                .frame(width: nil, height: 60)
-                .background(.thinMaterial)
-                .cornerRadius(20)
-                .padding()
-            }
-        }
     }
-
-
+}
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TabBar(selectedTab: .constant(.house))
+        TabBar()
     }
 }
