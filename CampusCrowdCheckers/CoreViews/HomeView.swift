@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var selectedTab = "house"
     
     var body: some View {
-        ZStack {
+        
+        ZStack(alignment: .bottom, content: {
+            
             Color.theme.BackGradient
                 .ignoresSafeArea()
             
-            
-        }
+            //custom tab bar
+            AnimatedTabBar(selectedTab: $selectedTab)
+        })
         
          
             

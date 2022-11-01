@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4907DB982911B52B00C5C502 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907DB972911B52B00C5C502 /* TabBar.swift */; };
+		4907DB9A2919C69000C5C502 /* AnimatedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */; };
+		4907DB9C2919CCB000C5C502 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907DB9B2919CCB000C5C502 /* TabCurve.swift */; };
 		493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306628F86B4500E3C3C8 /* SplashScreenView.swift */; };
 		493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306928FB2F2000E3C3C8 /* Color.swift */; };
 		493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306B28FB329D00E3C3C8 /* LoginScreen.swift */; };
@@ -21,7 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4907DB972911B52B00C5C502 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTabBar.swift; sourceTree = "<group>"; };
+		4907DB9B2919CCB000C5C502 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
 		493B306628F86B4500E3C3C8 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		493B306928FB2F2000E3C3C8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		493B306B28FB329D00E3C3C8 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -51,7 +53,8 @@
 			children = (
 				49A6D07928F7163500B82FDF /* ImageIcons.swift */,
 				493B306928FB2F2000E3C3C8 /* Color.swift */,
-				4907DB972911B52B00C5C502 /* TabBar.swift */,
+				4907DB9B2919CCB000C5C502 /* TabCurve.swift */,
+				4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,14 +177,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4907DB982911B52B00C5C502 /* TabBar.swift in Sources */,
 				49A6D07A28F7163500B82FDF /* ImageIcons.swift in Sources */,
 				49FC30E428F0C4030006D87F /* HomeView.swift in Sources */,
 				49FC30E228F0C4030006D87F /* CampusCrowdCheckersApp.swift in Sources */,
 				49E024DD28FCF0EF00FEA2BB /* SignUpView.swift in Sources */,
+				4907DB9C2919CCB000C5C502 /* TabCurve.swift in Sources */,
 				493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */,
 				493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */,
 				49E024DF28FCF2FB00FEA2BB /* LoginView.swift in Sources */,
+				4907DB9A2919C69000C5C502 /* AnimatedTabBar.swift in Sources */,
 				493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
