@@ -10,25 +10,58 @@ import SwiftUI
 struct HomeView: View {
     @State var selectedTab = "house"
     
+    let icons: [String] = [
+        "bubble.left", "house", "questionmark.circle"
+    ]
+    
+    
     var body: some View {
+        VStack {
+            ZStack {
+                Color.theme.background
+                    .ignoresSafeArea()
+                switch selectedTab {
+                        case icons[0]:
+                        //Use navigationlink to go to live chat
+                            Text("LiveChat")
+                                .foregroundColor(Color.white)
+                        case icons[1]:
+                        //modify the Home View here
+                            Text("chart")
+                                .foregroundColor(Color.white)
+                        case icons[2]:
+                        //Use navigationlink to go to Q/A
+                            Text("Q/A")
+                                .foregroundColor(Color.white)
+                        default:
+                            Text("Sup")
+                            
+                        }
+                        
+
+               AnimatedTabBar(selectedTab: $selectedTab)
+                    .offset(y:340)
+            }
+            
+  
+            
+            
+        }
         
-        ZStack(alignment: .bottom, content: {
-            
-            Color.theme.BackGradient
-                .ignoresSafeArea()
-            
-            //custom tab bar
-            AnimatedTabBar(selectedTab: $selectedTab)
-        })
         
-         
-            
+        
+        
+        
+        
     }
-        
-        
-        
-        
+    
+    
 }
+    
+
+    
+    
+    
 
 
 struct ContentView_Previews: PreviewProvider {
@@ -36,3 +69,4 @@ struct ContentView_Previews: PreviewProvider {
         HomeView()
     }
 }
+
