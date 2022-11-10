@@ -17,9 +17,12 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
+            
             ZStack {
                 Color.theme.background
                     .ignoresSafeArea()
+                Infographics()
+                    .offset(y:-310)
                 switch selectedTab {
                         case icons[0]:
                         //Use navigationlink to go to live chat
