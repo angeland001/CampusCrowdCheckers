@@ -22,7 +22,7 @@ struct HomeView: View {
                 Color.theme.background
                     .ignoresSafeArea()
                 Infographics()
-                    .offset(y:-320)
+                    .offset(y:-310)
                 switch selectedTab {
                         case icons[0]:
                         //Use navigationlink to go to live chat
