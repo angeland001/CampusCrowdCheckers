@@ -11,7 +11,7 @@ struct LoginScreen: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.theme.BackGradient
+                Color.theme.background
                     .ignoresSafeArea()
                 Circle()
                     .scale(1.7)
@@ -28,7 +28,7 @@ struct LoginScreen: View {
                     .foregroundColor(Color.theme.peopleImages)
                 Circle()
                     .scale(1.3)
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(Color.black)
                     .offset(y:380)
                 VStack() {
                     Image("Pop-Globe")
@@ -45,8 +45,8 @@ struct LoginScreen: View {
                         Text("Login")
                             .bold()
                             .frame(width:200,height:50)
-                            .foregroundColor(Color.theme.secondaryText)
-                            .background(Color.theme.GradientLoginButton)
+                            .foregroundColor(Color.black)
+                            .background(Color.white)
                             .clipShape(Capsule())
                                     }
                     .offset(y:420)
@@ -54,8 +54,8 @@ struct LoginScreen: View {
                         Text("Sign Up")
                             .bold()
                             .frame(width:200,height:50)
-                            .foregroundColor(Color.theme.secondaryText)
-                            .background(Color.theme.GradientSignUpButton)
+                            .foregroundColor(Color.black)
+                            .background(Color.white)
                             .clipShape(Capsule())
                                     }
                     .offset(y:430)

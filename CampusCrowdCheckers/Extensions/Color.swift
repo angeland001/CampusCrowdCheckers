@@ -27,6 +27,7 @@ struct ColorTheme {
     let lessopacitycircle = Color("LessOpacityCircle")
     let peopleImages = Color("PeopleColor")
     let PandaInfographic = Color("PandaInfoRectangle")
+    let StarbucksInfographic = Color("StarbucksRectangle")
     
     
         

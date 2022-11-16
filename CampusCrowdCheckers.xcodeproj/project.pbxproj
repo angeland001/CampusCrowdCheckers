@@ -13,6 +13,7 @@
 		493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306628F86B4500E3C3C8 /* SplashScreenView.swift */; };
 		493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306928FB2F2000E3C3C8 /* Color.swift */; };
 		493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306B28FB329D00E3C3C8 /* LoginScreen.swift */; };
+		49B5BE7F29256C74009CB7DF /* LiveChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE7E29256C74009CB7DF /* LiveChat.swift */; };
 		49E024DD28FCF0EF00FEA2BB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E024DC28FCF0EF00FEA2BB /* SignUpView.swift */; };
 		49E024DF28FCF2FB00FEA2BB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E024DE28FCF2FB00FEA2BB /* LoginView.swift */; };
 		49FC30E228F0C4030006D87F /* CampusCrowdCheckersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */; };
@@ -28,6 +29,7 @@
 		493B306628F86B4500E3C3C8 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		493B306928FB2F2000E3C3C8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		493B306B28FB329D00E3C3C8 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		49B5BE7E29256C74009CB7DF /* LiveChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChat.swift; sourceTree = "<group>"; };
 		49E024DC28FCF0EF00FEA2BB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		49E024DE28FCF2FB00FEA2BB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		49FC30DE28F0C4030006D87F /* CampusCrowdCheckers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusCrowdCheckers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +66,7 @@
 			children = (
 				49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */,
 				49FC30E328F0C4030006D87F /* HomeView.swift */,
+				49B5BE7E29256C74009CB7DF /* LiveChat.swift */,
 				493B306B28FB329D00E3C3C8 /* LoginScreen.swift */,
 				49E024DE28FCF2FB00FEA2BB /* LoginView.swift */,
 				49E024DC28FCF0EF00FEA2BB /* SignUpView.swift */,
@@ -186,6 +189,7 @@
 				493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */,
 				49E024DF28FCF2FB00FEA2BB /* LoginView.swift in Sources */,
 				4907DB9A2919C69000C5C502 /* AnimatedTabBar.swift in Sources */,
+				49B5BE7F29256C74009CB7DF /* LiveChat.swift in Sources */,
 				493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
