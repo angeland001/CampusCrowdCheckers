@@ -18,7 +18,10 @@ struct AnimatedTabBar: View {
         HStack (spacing: 0) {
             
             //Tab bar buttons
+            
             TabBarButton(image: "bubble.left", selectedTab: $selectedTab, tabPoints: $tabPoints)
+                
+            
             
             TabBarButton(image: "house", selectedTab: $selectedTab, tabPoints: $tabPoints)
             

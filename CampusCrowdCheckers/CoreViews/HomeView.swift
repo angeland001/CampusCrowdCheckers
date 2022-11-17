@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @State var selectedTab = "house"
+    @State var PageIndex = 0
     
     let icons: [String] = [
         "bubble.left", "house", "questionmark.circle"
@@ -16,53 +18,51 @@ struct HomeView: View {
     
     
     var body: some View {
-        VStack {
+        
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
             
-            ZStack {
-                Color.theme.background
-                    .ignoresSafeArea()
-                Infographics()
-                    .offset(y:-310)
-                switch selectedTab {
-                        case icons[0]:
-                        //Use navigationlink to go to live chat
-                            Text("LiveChat")
-                                .foregroundColor(Color.white)
-                        case icons[1]:
-                        //modify the Home View here
-                            Text("chart")
-                                .foregroundColor(Color.white)
-                        case icons[2]:
-                        //Use navigationlink to go to Q/A
-                            Text("Q/A")
-                                .foregroundColor(Color.white)
-                        default:
-                            Text("Sup")
-                            
+            
+            VStack {
+                Infographics(PageIndex: $PageIndex)
+                    .frame(height:280)
+                
+                
+                
+                    ScrollView {
+                            VStack(alignment: .leading) {
+                                Text("Hello")
+                                    .foregroundColor(Color.white)
+                            }
                         }
-                        
-
-               AnimatedTabBar(selectedTab: $selectedTab)
-                    .offset(y:340)
-            }
+                    
+                    
+                AnimatedTabBar(selectedTab: $selectedTab)
+                Spacer().frame(height:20)
+                }
             
-  
+            
+            
+                
+                
+            }
+            .ignoresSafeArea()
+            
             
             
         }
-        
-        
-        
-        
-        
-        
+            
+   
     }
     
     
-}
-    
 
+func goToLiveChat() {
     
+}
+
+
     
     
 
