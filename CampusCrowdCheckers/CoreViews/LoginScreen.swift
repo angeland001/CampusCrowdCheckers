@@ -41,7 +41,7 @@ struct LoginScreen: View {
                         .bold()
                         .foregroundColor(Color.theme.secondaryText)
                     
-                    NavigationLink(destination: LoginView()) {
+                    NavigationLink(destination: LoginInfo()) {
                         Text("Login")
                             .bold()
                             .frame(width:200,height:50)

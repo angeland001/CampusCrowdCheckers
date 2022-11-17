@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State var selectedTab = "house"
+    @State var PageIndex = 0
     
     let icons: [String] = [
         "bubble.left", "house", "questionmark.circle"
@@ -24,17 +25,15 @@ struct HomeView: View {
             
             
             VStack {
-                Infographics()
+                Infographics(PageIndex: $PageIndex)
                     .frame(height:280)
                 
                 
                 
                     ScrollView {
                             VStack(alignment: .leading) {
-                                ForEach(0..<50) {
-                                    Text("Hello this is a test \($0)")
-                                        .foregroundColor(Color.white)
-                                }
+                                Text("Hello")
+                                    .foregroundColor(Color.white)
                             }
                         }
                     
