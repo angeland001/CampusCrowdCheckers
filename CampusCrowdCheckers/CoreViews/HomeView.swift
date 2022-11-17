@@ -9,11 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State var selectedTab = "house"
     
-    let icons: [String] = [
-        "bubble.left", "house", "questionmark.circle"
-    ]
+    @State var PageIndex = 5
+    
+    
     
     
     var body: some View {
@@ -24,23 +23,20 @@ struct HomeView: View {
             
             
             VStack {
-                Infographics()
+                Infographics(PageIndex: $PageIndex)
                     .frame(height:280)
                 
                 
                 
                     ScrollView {
                             VStack(alignment: .leading) {
-                                ForEach(0..<50) {
-                                    Text("Hello this is a test \($0)")
-                                        .foregroundColor(Color.white)
-                                }
+                                Text("Hello")
+                                    .foregroundColor(Color.white)
                             }
                         }
                     
                     
-                AnimatedTabBar(selectedTab: $selectedTab)
-                Spacer().frame(height:20)
+                
                 }
             
             

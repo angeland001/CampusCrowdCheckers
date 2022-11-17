@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct Infographics: View {
+    @Binding var PageIndex: Int
     
     
     var body: some View {
             
-            TabView {
+        TabView(selection: $PageIndex) {
                 //insert infographics sequentially
-                HomeInfo()
-                ChickFilAInfo()
-                StarbucksInfo()
-                MoesInfo()
-                PodInfo()
-                PandaInfo()
-                RRInfo()
+                HomeInfo(image: "house.fill").tag(0)
+                ChickFilAInfo(image: "chickfilalogo").tag(1)
+                StarbucksInfo(image: "StarbuckLogo").tag(2)
+                MoesInfo(image: "MoesLogo").tag(3)
+                PodInfo(image: "podlogo").tag(4)
+                PandaInfo(image: "PandaLogo").tag(5)
+                RRInfo(image: "RRLogo").tag(6)
                 
             }
             //.frame(height:320)
-            .tabViewStyle(PageTabViewStyle())
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         
         
     }
@@ -34,13 +35,17 @@ struct Infographics: View {
 
 
 struct HomeInfo: View {
+   
+    var image: String
+    
     var body: some View {
         ZStack {
+           
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.white)
             
             HStack {
-                Image(systemName: "house.fill")
+                Image(systemName: image)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 105,height:105)
@@ -90,24 +95,33 @@ struct HomeInfo: View {
         
         
     }
+        
 }
+    
 
 struct ChickFilAInfo: View {
+    var image: String
+    
+   
     var body: some View {
+        
+        
         ZStack {
+            
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.red)
             
-            HStack {
-                Image("chickfilalogo")
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(Circle())
-                    .frame(width: 105,height:105)
-                    .overlay {
-                        Circle().stroke(.white, lineWidth: 4)
-                    }
-                    .fontWeight(.semibold)
+            
+                HStack {
+                    Image(image)
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .frame(width: 105,height:105)
+                        .overlay {
+                            Circle().stroke(.white, lineWidth: 4)
+                        }
+                        .fontWeight(.semibold)
                 
                 
                     
@@ -153,15 +167,19 @@ struct ChickFilAInfo: View {
         
         
     }
+        
 }
 
 struct MoesInfo: View {
+    var image: String
+    
     var body: some View {
         ZStack {
+            
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.cyan)
             HStack {
-                Image("MoesLogo")
+                Image(image)
                     .resizable()
                     .scaledToFit()
                     .clipShape(Circle())
@@ -224,15 +242,19 @@ struct MoesInfo: View {
         
         
     }
+        
 }
 
 struct PodInfo: View {
+    var image: String
+   
     var body: some View {
         ZStack {
+            
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.green)
             HStack {
-                Image("podlogo")
+                Image(image)
                     .resizable()
                     .scaledToFit()
                     .clipShape(Circle())
@@ -285,15 +307,21 @@ struct PodInfo: View {
         
         
     }
+
 }
 
 struct RRInfo: View {
+    
+    var image: String
+    
+    
     var body: some View {
         ZStack {
+            
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.white)
             HStack {
-                Image("RRLogo")
+                Image(image)
                     .resizable()
                     .scaledToFit()
                     .clipShape(Circle())
@@ -343,16 +371,20 @@ struct RRInfo: View {
         
         
     }
+     
 }
 
 
 struct PandaInfo: View {
+    var image: String
+    
     var body: some View {
         ZStack {
+            
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.theme.PandaInfographic)
             HStack {
-                Image("PandaLogo")
+                Image(image)
                     .resizable()
                     .scaledToFit()
                     .clipShape(Circle())
@@ -408,15 +440,19 @@ struct PandaInfo: View {
         
         
     }
+      
 }
 
 struct StarbucksInfo: View {
+    var image: String
+    
     var body: some View {
         ZStack {
+            
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.theme.StarbucksInfographic)
             HStack {
-                Image("StarbuckLogo")
+                Image(image)
                     .resizable()
                     .scaledToFit()
                     .clipShape(Circle())
@@ -491,11 +527,12 @@ struct StarbucksInfo: View {
         
         
     }
+        
 }
 
 
 struct Infographics_Previews: PreviewProvider {
     static var previews: some View {
-        Infographics()
+        HomeView()
     }
 }
