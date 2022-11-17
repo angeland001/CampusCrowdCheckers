@@ -11,9 +11,6 @@ struct Infographics: View {
     
     
     var body: some View {
-        ZStack {
-            Color.theme.background
-                .ignoresSafeArea()
             
             TabView {
                 //insert infographics sequentially
@@ -26,10 +23,9 @@ struct Infographics: View {
                 RRInfo()
                 
             }
-            
-            .frame(height:340)
+            //.frame(height:320)
             .tabViewStyle(PageTabViewStyle())
-        }
+        
         
     }
         
