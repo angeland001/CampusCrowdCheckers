@@ -25,7 +25,7 @@ struct AnimatedTabBar: View {
             
             TabBarButton(image: "house", selectedTab: $selectedTab, tabPoints: $tabPoints)
             
-            TabBarButton(image: "questionmark.circle", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButton(image: "gearshape", selectedTab: $selectedTab, tabPoints: $tabPoints)
             
            
         }
@@ -55,7 +55,7 @@ struct AnimatedTabBar: View {
                 return tabPoints[0]
             case "house":
                 return tabPoints[1]
-            case "questionmark.circle":
+            case "gearshape":
                 return tabPoints[2]
             
             default:

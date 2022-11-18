@@ -9,12 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State var selectedTab = "house"
+    //keep track of current infographic to change graphs when needed
     @State var PageIndex = 0
-    
-    let icons: [String] = [
-        "bubble.left", "house", "questionmark.circle"
-    ]
     
     
     var body: some View {
@@ -29,17 +25,21 @@ struct HomeView: View {
                     .frame(height:280)
                 
                 
-                
+                    //if the infographic changes... change graph output
                     ScrollView {
                             VStack(alignment: .leading) {
-                                Text("Hello")
-                                    .foregroundColor(Color.white)
+                                ForEach(0..<50) { num in
+                                    Text("This is a test" + "\(num)")
+                                        .foregroundColor(Color.white)
+                                    
+                                }
+                                    
+                                
                             }
                         }
                     
                     
-                AnimatedTabBar(selectedTab: $selectedTab)
-                Spacer().frame(height:20)
+                
                 }
             
             

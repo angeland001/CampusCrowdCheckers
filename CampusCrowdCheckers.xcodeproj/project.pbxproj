@@ -16,6 +16,16 @@
 		49B5BE7F29256C74009CB7DF /* LiveChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE7E29256C74009CB7DF /* LiveChat.swift */; };
 		49B5BE9D2925D228009CB7DF /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE9C2925D228009CB7DF /* BotResponse.swift */; };
 		49B5BE9F2925D305009CB7DF /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE9E2925D305009CB7DF /* LoginInfo.swift */; };
+		49B5BEA52927DFD8009CB7DF /* PopulationChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BEA42927DFD8009CB7DF /* PopulationChart.swift */; };
+		49B5BEA92927E3D0009CB7DF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BEA82927E3D0009CB7DF /* MainView.swift */; };
+		49B5BEAB2927E590009CB7DF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BEAA2927E590009CB7DF /* Settings.swift */; };
+		49B5BEB229288E3A009CB7DF /* UCData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEB129288E3A009CB7DF /* UCData.csv */; };
+		49B5BEB429288E5B009CB7DF /* PodData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEB329288E5B009CB7DF /* PodData.csv */; };
+		49B5BEB629288F9A009CB7DF /* RRData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEB529288F9A009CB7DF /* RRData.csv */; };
+		49B5BEB829288FB6009CB7DF /* MoesData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEB729288FB6009CB7DF /* MoesData.csv */; };
+		49B5BEBA29288FDB009CB7DF /* ChickFilaData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEB929288FDB009CB7DF /* ChickFilaData.csv */; };
+		49B5BEBC29289001009CB7DF /* PandaData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEBB29289001009CB7DF /* PandaData.csv */; };
+		49B5BEBE2928984B009CB7DF /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BEBD2928984B009CB7DF /* Database.swift */; };
 		49E024DD28FCF0EF00FEA2BB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E024DC28FCF0EF00FEA2BB /* SignUpView.swift */; };
 		49FC30E228F0C4030006D87F /* CampusCrowdCheckersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */; };
 		49FC30E428F0C4030006D87F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC30E328F0C4030006D87F /* HomeView.swift */; };
@@ -33,6 +43,16 @@
 		49B5BE7E29256C74009CB7DF /* LiveChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChat.swift; sourceTree = "<group>"; };
 		49B5BE9C2925D228009CB7DF /* BotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotResponse.swift; sourceTree = "<group>"; };
 		49B5BE9E2925D305009CB7DF /* LoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
+		49B5BEA42927DFD8009CB7DF /* PopulationChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationChart.swift; sourceTree = "<group>"; };
+		49B5BEA82927E3D0009CB7DF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		49B5BEAA2927E590009CB7DF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		49B5BEB129288E3A009CB7DF /* UCData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UCData.csv; sourceTree = "<group>"; };
+		49B5BEB329288E5B009CB7DF /* PodData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodData.csv; sourceTree = "<group>"; };
+		49B5BEB529288F9A009CB7DF /* RRData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RRData.csv; sourceTree = "<group>"; };
+		49B5BEB729288FB6009CB7DF /* MoesData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MoesData.csv; sourceTree = "<group>"; };
+		49B5BEB929288FDB009CB7DF /* ChickFilaData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChickFilaData.csv; sourceTree = "<group>"; };
+		49B5BEBB29289001009CB7DF /* PandaData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PandaData.csv; sourceTree = "<group>"; };
+		49B5BEBD2928984B009CB7DF /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		49E024DC28FCF0EF00FEA2BB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		49FC30DE28F0C4030006D87F /* CampusCrowdCheckers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusCrowdCheckers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusCrowdCheckersApp.swift; sourceTree = "<group>"; };
@@ -60,6 +80,7 @@
 				4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */,
 				49023B49291C8F7D00CF6DDF /* Infographics.swift */,
 				49B5BE9C2925D228009CB7DF /* BotResponse.swift */,
+				49B5BEA42927DFD8009CB7DF /* PopulationChart.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -69,6 +90,8 @@
 			children = (
 				49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */,
 				49FC30E328F0C4030006D87F /* HomeView.swift */,
+				49B5BEA82927E3D0009CB7DF /* MainView.swift */,
+				49B5BEAA2927E590009CB7DF /* Settings.swift */,
 				49B5BE7E29256C74009CB7DF /* LiveChat.swift */,
 				49B5BE9E2925D305009CB7DF /* LoginInfo.swift */,
 				493B306B28FB329D00E3C3C8 /* LoginScreen.swift */,
@@ -78,9 +101,24 @@
 			path = CoreViews;
 			sourceTree = "<group>";
 		};
+		49B5BEB029288DBD009CB7DF /* DataFiles */ = {
+			isa = PBXGroup;
+			children = (
+				49B5BEB929288FDB009CB7DF /* ChickFilaData.csv */,
+				49B5BEB129288E3A009CB7DF /* UCData.csv */,
+				49B5BEB329288E5B009CB7DF /* PodData.csv */,
+				49B5BEB529288F9A009CB7DF /* RRData.csv */,
+				49B5BEB729288FB6009CB7DF /* MoesData.csv */,
+				49B5BEBB29289001009CB7DF /* PandaData.csv */,
+				49B5BEBD2928984B009CB7DF /* Database.swift */,
+			);
+			path = DataFiles;
+			sourceTree = "<group>";
+		};
 		49FC30D528F0C4030006D87F = {
 			isa = PBXGroup;
 			children = (
+				49B5BEB029288DBD009CB7DF /* DataFiles */,
 				49FC30E028F0C4030006D87F /* CampusCrowdCheckers */,
 				49FC30DF28F0C4030006D87F /* Products */,
 			);
@@ -172,6 +210,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FC30E928F0C4060006D87F /* Preview Assets.xcassets in Resources */,
+				49B5BEB229288E3A009CB7DF /* UCData.csv in Resources */,
+				49B5BEBA29288FDB009CB7DF /* ChickFilaData.csv in Resources */,
+				49B5BEB829288FB6009CB7DF /* MoesData.csv in Resources */,
+				49B5BEB429288E5B009CB7DF /* PodData.csv in Resources */,
+				49B5BEBC29289001009CB7DF /* PandaData.csv in Resources */,
+				49B5BEB629288F9A009CB7DF /* RRData.csv in Resources */,
 				49FC30E628F0C4060006D87F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FC30E428F0C4030006D87F /* HomeView.swift in Sources */,
+				49B5BEA92927E3D0009CB7DF /* MainView.swift in Sources */,
 				49FC30E228F0C4030006D87F /* CampusCrowdCheckersApp.swift in Sources */,
 				49E024DD28FCF0EF00FEA2BB /* SignUpView.swift in Sources */,
 				49B5BE9F2925D305009CB7DF /* LoginInfo.swift in Sources */,
@@ -191,10 +236,13 @@
 				49023B4A291C8F7D00CF6DDF /* Infographics.swift in Sources */,
 				493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */,
 				493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */,
+				49B5BEAB2927E590009CB7DF /* Settings.swift in Sources */,
 				49B5BE9D2925D228009CB7DF /* BotResponse.swift in Sources */,
 				4907DB9A2919C69000C5C502 /* AnimatedTabBar.swift in Sources */,
 				49B5BE7F29256C74009CB7DF /* LiveChat.swift in Sources */,
 				493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */,
+				49B5BEBE2928984B009CB7DF /* Database.swift in Sources */,
+				49B5BEA52927DFD8009CB7DF /* PopulationChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
