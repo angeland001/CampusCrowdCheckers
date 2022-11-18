@@ -9,12 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State var selectedTab = "house"
-    @State var PageIndex = 0
     
-    let icons: [String] = [
-        "bubble.left", "house", "questionmark.circle"
-    ]
+    @State var PageIndex = 5
+    
+    
     
     
     var body: some View {
@@ -38,8 +36,7 @@ struct HomeView: View {
                         }
                     
                     
-                AnimatedTabBar(selectedTab: $selectedTab)
-                Spacer().frame(height:20)
+                
                 }
             
             
