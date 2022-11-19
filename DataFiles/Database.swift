@@ -36,6 +36,7 @@ struct DataForChart: Identifiable{
 
 
 func loadCSV(from csvName: String) -> [DataForChart] {
+    
     var csvToStruct = [DataForChart]()
     
     //locate csvFile
