@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    //keeps track of currently selected house... HOME PAGE
     @State var selectedTab = "house"
+    
     
     let icons: [String] = [
         "bubble.left", "house", "gearshape"
@@ -20,9 +23,7 @@ struct MainView: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 0) {
-                
-                
-                
+                //Switches views depending on tab selected
                 switch selectedTab {
                 case icons[0]:
                     LiveChat()
@@ -34,7 +35,7 @@ struct MainView: View {
                     HomeView()
                 }
                 
-                
+                //Tab Bar is fixed throughout all views
                 AnimatedTabBar(selectedTab: $selectedTab)
                     .background(Color.black)
                 
