@@ -9,10 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
-    
-    @State var PageIndex = 5
-    
-    
+    //keep track of current infographic to change graphs when needed
+    @State var PageIndex = 0
     
     
     var body: some View {
@@ -27,11 +25,16 @@ struct HomeView: View {
                     .frame(height:280)
                 
                 
-                
+                    //if the infographic changes... change graph output
                     ScrollView {
                             VStack(alignment: .leading) {
-                                Text("Hello")
-                                    .foregroundColor(Color.white)
+                                ForEach(0..<50) { num in
+                                    Text("This is a test" + "\(num)")
+                                        .foregroundColor(Color.white)
+                                    
+                                }
+                                    
+                                
                             }
                         }
                     
