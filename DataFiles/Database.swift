@@ -36,6 +36,7 @@ struct DataForChart: Identifiable{
 
 
 func loadCSV(from csvName: String) -> [DataForChart] {
+    
     var csvToStruct = [DataForChart]()
     
     //locate csvFile
@@ -43,7 +44,7 @@ func loadCSV(from csvName: String) -> [DataForChart] {
         return []
     }
     
-    //convert the contenrts of ther file into one very long string
+    //convert the contents of ther file into one very long string
     
     var data = ""
     do {
@@ -57,8 +58,10 @@ func loadCSV(from csvName: String) -> [DataForChart] {
     //detect "/n" carriage return then split
     var rows = data.components(separatedBy: "\n")
     
+    
     //remove header rows
     //count the number of header columns before removing
+    
     let columnCount = rows.first?.components(separatedBy: ",").count
     rows.removeFirst()
     

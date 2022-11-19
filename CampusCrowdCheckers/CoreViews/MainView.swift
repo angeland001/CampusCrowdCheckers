@@ -30,7 +30,7 @@ struct MainView: View {
                 case icons[1]:
                     HomeView()
                 case icons[2]:
-                    LiveChat()
+                    Settings()
                 default:
                     HomeView()
                 }

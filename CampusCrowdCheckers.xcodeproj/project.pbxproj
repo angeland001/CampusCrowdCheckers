@@ -19,13 +19,13 @@
 		49B5BEA52927DFD8009CB7DF /* PopulationChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BEA42927DFD8009CB7DF /* PopulationChart.swift */; };
 		49B5BEA92927E3D0009CB7DF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BEA82927E3D0009CB7DF /* MainView.swift */; };
 		49B5BEAB2927E590009CB7DF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BEAA2927E590009CB7DF /* Settings.swift */; };
-		49B5BEB229288E3A009CB7DF /* UCData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEB129288E3A009CB7DF /* UCData.csv */; };
-		49B5BEB429288E5B009CB7DF /* PodData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEB329288E5B009CB7DF /* PodData.csv */; };
-		49B5BEB629288F9A009CB7DF /* RRData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEB529288F9A009CB7DF /* RRData.csv */; };
-		49B5BEB829288FB6009CB7DF /* MoesData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEB729288FB6009CB7DF /* MoesData.csv */; };
-		49B5BEBA29288FDB009CB7DF /* ChickFilaData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEB929288FDB009CB7DF /* ChickFilaData.csv */; };
-		49B5BEBC29289001009CB7DF /* PandaData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEBB29289001009CB7DF /* PandaData.csv */; };
 		49B5BEBE2928984B009CB7DF /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BEBD2928984B009CB7DF /* Database.swift */; };
+		49B5BEC5292A9B59009CB7DF /* PandaData1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEBF292A9B58009CB7DF /* PandaData1.csv */; };
+		49B5BEC6292A9B59009CB7DF /* UCData1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEC0292A9B58009CB7DF /* UCData1.csv */; };
+		49B5BEC7292A9B59009CB7DF /* ChickFilaData1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEC1292A9B58009CB7DF /* ChickFilaData1.csv */; };
+		49B5BEC8292A9B59009CB7DF /* PodData1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEC2292A9B58009CB7DF /* PodData1.csv */; };
+		49B5BEC9292A9B59009CB7DF /* RRData1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEC3292A9B58009CB7DF /* RRData1.csv */; };
+		49B5BECA292A9B59009CB7DF /* MoesData1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEC4292A9B58009CB7DF /* MoesData1.csv */; };
 		49E024DD28FCF0EF00FEA2BB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E024DC28FCF0EF00FEA2BB /* SignUpView.swift */; };
 		49FC30E228F0C4030006D87F /* CampusCrowdCheckersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */; };
 		49FC30E428F0C4030006D87F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC30E328F0C4030006D87F /* HomeView.swift */; };
@@ -46,13 +46,13 @@
 		49B5BEA42927DFD8009CB7DF /* PopulationChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationChart.swift; sourceTree = "<group>"; };
 		49B5BEA82927E3D0009CB7DF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		49B5BEAA2927E590009CB7DF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		49B5BEB129288E3A009CB7DF /* UCData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UCData.csv; sourceTree = "<group>"; };
-		49B5BEB329288E5B009CB7DF /* PodData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodData.csv; sourceTree = "<group>"; };
-		49B5BEB529288F9A009CB7DF /* RRData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RRData.csv; sourceTree = "<group>"; };
-		49B5BEB729288FB6009CB7DF /* MoesData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MoesData.csv; sourceTree = "<group>"; };
-		49B5BEB929288FDB009CB7DF /* ChickFilaData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChickFilaData.csv; sourceTree = "<group>"; };
-		49B5BEBB29289001009CB7DF /* PandaData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PandaData.csv; sourceTree = "<group>"; };
 		49B5BEBD2928984B009CB7DF /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		49B5BEBF292A9B58009CB7DF /* PandaData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PandaData1.csv; sourceTree = "<group>"; };
+		49B5BEC0292A9B58009CB7DF /* UCData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UCData1.csv; sourceTree = "<group>"; };
+		49B5BEC1292A9B58009CB7DF /* ChickFilaData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChickFilaData1.csv; sourceTree = "<group>"; };
+		49B5BEC2292A9B58009CB7DF /* PodData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodData1.csv; sourceTree = "<group>"; };
+		49B5BEC3292A9B58009CB7DF /* RRData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RRData1.csv; sourceTree = "<group>"; };
+		49B5BEC4292A9B58009CB7DF /* MoesData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MoesData1.csv; sourceTree = "<group>"; };
 		49E024DC28FCF0EF00FEA2BB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		49FC30DE28F0C4030006D87F /* CampusCrowdCheckers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusCrowdCheckers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusCrowdCheckersApp.swift; sourceTree = "<group>"; };
@@ -104,15 +104,23 @@
 		49B5BEB029288DBD009CB7DF /* DataFiles */ = {
 			isa = PBXGroup;
 			children = (
-				49B5BEB929288FDB009CB7DF /* ChickFilaData.csv */,
-				49B5BEB129288E3A009CB7DF /* UCData.csv */,
-				49B5BEB329288E5B009CB7DF /* PodData.csv */,
-				49B5BEB529288F9A009CB7DF /* RRData.csv */,
-				49B5BEB729288FB6009CB7DF /* MoesData.csv */,
-				49B5BEBB29289001009CB7DF /* PandaData.csv */,
+				49B5BECB292A9B66009CB7DF /* CSVFiles */,
 				49B5BEBD2928984B009CB7DF /* Database.swift */,
 			);
 			path = DataFiles;
+			sourceTree = "<group>";
+		};
+		49B5BECB292A9B66009CB7DF /* CSVFiles */ = {
+			isa = PBXGroup;
+			children = (
+				49B5BEC1292A9B58009CB7DF /* ChickFilaData1.csv */,
+				49B5BEC4292A9B58009CB7DF /* MoesData1.csv */,
+				49B5BEBF292A9B58009CB7DF /* PandaData1.csv */,
+				49B5BEC2292A9B58009CB7DF /* PodData1.csv */,
+				49B5BEC3292A9B58009CB7DF /* RRData1.csv */,
+				49B5BEC0292A9B58009CB7DF /* UCData1.csv */,
+			);
+			path = CSVFiles;
 			sourceTree = "<group>";
 		};
 		49FC30D528F0C4030006D87F = {
@@ -210,13 +218,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FC30E928F0C4060006D87F /* Preview Assets.xcassets in Resources */,
-				49B5BEB229288E3A009CB7DF /* UCData.csv in Resources */,
-				49B5BEBA29288FDB009CB7DF /* ChickFilaData.csv in Resources */,
-				49B5BEB829288FB6009CB7DF /* MoesData.csv in Resources */,
-				49B5BEB429288E5B009CB7DF /* PodData.csv in Resources */,
-				49B5BEBC29289001009CB7DF /* PandaData.csv in Resources */,
-				49B5BEB629288F9A009CB7DF /* RRData.csv in Resources */,
+				49B5BEC8292A9B59009CB7DF /* PodData1.csv in Resources */,
+				49B5BEC9292A9B59009CB7DF /* RRData1.csv in Resources */,
+				49B5BEC5292A9B59009CB7DF /* PandaData1.csv in Resources */,
+				49B5BEC7292A9B59009CB7DF /* ChickFilaData1.csv in Resources */,
+				49B5BECA292A9B59009CB7DF /* MoesData1.csv in Resources */,
 				49FC30E628F0C4060006D87F /* Assets.xcassets in Resources */,
+				49B5BEC6292A9B59009CB7DF /* UCData1.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
