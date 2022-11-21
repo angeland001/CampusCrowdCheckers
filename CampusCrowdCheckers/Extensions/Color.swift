@@ -29,6 +29,9 @@ struct ColorTheme {
     let PandaInfographic = Color("PandaInfoRectangle")
     let StarbucksInfographic = Color("StarbucksRectangle")
     
+    let yellowblueGradiant = LinearGradient(gradient: Gradient(colors: [Color.yellow,Color.blue]),
+                                            startPoint: .topLeading, endPoint: .bottomTrailing)
+    
     
         
         

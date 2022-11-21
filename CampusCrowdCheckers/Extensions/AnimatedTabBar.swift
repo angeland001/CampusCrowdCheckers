@@ -117,8 +117,9 @@ struct TabBarButton: View {
 
 
 struct AnimatedTabBar_Previews: PreviewProvider {
+   
     static var previews: some View {
-        HomeView()
+        MainView()
     }
 }
 
