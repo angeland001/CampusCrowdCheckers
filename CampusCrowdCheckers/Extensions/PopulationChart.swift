@@ -21,15 +21,16 @@ import Charts
 struct GraphChart: Identifiable {
     var time: String
     var Populationcount: Int
+    var isAnimated: Bool = false
     var id = UUID()
 }
 
 struct PopulationChart: View {
     
     var Theme: Color
-    
+    var Title: String
     var DataFile: String
-    
+    @State var scale = 1.0
 
     
     var body: some View {
@@ -37,6 +38,32 @@ struct PopulationChart: View {
         let currentDay = getCurrentDay()
         let datasheet = loadCSV(from: DataFile)
         
+        VStack() {
+            HStack{
+                Text("Population of " + (Title))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.theme.text)
+                
+            }
+
+            AnimatedChart(currentDay: currentDay, datasheet: datasheet, theme: Theme)
+        }
+            
+                
+                
+            
+            
+            
+        
+                
+        
+      
+        }
+    
+    @ViewBuilder
+    func AnimatedChart(currentDay: String, datasheet: [DataForChart], theme: Color) -> some View {
+        
+       
         
         //y axis
         //array of population count
@@ -45,9 +72,9 @@ struct PopulationChart: View {
         
         //array of times
         //x axis
-        let TimeForDay = fillArrayOfTime(CurrentWeekDay: currentDay, datasheet: datasheet)
+        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
    
-        let data: [GraphChart] = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
+        var data: [GraphChart] = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
         
         Chart {
             ForEach(data) { element in
@@ -55,21 +82,26 @@ struct PopulationChart: View {
                     x: .value("Time", element.time),
                     y: .value("Total Count", element.Populationcount)
                 )
+                .foregroundStyle(theme.gradient)
+                
+            }
+        }
+        .background(Color.theme.Background)
+        .frame(width:390,height:230)
+        .onAppear {
+            withAnimation(.default) {
+                
             }
         }
         
-        .background(Color.black)
-        .foregroundColor(Theme)
-        .frame(width:380,height:200)
-        
-        
-
         }
+        
+    }
     
     
             
     
-    }
+    
 
 func returnArrayOfObj(TimeOfDay: [String], Population: [Int]) -> [GraphChart] {
     var arrayOfData: [GraphChart] = []
@@ -142,64 +174,19 @@ func generateRandomNumbers(size: Int) -> [Int] {
         
     }
     
-    func fillArrayOfTime(CurrentWeekDay: String,datasheet: [DataForChart]) -> [String] {
+    func fillArrayOfTime(datasheet: [DataForChart]) -> [String] {
         var arrayOfData: [String] = []
         
-        
-        switch CurrentWeekDay {
-        case "Monday":
             for element in datasheet {
                 arrayOfData.append(element.TimeOfDay)
             }
                     
-        case "Tuesday":
-            for element in datasheet {
-                arrayOfData.append(element.TimeOfDay)
-            }
-        case "Wednesday":
-            for element in datasheet {
-                arrayOfData.append(element.TimeOfDay)
-            }
-
-        case "Thursday":
-            for element in datasheet {
-                arrayOfData.append(element.TimeOfDay)
-            }
-
-        case "Friday":
-            for element in datasheet {
-                arrayOfData.append(element.TimeOfDay)
-            }
-
-        case "Saturday":
-            for element in datasheet {
-                arrayOfData.append(element.TimeOfDay)
-            }
-
-        case "Sunday":
-            for element in datasheet {
-                arrayOfData.append(element.TimeOfDay)
-            }
-
-
-        default:
-            for element in datasheet {
-                arrayOfData.append(element.TimeOfDay)
-            }
-        }
-        
         
         return arrayOfData
     }
     
 
-    
-    
-        
-        
-    
-
-
+  
 
 func getCurrentDay() -> String {
     //get current day of the week
@@ -217,6 +204,6 @@ func getCurrentDay() -> String {
 
 struct PopulationChart_Previews: PreviewProvider {
     static var previews: some View {
-        PopulationChart(Theme: Color.red, DataFile: "ChickFilaData1")
+        PopulationChart(Theme: Color.red, Title: "ChickFilA", DataFile: "ChickFilaData1")
     }
 }

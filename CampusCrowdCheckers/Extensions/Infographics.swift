@@ -9,13 +9,13 @@ import SwiftUI
 
 struct Infographics: View {
     @Binding var PageIndex: Int
-    
+    @State var isAnimated: Bool = false
     
     var body: some View {
             
         TabView(selection: $PageIndex) {
                 //insert infographics sequentially
-                HomeInfo(image: "house.fill").tag(0)
+                HomeInfo(image: "house.circle.fill").tag(0)
                 ChickFilAInfo(image: "chickfilalogo").tag(1)
                 StarbucksInfo(image: "StarbuckLogo").tag(2)
                 MoesInfo(image: "MoesLogo").tag(3)
@@ -42,7 +42,12 @@ struct HomeInfo: View {
         ZStack {
            
             RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.white)
+                .foregroundColor(Color.yellow)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.theme.Stroke, lineWidth: 5)
+                        )
+                
             
             HStack {
                 Image(systemName: image)
@@ -110,7 +115,10 @@ struct ChickFilAInfo: View {
             
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.red)
-            
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.theme.Stroke, lineWidth: 5)
+                        )
             
                 HStack {
                     Image(image)
@@ -178,6 +186,10 @@ struct MoesInfo: View {
             
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.cyan)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.theme.Stroke, lineWidth: 5)
+                        )
             HStack {
                 Image(image)
                     .resizable()
@@ -253,6 +265,10 @@ struct PodInfo: View {
             
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.green)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.theme.Stroke, lineWidth: 5)
+                        )
             HStack {
                 Image(image)
                     .resizable()
@@ -320,6 +336,10 @@ struct RRInfo: View {
             
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.white)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.theme.Stroke, lineWidth: 5)
+                        )
             HStack {
                 Image(image)
                     .resizable()
@@ -383,6 +403,10 @@ struct PandaInfo: View {
             
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.theme.PandaInfographic)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.theme.Stroke, lineWidth: 5)
+                        )
             HStack {
                 Image(image)
                     .resizable()
@@ -451,6 +475,10 @@ struct StarbucksInfo: View {
             
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.theme.StarbucksInfographic)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.theme.Stroke, lineWidth: 5)
+                        )
             HStack {
                 Image(image)
                     .resizable()

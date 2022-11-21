@@ -11,7 +11,7 @@ struct LoginScreen: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.theme.background
+                Color.black
                     .ignoresSafeArea()
                 Circle()
                     .scale(1.7)
@@ -25,7 +25,7 @@ struct LoginScreen: View {
                     .resizable()
                     .frame(width: 30,height:40)
                     .offset(x:-70,y:120)
-                    .foregroundColor(Color.theme.peopleImages)
+                    .foregroundColor(Color.white)
                 Circle()
                     .scale(1.3)
                     .foregroundColor(Color.black)
@@ -39,14 +39,14 @@ struct LoginScreen: View {
                     Text("CrowdCheckers")
                         .font(.title)
                         .bold()
-                        .foregroundColor(Color.theme.secondaryText)
+                        .foregroundColor(Color.white)
                     
                     NavigationLink(destination: LoginInfo()) {
                         Text("Login")
                             .bold()
                             .frame(width:200,height:50)
                             .foregroundColor(Color.black)
-                            .background(Color.white)
+                            .background(Color.theme.GradientLoginButton)
                             .clipShape(Capsule())
                                     }
                     .offset(y:420)

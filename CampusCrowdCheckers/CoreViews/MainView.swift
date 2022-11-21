@@ -19,7 +19,7 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            Color.theme.background
+            Color.theme.Background
                 .ignoresSafeArea()
             
             VStack(spacing: 0) {
@@ -37,7 +37,7 @@ struct MainView: View {
                 
                 //Tab Bar is fixed throughout all views
                 AnimatedTabBar(selectedTab: $selectedTab)
-                    .background(Color.black)
+                    .background(Color.theme.Background)
                 
             }
             

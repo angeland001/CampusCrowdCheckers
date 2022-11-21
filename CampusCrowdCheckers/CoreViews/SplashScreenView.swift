@@ -17,7 +17,7 @@ struct SplashScreenView: View {
                     LoginScreen()
         } else{
             ZStack {
-                Color.theme.SplashScreen
+                Color.black
                     .ignoresSafeArea()
                 
                 VStack{
