@@ -46,7 +46,7 @@ struct LoginScreen: View {
                             .bold()
                             .frame(width:200,height:50)
                             .foregroundColor(Color.black)
-                            .background(Color.white)
+                            .background(Color.theme.GradientLoginButton)
                             .clipShape(Capsule())
                                     }
                     .offset(y:420)

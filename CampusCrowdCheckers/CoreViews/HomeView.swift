@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct HomeView: View {
     
@@ -31,21 +32,21 @@ struct HomeView: View {
                             VStack(alignment: .leading) {
                                 switch PageIndex {
                                 case 0:
-                                    PopulationChart(Theme: Color.white, DataFile: "UCData1")
+                                    PopulationChart(Theme: Color.yellow, Title: "University Center", DataFile: "UCData1")
                                 case 1:
-                                    PopulationChart(Theme: Color.red, DataFile: "ChickFilaData1")
+                                    PopulationChart(Theme: Color.red, Title: "Chick-Fil-a", DataFile: "ChickFilaData1")
                                 case 2:
-                                    PopulationChart(Theme: Color.theme.StarbucksInfographic, DataFile: "UCData1")
+                                    PopulationChart(Theme: Color.theme.StarbucksInfographic, Title: "Starbucks", DataFile: "UCData1")
                                 case 3:
-                                    PopulationChart(Theme: Color.cyan, DataFile: "MoesData1")
+                                    PopulationChart(Theme: Color.cyan, Title: "Moes", DataFile: "MoesData1")
                                 case 4:
-                                    PopulationChart(Theme: Color.green, DataFile: "PodData1")
+                                    PopulationChart(Theme: Color.green, Title: "Pod Market", DataFile: "PodData1")
                                 case 5:
-                                    PopulationChart(Theme: Color.orange, DataFile: "PandaData1")
+                                    PopulationChart(Theme: Color.orange, Title: "Panda Express", DataFile: "PandaData1")
                                 case 6:
-                                    PopulationChart(Theme: Color.white, DataFile: "RRData1")
+                                    PopulationChart(Theme: Color.white, Title: "Restaurant Row", DataFile: "RRData1")
                                 default:
-                                    PopulationChart(Theme: Color.white, DataFile: "UCData1")
+                                    PopulationChart(Theme: Color.white, Title: "University Center", DataFile: "UCData1")
                                     
                                 }
                                     

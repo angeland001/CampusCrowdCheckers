@@ -42,7 +42,12 @@ struct HomeInfo: View {
         ZStack {
            
             RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.white)
+                .foregroundColor(Color.yellow)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.white, lineWidth: 5)
+                        )
+                
             
             HStack {
                 Image(systemName: image)
@@ -110,7 +115,10 @@ struct ChickFilAInfo: View {
             
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.red)
-            
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.white, lineWidth: 5)
+                        )
             
                 HStack {
                     Image(image)
@@ -178,6 +186,10 @@ struct MoesInfo: View {
             
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.cyan)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.white, lineWidth: 5)
+                        )
             HStack {
                 Image(image)
                     .resizable()
@@ -253,6 +265,10 @@ struct PodInfo: View {
             
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.green)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.white, lineWidth: 5)
+                        )
             HStack {
                 Image(image)
                     .resizable()
@@ -320,6 +336,10 @@ struct RRInfo: View {
             
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.white)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.white, lineWidth: 5)
+                        )
             HStack {
                 Image(image)
                     .resizable()
@@ -383,6 +403,10 @@ struct PandaInfo: View {
             
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.theme.PandaInfographic)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.white, lineWidth: 5)
+                        )
             HStack {
                 Image(image)
                     .resizable()
@@ -451,6 +475,10 @@ struct StarbucksInfo: View {
             
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.theme.StarbucksInfographic)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.white, lineWidth: 5)
+                        )
             HStack {
                 Image(image)
                     .resizable()
