@@ -31,11 +31,11 @@ struct AnimatedTabBar: View {
         }
         .padding()
         .background(
-            Color.white
+            Color.theme.TabBar
                 .clipShape(TabCurve(tabPoint: getCurvePoint() - 15)))
         .overlay (
           Circle()
-            .fill(Color.white)
+            .fill(Color.theme.TabBar)
             .frame(width:10,height:10)
             .offset(x:getCurvePoint() - 195)
           ,alignment: .bottom
@@ -99,7 +99,7 @@ struct TabBarButton: View {
                 //filling the color if its selected
                 Image(systemName: "\(image)\(selectedTab == image ? ".fill" : "")")
                     .font(.system(size:25,weight:.semibold))
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color.theme.Background)
                     // Lifting View
                     //if its selected
                     .offset(y:selectedTab == image ? -10 : 0)

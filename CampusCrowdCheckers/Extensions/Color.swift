@@ -13,24 +13,22 @@ extension Color {
 }
 
 struct ColorTheme {
-    let SplashScreen = Color("SplashScreenColor")
-    let accent = Color("AccentColor")
-    let background = Color("BackgroundColor")
-    let secondaryText = Color("SecondaryTextColor")
+
+   
     let BackGradient = LinearGradient(gradient: Gradient(colors: [Color.black,Color.white]),
                                   startPoint: .topLeading, endPoint: .bottomTrailing)
     let GradientLoginButton = LinearGradient(gradient: Gradient(colors: [Color.white,Color.black]),
                                   startPoint: .topLeading, endPoint: .bottomTrailing)
     let GradientSignUpButton = LinearGradient(gradient: Gradient(colors: [Color.white,Color.black]),
-                                  startPoint: .leading, endPoint: .trailing)
+                            startPoint: .leading, endPoint: .trailing)
     let circle = Color("CircleColor")
     let lessopacitycircle = Color("LessOpacityCircle")
-    let peopleImages = Color("PeopleColor")
     let PandaInfographic = Color("PandaInfoRectangle")
     let StarbucksInfographic = Color("StarbucksRectangle")
-    
-    let yellowblueGradiant = LinearGradient(gradient: Gradient(colors: [Color.yellow,Color.blue]),
-                                            startPoint: .topLeading, endPoint: .bottomTrailing)
+    let Background = Color("Background")
+    let TabBar = Color("TabBar")
+    let text = Color("Text")
+    let Stroke = Color("Stroke")
     
     
         
