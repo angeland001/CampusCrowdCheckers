@@ -12,13 +12,15 @@ struct HomeView: View {
     
     //keep track of current infographic to change graphs when needed
     @State var PageIndex = 0
+    @Environment(\.colorScheme) var colorScheme
+    
     
     
     
     var body: some View {
         
         ZStack {
-            Color.black
+            Color.theme.Background
                 .ignoresSafeArea()
             
             
@@ -44,7 +46,7 @@ struct HomeView: View {
                                 case 5:
                                     PopulationChart(Theme: Color.orange, Title: "Panda Express", DataFile: "PandaData1")
                                 case 6:
-                                    PopulationChart(Theme: Color.white, Title: "Restaurant Row", DataFile: "RRData1")
+                                    PopulationChart(Theme: colorScheme == .dark ? .white : .black, Title: "Restaurant Row", DataFile: "RRData1")
                                 default:
                                     PopulationChart(Theme: Color.white, Title: "University Center", DataFile: "UCData1")
                                     

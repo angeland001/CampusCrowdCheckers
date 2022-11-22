@@ -26,7 +26,7 @@ struct Settings: View {
     ]
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
+            Color.theme.Background.ignoresSafeArea()
             
             VStack {
                 Chart(items) { item in
