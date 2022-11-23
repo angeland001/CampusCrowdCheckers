@@ -127,7 +127,7 @@ struct ChickFilAInfo: View {
                         .clipShape(Circle())
                         .frame(width: 105,height:105)
                         .overlay {
-                            Circle().stroke(.white, lineWidth: 4)
+                            Circle().stroke(Color.theme.Stroke, lineWidth: 4)
                         }
                         .fontWeight(.semibold)
                 
