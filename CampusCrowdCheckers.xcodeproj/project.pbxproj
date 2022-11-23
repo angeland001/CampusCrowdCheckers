@@ -14,6 +14,7 @@
 		493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306928FB2F2000E3C3C8 /* Color.swift */; };
 		493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306B28FB329D00E3C3C8 /* LoginScreen.swift */; };
 		494CEE03292D94C40013D8B2 /* InfoBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CEE02292D94C40013D8B2 /* InfoBoxes.swift */; };
+		494CEE06292D9D670013D8B2 /* SwiftClockUI in Frameworks */ = {isa = PBXBuildFile; productRef = 494CEE05292D9D670013D8B2 /* SwiftClockUI */; };
 		49B5BE7F29256C74009CB7DF /* LiveChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE7E29256C74009CB7DF /* LiveChat.swift */; };
 		49B5BE9D2925D228009CB7DF /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE9C2925D228009CB7DF /* BotResponse.swift */; };
 		49B5BE9F2925D305009CB7DF /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE9E2925D305009CB7DF /* LoginInfo.swift */; };
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494CEE06292D9D670013D8B2 /* SwiftClockUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +180,9 @@
 			dependencies = (
 			);
 			name = CampusCrowdCheckers;
+			packageProductDependencies = (
+				494CEE05292D9D670013D8B2 /* SwiftClockUI */,
+			);
 			productName = CampusCrowdCheckers;
 			productReference = 49FC30DE28F0C4030006D87F /* CampusCrowdCheckers.app */;
 			productType = "com.apple.product-type.application";
@@ -206,6 +211,9 @@
 				Base,
 			);
 			mainGroup = 49FC30D528F0C4030006D87F;
+			packageReferences = (
+				494CEE04292D9D670013D8B2 /* XCRemoteSwiftPackageReference "SwiftClockUI" */,
+			);
 			productRefGroup = 49FC30DF28F0C4030006D87F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -465,6 +473,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		494CEE04292D9D670013D8B2 /* XCRemoteSwiftPackageReference "SwiftClockUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/renaudjenny/SwiftClockUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		494CEE05292D9D670013D8B2 /* SwiftClockUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494CEE04292D9D670013D8B2 /* XCRemoteSwiftPackageReference "SwiftClockUI" */;
+			productName = SwiftClockUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 49FC30D628F0C4030006D87F /* Project object */;
 }
