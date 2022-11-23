@@ -15,7 +15,15 @@ struct InfoBoxes: View {
     var DataFile: String
     
     var body: some View {
-        let gradient = Gradient(colors: [Color.theme.Background,theme])
+        let gradient = Gradient(colors: [theme, Color.black])
+        let datasheet = loadCSV(from: DataFile)
+        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: getCurrentDays(), datasheet: datasheet)
+        
+        
+        let largestNumInArr = PopulationCountForDay.max()
+        
+        
+        
         VStack {
             
 
@@ -68,11 +76,17 @@ struct InfoBoxes: View {
                             Gauge(value: 0.4, label: {
                                 
                             }, currentValueLabel: {
-                                Text("60")
+                                Text(String(largestNumInArr ?? 10))
                                     .fontWeight(.heavy)
-                                    .foregroundColor(Color.theme.Background
+                                    .foregroundColor(Color.black
                                     )
                                 
+                            }, minimumValueLabel: {
+                                Text("0")
+                                    .foregroundColor(Color.black)
+                            }, maximumValueLabel: {
+                                DataFile == "UCData1" ? Text("300").foregroundColor(Color.black) : Text("30")
+                                    .foregroundColor(Color.black)
                             })
                             .scaleEffect(2)
                             .gaugeStyle(.accessoryCircular)
@@ -91,18 +105,7 @@ struct InfoBoxes: View {
     }
 }
 
-struct StylePicker: View {
-    @Binding var clockStyle: ClockStyle
 
-    var body: some View {
-        Picker("Style", selection: $clockStyle) {
-            ForEach(ClockStyle.allCases) { style in
-                Text(style.description).tag(style)
-            }
-        }
-        .pickerStyle(SegmentedPickerStyle())
-    }
-}
 
 struct InfoBoxes_Previews: PreviewProvider {
     static var previews: some View {
@@ -110,6 +113,4 @@ struct InfoBoxes_Previews: PreviewProvider {
     }
 }
 
-//                .fontWeight(.bold)
-//                .foregroundColor(Color.theme.text)
-//                .padding()
+
