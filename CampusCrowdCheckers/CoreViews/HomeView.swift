@@ -34,21 +34,23 @@ struct HomeView: View {
                             VStack(alignment: .leading) {
                                 switch PageIndex {
                                 case 0:
-                                    PopulationChart(Theme: Color.yellow, Title: "University Center", DataFile: "UCData1")
+                                    ChartOfCrowd(Theme: Color.yellow, Title: "University Center", DataFile: "UCData1")
                                 case 1:
-                                    PopulationChart(Theme: Color.red, Title: "Chick-Fil-a", DataFile: "ChickFilaData1")
+                                    ChartOfCrowd(Theme: Color.red, Title: "Chick-Fil-a", DataFile: "ChickFilaData1")
+                                    InfoBoxes(theme: Color.red, DataFile: "ChickFilaData1")
+                                    
                                 case 2:
-                                    PopulationChart(Theme: Color.theme.StarbucksInfographic, Title: "Starbucks", DataFile: "UCData1")
+                                    ChartOfCrowd(Theme: Color.theme.StarbucksInfographic, Title: "Starbucks", DataFile: "UCData1")
                                 case 3:
-                                    PopulationChart(Theme: Color.cyan, Title: "Moes", DataFile: "MoesData1")
+                                    ChartOfCrowd(Theme: Color.cyan, Title: "Moes", DataFile: "MoesData1")
                                 case 4:
-                                    PopulationChart(Theme: Color.green, Title: "Pod Market", DataFile: "PodData1")
+                                    ChartOfCrowd(Theme: Color.green, Title: "Pod Market", DataFile: "PodData1")
                                 case 5:
-                                    PopulationChart(Theme: Color.orange, Title: "Panda Express", DataFile: "PandaData1")
+                                    ChartOfCrowd(Theme: Color.orange, Title: "Panda Express", DataFile: "PandaData1")
                                 case 6:
-                                    PopulationChart(Theme: colorScheme == .dark ? .white : .black, Title: "Restaurant Row", DataFile: "RRData1")
+                                    ChartOfCrowd(Theme: colorScheme == .dark ? .white : .black, Title: "Restaurant Row", DataFile: "RRData1")
                                 default:
-                                    PopulationChart(Theme: Color.white, Title: "University Center", DataFile: "UCData1")
+                                    ChartOfCrowd(Theme: Color.white, Title: "University Center", DataFile: "UCData1")
                                     
                                 }
                                     

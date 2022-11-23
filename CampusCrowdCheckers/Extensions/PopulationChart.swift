@@ -25,7 +25,7 @@ struct GraphChart: Identifiable {
     var id = UUID()
 }
 
-struct PopulationChart: View {
+struct ChartOfCrowd: View {
     
     var Theme: Color
     var Title: String
@@ -204,6 +204,6 @@ func getCurrentDay() -> String {
 
 struct PopulationChart_Previews: PreviewProvider {
     static var previews: some View {
-        PopulationChart(Theme: Color.red, Title: "ChickFilA", DataFile: "ChickFilaData1")
+        ChartOfCrowd(Theme: Color.red, Title: "ChickFilA", DataFile: "ChickFilaData1")
     }
 }
