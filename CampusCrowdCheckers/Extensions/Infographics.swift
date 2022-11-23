@@ -54,35 +54,38 @@ struct HomeInfo: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 105,height:105)
+                    .overlay {
+                        Circle().stroke(Color.theme.Stroke, lineWidth: 4)
+                    }
                     
                 
                 
                     
                 VStack {
                     Text("Fall Hours")
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                         .font(.title)
                         .bold()
                     Divider()
                         .frame(width:200)
                     Text("Monday - Friday")
                         .italic()
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                     Text("7:30AM - 8:00PM")
                         .bold()
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                     Text("Saturday")
                         .italic()
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                     Text("11:00AM - 8:00PM")
                         .bold()
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                     Text("Sunday")
                         .italic()
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                     Text("Closed")
                         .bold()
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                     
                         
                 }
@@ -127,7 +130,7 @@ struct ChickFilAInfo: View {
                         .clipShape(Circle())
                         .frame(width: 105,height:105)
                         .overlay {
-                            Circle().stroke(Color.theme.Stroke, lineWidth: 4)
+                            Circle().stroke(Color.white, lineWidth: 4)
                         }
                         .fontWeight(.semibold)
                 
@@ -480,6 +483,7 @@ struct StarbucksInfo: View {
                                 .stroke(Color.theme.Stroke, lineWidth: 5)
                         )
             HStack {
+                
                 Image(image)
                     .resizable()
                     .scaledToFit()
@@ -487,7 +491,7 @@ struct StarbucksInfo: View {
                     .frame(width: 120,height:100)
                     .offset(x:30)
                     .overlay {
-                        Circle().stroke(.white, lineWidth: 4)
+                        Circle().stroke(Color.theme.Stroke, lineWidth: 4)
                             .offset(x:30)
                             
                     }
