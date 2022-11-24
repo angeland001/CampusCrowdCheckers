@@ -29,11 +29,24 @@ struct ChartOfCrowd: View {
     
     var Theme: Color
     var Title: String
-
-    @State var Data: [GraphChart] = data
+    @State var datafile: String
+    
+    
     
     
     var body: some View {
+        
+        let datasheet = loadCSV(from: datafile)
+        let currentDay = getCurrentDay()
+        //y axis
+        //array of population count
+        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
+
+        //array of times
+        //x axis
+        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
+
+        var Data = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
      
         VStack() {
             HStack{
@@ -48,7 +61,7 @@ struct ChartOfCrowd: View {
                 ForEach(Data) { element in
                     BarMark(
                         x: .value("Time", element.time),
-                        y: .value("Total Count", element.animate ?  element.Populationcount : 0)
+                        y: .value("Total Count",  element.Populationcount)
                     )
                     .foregroundStyle(Theme.gradient)
                     
@@ -56,12 +69,12 @@ struct ChartOfCrowd: View {
             }
             
             .background(Color.theme.Background)
-            .frame(width:390,height:180)
+            .frame(width:390,height:170)
             .onAppear {
-                for (index,_) in data.enumerated() {
+                for (index,_) in Data.enumerated() {
                     DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.05) {
                         withAnimation(.interactiveSpring(response: 0.8,dampingFraction: 0.8,blendDuration: 0.8)) {
-                            data[index].animate = true
+                            Data[index].animate = true
                         }
                     }
                 }
@@ -87,7 +100,7 @@ struct ChartOfCrowd: View {
     
     
     
-    
+
     
     
     func getCurrentDay() -> String {
@@ -106,7 +119,7 @@ struct ChartOfCrowd: View {
     
     struct PopulationChart_Previews: PreviewProvider {
         static var previews: some View {
-            ChartOfCrowd(Theme: Color.yellow, Title: "University Center")
+            ChartOfCrowd(Theme: Color.yellow, Title: "Chick-Fil-a", datafile: "ChickFilaData1")
         }
     }
     

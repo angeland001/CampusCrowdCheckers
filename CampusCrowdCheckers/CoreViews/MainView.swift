@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import SwiftClockUI
 
 struct MainView: View {
     
     //keeps track of currently selected house... HOME PAGE
     @State var selectedTab = "house"
-    
+    @State private var clockStyle: ClockStyle = .steampunk
     
     let icons: [String] = [
         "bubble.left", "house", "gearshape"
@@ -30,7 +31,7 @@ struct MainView: View {
                 case icons[1]:
                     HomeView()
                 case icons[2]:
-                    Settings()
+                    Settings(clockStyle: clockStyle)
                 default:
                     HomeView()
                 }

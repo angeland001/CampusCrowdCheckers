@@ -16,11 +16,11 @@ struct LiveChat: View {
                     Text("FAQ")
                         .font(.largeTitle)
                         .bold()
-                        .foregroundColor(Color.theme.text)
+                        .foregroundColor(Color.black)
                     
                     Image(systemName: "person.fill")
                         .font(.system(size: 26))
-                        .foregroundColor(Color.theme.text)
+                        .foregroundColor(Color.black)
                 }
                 
                 ScrollView{
@@ -43,7 +43,7 @@ struct LiveChat: View {
                             HStack{
                                 Text(message)
                                     .padding()
-                                    .background(.white)
+                                    .background(.black.opacity(0.6))
                                     .cornerRadius(10)
                                     .padding(.horizontal, 16)
                                     .padding(.bottom, 10)
@@ -53,13 +53,18 @@ struct LiveChat: View {
                         }
                     }.rotationEffect(.degrees(180))
                 }.rotationEffect(.degrees(180))
-                    .background(Color.theme.Background)
+                    .background(Color.white)
                 
                 HStack{
-                    TextField("Type Something", text: $messageText)
+                    TextField("Ask Us About Locations", text: $messageText)
                         .padding()
-                        .background(Color.white)
+                        .background(Color.white.opacity(0.5))
+                        
                         .cornerRadius(10)
+                        .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.black, lineWidth: 1)
+                                )
                         .onSubmit {
                             //send message
                             sendMessage(message: messageText)
@@ -76,7 +81,7 @@ struct LiveChat: View {
                 }
                 .padding()
             }
-            .background(Color.theme.Background)
+            .background(Color.white)
             
             
         }

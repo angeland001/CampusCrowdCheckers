@@ -491,7 +491,7 @@ struct StarbucksInfo: View {
                     .frame(width: 120,height:100)
                     .offset(x:30)
                     .overlay {
-                        Circle().stroke(Color.theme.Stroke, lineWidth: 4)
+                        Circle().stroke(Color.white, lineWidth: 4)
                             .offset(x:30)
                             
                     }
