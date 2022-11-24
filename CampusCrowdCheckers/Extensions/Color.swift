@@ -29,6 +29,7 @@ struct ColorTheme {
     let TabBar = Color("TabBar")
     let text = Color("Text")
     let Stroke = Color("Stroke")
+    let opacity = Color("Opacity")
     
     
         

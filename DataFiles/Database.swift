@@ -34,16 +34,7 @@ struct DataForChart: Identifiable{
     }
 }
         
-        let datasheet = loadCSV(from: "ChickFilaData1")
-                        
-        //array of population count
-        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: getCurrentDays(), datasheet: datasheet)
-
-        //array of times
-        //x axis
-        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
         
-        var data: [GraphChart] = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
 
 func getCurrentDays() -> String {
     //get current day of the week
@@ -153,7 +144,9 @@ func fillArrayOfCurrentDayCount(CurrentWeekDay: String, datasheet: [DataForChart
         }
 
     case "Sunday":
-        arrayOfData = generateRandomNumbers(size:10)
+        for element in datasheet {
+            arrayOfData.append(Int(element.Sunday) ?? 0)
+        }
 
 
     default:
@@ -186,106 +179,111 @@ func generateRandomNumbers(size: Int) -> [Int] {
     return result.map{ _ in Int.random(in: 0..<size)}
 }
 
+var dataForUC: [GraphChart] = updateDataSheet(title: "UC")
+var dataForChickFilA: [GraphChart] = updateDataSheet(title: "Chick-Fil-a")
+var dataForStarbucks: [GraphChart] = updateDataSheet(title: "Starbucks")
+var dataForMoes: [GraphChart] = updateDataSheet(title: "Moes")
+var dataForPod: [GraphChart] = updateDataSheet(title: "Pod Market")
+var dataForPanda: [GraphChart] = updateDataSheet(title: "Panda Express")
+var dataForRR: [GraphChart] = updateDataSheet(title: "Restaurant Row")
+
+func updateDataSheet(title: String) -> [GraphChart] {
+    let currentDay = getCurrentDay()
+    var arrayOfData: [GraphChart] = []
+
+    switch title {
+    case "Chick-Fil-a":
+        let datasheet = loadCSV(from: "ChickFilaData1")
+
+        //y axis
+        //array of population count
+        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
+
+        //array of times
+        //x axis
+        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
+
+        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
+
+    case "Starbucks":
+        let datasheet = loadCSV(from: "ChickFilaData1")
+
+        //y axis
+        //array of population count
+        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
+
+        //array of times
+        //x axis
+        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
+
+        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
+
+    case "Moes":
+        let datasheet = loadCSV(from: "MoesData1")
+
+        //y axis
+        //array of population count
+        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
+
+        //array of times
+        //x axis
+        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
+
+        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
+
+    case "Pod Market":
+        let datasheet = loadCSV(from: "PodData1")
+
+        //y axis
+        //array of population count
+        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
+
+        //array of times
+        //x axis
+        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
+
+        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
+
+    case "Panda Express":
+        let datasheet = loadCSV(from: "PandaData1")
+
+        //y axis
+        //array of population count
+        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
+
+        //array of times
+        //x axis
+        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
+
+        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
+
+    case "Restaurant Row":
+        let datasheet = loadCSV(from: "RRData1")
+
+        //y axis
+        //array of population count
+        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
+
+        //array of times
+        //x axis
+        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
+
+        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
+
+    default:
+        let datasheet = loadCSV(from: "UCData1")
+
+        //y axis
+        //array of population count
+        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
+
+        //array of times
+        //x axis
+        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
+
+        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
 
 
-
-//func updateDataSheet(title: String) -> [GraphChart] {
-//    let currentDay = getCurrentDay()
-//    var arrayOfData: [GraphChart] = []
-//
-//    switch title {
-//    case "Chick-Fil-a":
-//        let datasheet = loadCSV(from: "ChickFilaData1")
-//
-//        //y axis
-//        //array of population count
-//        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
-//
-//        //array of times
-//        //x axis
-//        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
-//
-//        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
-//
-//    case "Starbucks":
-//        let datasheet = loadCSV(from: "UCData1")
-//
-//        //y axis
-//        //array of population count
-//        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
-//
-//        //array of times
-//        //x axis
-//        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
-//
-//        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
-//
-//    case "Moes":
-//        let datasheet = loadCSV(from: "MoesData1")
-//
-//        //y axis
-//        //array of population count
-//        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
-//
-//        //array of times
-//        //x axis
-//        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
-//
-//        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
-//
-//    case "Pod Market":
-//        let datasheet = loadCSV(from: "PodData1")
-//
-//        //y axis
-//        //array of population count
-//        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
-//
-//        //array of times
-//        //x axis
-//        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
-//
-//        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
-//
-//    case "Panda Express":
-//        let datasheet = loadCSV(from: "PandaData1")
-//
-//        //y axis
-//        //array of population count
-//        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
-//
-//        //array of times
-//        //x axis
-//        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
-//
-//        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
-//
-//    case "Restaurant Row":
-//        let datasheet = loadCSV(from: "RRData1")
-//
-//        //y axis
-//        //array of population count
-//        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
-//
-//        //array of times
-//        //x axis
-//        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
-//
-//        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
-//
-//    default:
-//        let datasheet = loadCSV(from: "UCData1")
-//
-//        //y axis
-//        //array of population count
-//        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: currentDay, datasheet: datasheet)
-//
-//        //array of times
-//        //x axis
-//        let TimeForDay = fillArrayOfTime(datasheet: datasheet)
-//
-//        arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
-//
-//
-//    }
-//    return arrayOfData
-//}
+    }
+    return arrayOfData
+}

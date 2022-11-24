@@ -32,33 +32,52 @@ struct HomeView: View {
                 
                     //if the infographic changes... change graph output
                     ScrollView {
-                            VStack(alignment: .leading) {
+                            VStack(alignment: .center) {
                                 switch PageIndex {
                                 case 0:
-                                    ChartOfCrowd(Theme: Color.yellow, Title: "University Center")
                                     InfoBoxes(theme: Color.yellow, DataFile: "UCData1")
+                                    ChartofUC()
+                                    
                                 case 1:
-                                    ChartOfCrowd(Theme: Color.red, Title: "Chick-Fil-a")
                                     InfoBoxes(theme: Color.red, DataFile: "ChickFilaData1")
+                                    ChartofChickFila()
+                                    
                                     
                                 case 2:
-                                    ChartOfCrowd(Theme: Color.theme.StarbucksInfographic, Title: "Starbucks")
-                                    InfoBoxes(theme: Color.theme.StarbucksInfographic, DataFile: "UCData1")
-                                case 3:
-                                    ChartOfCrowd(Theme: Color.cyan, Title: "Moes")
-                                    InfoBoxes(theme: Color.cyan, DataFile: "MoesData1")
-                                case 4:
-                                    ChartOfCrowd(Theme: Color.green, Title: "Pod Market")
-                                    InfoBoxes(theme: Color.green, DataFile: "PodData1")
-                                case 5:
-                                    ChartOfCrowd(Theme: Color.orange, Title: "Panda Express")
-                                    InfoBoxes(theme: Color.orange, DataFile: "PandaData1")
-                                case 6:
-                                    ChartOfCrowd(Theme: colorScheme == .dark ? .white : .black, Title: "Restaurant Row")
-                                    InfoBoxes(theme: Color.white, DataFile: "RRData1")
-                                default:
-                                    ChartOfCrowd(Theme: Color.white, Title: "University Center")
+                                    InfoBoxes(theme: Color.theme.StarbucksInfographic, DataFile: "ChickFilaData1")
+                                    ChartofStarbucks()
                                     
+                                case 3:
+                                    InfoBoxes(theme: Color.cyan, DataFile: "MoesData1")
+                                    ChartofMoes()
+                                    
+                                case 4:
+                                    InfoBoxes(theme: Color.green, DataFile: "PodData1")
+                                    ChartofPod()
+                                    
+                                case 5:
+                                    InfoBoxes(theme: Color.orange, DataFile: "PandaData1")
+                                    ChartofPanda()
+                                    
+                                case 6:
+                                    InfoBoxes(theme: Color.white, DataFile: "RRData1")
+                                    ChartofRR()
+                                                                        
+                                    Button {
+                                        PageIndex = 0
+                                    } label: {
+                                        Text("Back To Front")
+                                            .bold()
+                                            .frame(width:150,height:50)
+                                            .foregroundColor(Color.white)
+                                            .background(Color.theme.Stroke)
+                                            .clipShape(Capsule())
+                                    }.padding(.all)
+
+                                    
+                                default:
+                                    InfoBoxes(theme: Color.white, DataFile: "RRData1")
+                                    ChartofUC()
                                 }
                                     
                                 
