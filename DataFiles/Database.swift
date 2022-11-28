@@ -144,7 +144,9 @@ func fillArrayOfCurrentDayCount(CurrentWeekDay: String, datasheet: [DataForChart
         }
 
     case "Sunday":
-        arrayOfData = generateRandomNumbers(size:10)
+        for element in datasheet {
+            arrayOfData.append(Int(element.Sunday) ?? 0)
+        }
 
 
     default:
@@ -177,8 +179,13 @@ func generateRandomNumbers(size: Int) -> [Int] {
     return result.map{ _ in Int.random(in: 0..<size)}
 }
 
-
-
+var dataForUC: [GraphChart] = updateDataSheet(title: "UC")
+var dataForChickFilA: [GraphChart] = updateDataSheet(title: "Chick-Fil-a")
+var dataForStarbucks: [GraphChart] = updateDataSheet(title: "Starbucks")
+var dataForMoes: [GraphChart] = updateDataSheet(title: "Moes")
+var dataForPod: [GraphChart] = updateDataSheet(title: "Pod Market")
+var dataForPanda: [GraphChart] = updateDataSheet(title: "Panda Express")
+var dataForRR: [GraphChart] = updateDataSheet(title: "Restaurant Row")
 
 func updateDataSheet(title: String) -> [GraphChart] {
     let currentDay = getCurrentDay()
@@ -199,7 +206,7 @@ func updateDataSheet(title: String) -> [GraphChart] {
         arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
 
     case "Starbucks":
-        let datasheet = loadCSV(from: "UCData1")
+        let datasheet = loadCSV(from: "ChickFilaData1")
 
         //y axis
         //array of population count

@@ -15,7 +15,7 @@ struct Infographics: View {
             
         TabView(selection: $PageIndex) {
                 //insert infographics sequentially
-                HomeInfo(image: "house.circle.fill").tag(0)
+                HomeInfo(image: "house.circle").tag(0)
                 ChickFilAInfo(image: "chickfilalogo").tag(1)
                 StarbucksInfo(image: "StarbuckLogo").tag(2)
                 MoesInfo(image: "MoesLogo").tag(3)
@@ -42,7 +42,7 @@ struct HomeInfo: View {
         ZStack {
            
             RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.yellow)
+                .foregroundColor(Color.white)
                 .overlay(
                             RoundedRectangle(cornerRadius: 20)
                                 .stroke(Color.theme.Stroke, lineWidth: 5)
@@ -52,40 +52,41 @@ struct HomeInfo: View {
             HStack {
                 Image(systemName: image)
                     .resizable()
+                    .foregroundColor(Color.black)
                     .scaledToFit()
                     .frame(width: 105,height:105)
-                    .overlay {
-                        Circle().stroke(Color.theme.Stroke, lineWidth: 4)
-                    }
+//                    .overlay {
+//                        Circle().stroke(Color.theme.Stroke, lineWidth: 4)
+//                    }
                     
                 
                 
                     
                 VStack {
                     Text("Fall Hours")
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.black)
                         .font(.title)
                         .bold()
                     Divider()
                         .frame(width:200)
                     Text("Monday - Friday")
                         .italic()
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.black)
                     Text("7:30AM - 8:00PM")
                         .bold()
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.black)
                     Text("Saturday")
                         .italic()
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.black)
                     Text("11:00AM - 8:00PM")
                         .bold()
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.black)
                     Text("Sunday")
                         .italic()
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.black)
                     Text("Closed")
                         .bold()
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.black)
                     
                         
                 }
