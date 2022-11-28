@@ -36,33 +36,33 @@ struct HomeView: View {
                                 switch PageIndex {
                                 case 0:
                                     InfoBoxes(theme: Color.yellow, DataFile: "UCData1")
-                                    ChartOfCrowd(Theme: Color.yellow, Title: "University Center", datafile: "UCData1")
+                                    ChartofUC()
                                     
                                 case 1:
                                     InfoBoxes(theme: Color.red, DataFile: "ChickFilaData1")
-                                    ChartOfCrowd(Theme: Color.red, Title: "Chick-Fil-a", datafile: "ChickFilaData1")
+                                    ChartofChickFila()
                                     
                                     
                                 case 2:
                                     InfoBoxes(theme: Color.theme.StarbucksInfographic, DataFile: "ChickFilaData1")
-                                    ChartOfCrowd(Theme: Color.theme.StarbucksInfographic, Title: "Starbucks", datafile: "ChickFilaData1")
+                                    ChartofStarbucks()
                                     
                                 case 3:
                                     InfoBoxes(theme: Color.cyan, DataFile: "MoesData1")
-                                    ChartOfCrowd(Theme: Color.cyan, Title: "Moes", datafile: "MoesData1")
+                                    ChartofMoes()
                                     
                                 case 4:
                                     InfoBoxes(theme: Color.green, DataFile: "PodData1")
-                                    ChartOfCrowd(Theme: Color.green, Title: "Pod Market", datafile: "PodData1")
+                                    ChartofPod()
                                     
                                 case 5:
                                     InfoBoxes(theme: Color.orange, DataFile: "PandaData1")
-                                    ChartOfCrowd(Theme: Color.orange, Title: "Panda Express", datafile: "PandaData1")
+                                    ChartofPanda()
                                     
                                 case 6:
                                     InfoBoxes(theme: Color.white, DataFile: "RRData1")
-                                    ChartOfCrowd(Theme: colorScheme == .dark ? .white : .black, Title: "Restaurant Row", datafile: "RRData1")
-                                    
+                                    ChartofRR()
+                                                                        
                                     Button {
                                         PageIndex = 0
                                     } label: {
@@ -76,8 +76,8 @@ struct HomeView: View {
 
                                     
                                 default:
-                                    ChartOfCrowd(Theme: Color.white, Title: "University Center", datafile: "UCData1")
-                                    
+                                    InfoBoxes(theme: Color.white, DataFile: "RRData1")
+                                    ChartofUC()
                                 }
                                     
                                 
