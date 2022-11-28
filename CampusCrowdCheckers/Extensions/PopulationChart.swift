@@ -51,7 +51,7 @@ struct ChartofUC: View {
                         x: .value("Time", element.time),
                         y: .value("Total Count", element.animate ?  element.Populationcount : 0)
                     )
-                    .foregroundStyle(Color.yellow.gradient)
+                    .foregroundStyle(Color.white.gradient)
                     
                 }
             }

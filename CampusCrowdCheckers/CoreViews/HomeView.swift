@@ -35,7 +35,7 @@ struct HomeView: View {
                             VStack(alignment: .center) {
                                 switch PageIndex {
                                 case 0:
-                                    InfoBoxes(theme: Color.yellow, DataFile: "UCData1")
+                                    InfoBoxes(theme: Color.white, DataFile: "UCData1")
                                     ChartofUC()
                                     
                                 case 1:
