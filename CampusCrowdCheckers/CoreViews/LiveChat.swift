@@ -13,14 +13,14 @@ struct LiveChat: View {
         var body: some View {
             VStack {
                 HStack{
-                    Text("FAQ")
+                    Text("Friendly Bot")
                         .font(.largeTitle)
                         .bold()
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.theme.text)
                     
                     Image(systemName: "person.fill")
                         .font(.system(size: 26))
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.theme.text)
                 }
                 
                 ScrollView{
@@ -53,7 +53,7 @@ struct LiveChat: View {
                         }
                     }.rotationEffect(.degrees(180))
                 }.rotationEffect(.degrees(180))
-                    .background(Color.white)
+                    .background(Color.theme.Background)
                 
                 HStack{
                     TextField("Ask Us About Locations", text: $messageText)
@@ -81,7 +81,7 @@ struct LiveChat: View {
                 }
                 .padding()
             }
-            .background(Color.white)
+            .background(Color.theme.Background)
             
             
         }

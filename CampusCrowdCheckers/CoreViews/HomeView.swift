@@ -12,12 +12,9 @@ struct HomeView: View {
     
     //keep track of current infographic to change graphs when needed
     @State var PageIndex = 0
-    
     @Environment(\.colorScheme) var colorScheme
     
-    
-    
-    
+
     var body: some View {
         
         ZStack {
@@ -69,8 +66,8 @@ struct HomeView: View {
                                         Text("Back To Front")
                                             .bold()
                                             .frame(width:150,height:50)
-                                            .foregroundColor(Color.white)
-                                            .background(Color.theme.Stroke)
+                                            .foregroundColor(colorScheme == .dark ? Color.white: Color.black)
+                                            .background(colorScheme == .dark ? Color.black: Color.white)
                                             .clipShape(Capsule())
                                     }.padding(.all)
 

@@ -24,8 +24,9 @@ struct Infographics: View {
                 RRInfo(image: "RRLogo").tag(6)
                 
             }
-            //.frame(height:320)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            //.frame(height:320)
+            
         
         
     }
