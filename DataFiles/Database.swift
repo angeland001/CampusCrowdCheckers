@@ -144,9 +144,7 @@ func fillArrayOfCurrentDayCount(CurrentWeekDay: String, datasheet: [DataForChart
         }
 
     case "Sunday":
-        for element in datasheet {
-            arrayOfData.append(Int(element.Sunday) ?? 0)
-        }
+        arrayOfData = generateRandomNumbers(size: 7)
 
 
     default:
@@ -270,7 +268,7 @@ func updateDataSheet(title: String) -> [GraphChart] {
 
         arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
 
-    default:
+    case "UC":
         let datasheet = loadCSV(from: "UCData1")
 
         //y axis
@@ -284,6 +282,8 @@ func updateDataSheet(title: String) -> [GraphChart] {
         arrayOfData = returnArrayOfObj(TimeOfDay: TimeForDay, Population: PopulationCountForDay)
 
 
+    default:
+        break
     }
     return arrayOfData
 }
