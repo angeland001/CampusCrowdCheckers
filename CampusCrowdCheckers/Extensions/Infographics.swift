@@ -407,7 +407,7 @@ struct PandaInfo: View {
         ZStack {
             
             RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.theme.PandaInfographic)
+                .foregroundColor(Color.orange)
                 .overlay(
                             RoundedRectangle(cornerRadius: 20)
                                 .stroke(Color.theme.Stroke, lineWidth: 5)
@@ -419,7 +419,7 @@ struct PandaInfo: View {
                     .clipShape(Circle())
                     .frame(width: 120,height:100)
                     .overlay {
-                        Circle().stroke(.white, lineWidth: 4)
+                        Circle().stroke(Color.theme.Stroke, lineWidth: 4)
                     }
                     
                 VStack {

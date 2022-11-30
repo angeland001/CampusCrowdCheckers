@@ -32,7 +32,7 @@ struct HomeView: View {
                             VStack(alignment: .center) {
                                 switch PageIndex {
                                 case 0:
-                                    InfoBoxes(theme: Color.white, DataFile: "UCData1")
+                                    InfoBoxes(theme: colorScheme == .dark ? Color.white: Color.black, DataFile: "UCData1")
                                     ChartofUC()
                                     
                                 case 1:
@@ -57,7 +57,7 @@ struct HomeView: View {
                                     ChartofPanda()
                                     
                                 case 6:
-                                    InfoBoxes(theme: Color.white, DataFile: "RRData1")
+                                    InfoBoxes(theme: colorScheme == .dark ? Color.white: Color.black, DataFile: "RRData1")
                                     ChartofRR()
                                                                         
                                     Button {
