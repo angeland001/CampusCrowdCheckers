@@ -51,7 +51,7 @@ struct ChartofUC: View {
                         x: .value("Time", element.time),
                         y: .value("Total Count", element.animate ?  element.Populationcount : 0)
                     )
-                    .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
+                    .foregroundStyle(colorScheme == .dark ? Color.white.gradient : Color.black.gradient)
                     
                 }
             }
@@ -164,7 +164,7 @@ struct ChartofStarbucks: View {
                         x: .value("Time", element.time),
                         y: .value("Total Count", element.animate ?  element.Populationcount : 0)
                     )
-                    .foregroundStyle(Color.theme.StarbucksInfographic)
+                    .foregroundStyle(Color.theme.StarbucksInfographic.gradient)
                     
                 }
             }
@@ -332,7 +332,7 @@ struct ChartofPanda: View {
                         x: .value("Time", element.time),
                         y: .value("Total Count", element.animate ?  element.Populationcount : 0)
                     )
-                    .foregroundStyle(Color.theme.PandaInfographic)
+                    .foregroundStyle(Color.orange.gradient)
                     
                 }
             }
@@ -389,7 +389,7 @@ struct ChartofRR: View {
                         x: .value("Time", element.time),
                         y: .value("Total Count", element.animate ?  element.Populationcount : 0)
                     )
-                    .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
+                    .foregroundStyle(colorScheme == .dark ? Color.white.gradient : Color.black.gradient)
                     
                 }
             }
