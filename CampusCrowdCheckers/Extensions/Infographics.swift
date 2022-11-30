@@ -24,8 +24,9 @@ struct Infographics: View {
                 RRInfo(image: "RRLogo").tag(6)
                 
             }
-            //.frame(height:320)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            //.frame(height:320)
+            
         
         
     }
@@ -406,7 +407,7 @@ struct PandaInfo: View {
         ZStack {
             
             RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.theme.PandaInfographic)
+                .foregroundColor(Color.orange)
                 .overlay(
                             RoundedRectangle(cornerRadius: 20)
                                 .stroke(Color.theme.Stroke, lineWidth: 5)
