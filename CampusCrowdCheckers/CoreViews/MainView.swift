@@ -13,6 +13,7 @@ struct MainView: View {
     //keeps track of currently selected house... HOME PAGE
     @State var selectedTab = "house"
     @State private var clockStyle: ClockStyle = .steampunk
+    @Environment(\.colorScheme) var colorScheme
     
     let icons: [String] = [
         "bubble.left", "house", "gearshape"
@@ -38,7 +39,7 @@ struct MainView: View {
                 
                 //Tab Bar is fixed throughout all views
                 AnimatedTabBar(selectedTab: $selectedTab)
-                    .background(Color.theme.Background)
+                    
                 
             }
             

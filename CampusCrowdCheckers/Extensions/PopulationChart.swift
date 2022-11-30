@@ -30,7 +30,7 @@ struct ChartofUC: View {
     
     @State var Data: [GraphChart] = dataForUC
     
-    
+    @Environment(\.colorScheme) var colorScheme
     
     
     var body: some View {
@@ -51,7 +51,7 @@ struct ChartofUC: View {
                         x: .value("Time", element.time),
                         y: .value("Total Count", element.animate ?  element.Populationcount : 0)
                     )
-                    .foregroundStyle(Color.white.gradient)
+                    .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
                     
                 }
             }
@@ -367,7 +367,7 @@ struct ChartofRR: View {
     
     
     @State var Data: [GraphChart] = dataForRR
-    
+    @Environment(\.colorScheme) var colorScheme
     
     
     
@@ -389,7 +389,7 @@ struct ChartofRR: View {
                         x: .value("Time", element.time),
                         y: .value("Total Count", element.animate ?  element.Populationcount : 0)
                     )
-                    .foregroundStyle(Color.theme.text)
+                    .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
                     
                 }
             }

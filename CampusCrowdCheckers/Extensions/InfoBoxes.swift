@@ -15,7 +15,7 @@ struct InfoBoxes: View {
     var DataFile: String
     
     var body: some View {
-        let gradient = Gradient(colors: [theme, Color.black])
+        
         let datasheet = loadCSV(from: DataFile)
         let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: getCurrentDays(), datasheet: datasheet)
         
@@ -24,8 +24,7 @@ struct InfoBoxes: View {
         
         
         
-        VStack {
-            
+        
 
 
             HStack{
@@ -52,58 +51,49 @@ struct InfoBoxes: View {
                     }
                 }
                 Spacer()
-                VStack(alignment: .center) {
-                    Group {
-                        Text("High For Today")
-                            
-                    }
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.theme.text)
+                VStack {
                     
+                    Text("High For Today")
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.theme.text)
+                        .offset(x:-20,y:-55)
+                    
+                    Gauge(value: 0.4, label: {
+                        
+                    }, currentValueLabel: {
+                        Text(String(largestNumInArr ?? 10))
+                            .fontWeight(.heavy)
+                            .foregroundColor(Color.theme.text
+                            )
+                        
+                    }, minimumValueLabel: {
+                        Text("0")
+                            .foregroundColor(Color.theme.text)
+                    }, maximumValueLabel: {
+                        DataFile == "UCData1" ? Text("300").foregroundColor(Color.theme.text) : Text("30")
+                            .foregroundColor(Color.theme.text)
+                    })
+                    .scaleEffect(2)
+                    .gaugeStyle(.accessoryCircular)
+                    .tint(theme)
+                    .offset(x:-20)
+                       
+                            
+                            
+                            
+                            
                         
                     
-                    ZStack {
-                        RoundedRectangle(cornerRadius:10)
-                            .fill(theme)
-                            .frame(
-                                width:170,
-                                height:170)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.theme.Stroke, lineWidth: 5)
-                            )
-                        VStack {
-                            Gauge(value: 0.4, label: {
-                                
-                            }, currentValueLabel: {
-                                Text(String(largestNumInArr ?? 10))
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(Color.black
-                                    )
-                                
-                            }, minimumValueLabel: {
-                                Text("0")
-                                    .foregroundColor(Color.black)
-                            }, maximumValueLabel: {
-                                DataFile == "UCData1" ? Text("300").foregroundColor(Color.black) : Text("30")
-                                    .foregroundColor(Color.black)
-                            })
-                            .scaleEffect(2)
-                            .gaugeStyle(.accessoryCircular)
-                            .tint(gradient)
-                            
-                            
-                            
-                        }
-                    }
                 }
                 
             }
             .padding()
-        }
+       
         
     }
 }
+
+
 
 
 
