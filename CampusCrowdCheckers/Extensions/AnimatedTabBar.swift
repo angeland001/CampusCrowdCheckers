@@ -20,10 +20,12 @@ struct AnimatedTabBar: View {
             //Tab bar buttons
             
             TabBarButton(image: "bubble.left", selectedTab: $selectedTab, tabPoints: $tabPoints)
-                
             
             
-            TabBarButton(image: "house", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButton(image: "takeoutbag.and.cup.and.straw", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            
+            
+            TabBarButton(image: "graduationcap", selectedTab: $selectedTab, tabPoints: $tabPoints)
             
             TabBarButton(image: "gearshape", selectedTab: $selectedTab, tabPoints: $tabPoints)
             
@@ -37,7 +39,7 @@ struct AnimatedTabBar: View {
           Circle()
             .fill(Color.theme.TabBar)
             .frame(width:10,height:10)
-            .offset(x:getCurvePoint() - 195)
+            .offset(x:getCurvePoint() - 215)
           ,alignment: .bottom
         )
         .cornerRadius(30)
@@ -53,10 +55,12 @@ struct AnimatedTabBar: View {
             switch selectedTab {
             case "bubble.left":
                 return tabPoints[0]
-            case "house":
+            case "takeoutbag.and.cup.and.straw":
                 return tabPoints[1]
-            case "gearshape":
+            case "graduationcap":
                 return tabPoints[2]
+            case "gearshape":
+                return tabPoints[3]
             
             default:
                 return tabPoints[3]
