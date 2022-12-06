@@ -148,11 +148,7 @@ struct Home : View {
             }
             .padding(.top, 10)
             
-            Image("Crowd")
-                .resizable()
-                .scaledToFit()
-                .scaleEffect(9)
-                .offset(y:-50)
+            
                 
                 
             

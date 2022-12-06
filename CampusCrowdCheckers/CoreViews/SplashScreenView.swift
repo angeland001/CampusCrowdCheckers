@@ -11,11 +11,11 @@ struct SplashScreenView: View {
     @State private var isActive = false
     @State private var size = 0.8
     @State private var opacity = 0.5
-    @ObservedObject var locationManager = LocationManager.shared
+    
     
     var body: some View {
         if isActive{
-            LoginScreen()
+            MainView()
         } else{
             ZStack {
                 Color.black

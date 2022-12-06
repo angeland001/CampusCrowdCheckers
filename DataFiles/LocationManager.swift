@@ -6,49 +6,42 @@
 //
 
 import Foundation
-import CoreLocation
+import MapKit
 
-class LocationManager: NSObject, ObservableObject {
-    //monitor changes in location status
-    private let manager = CLLocationManager()
-    @Published var userLocation: CLLocation?
+
+final class MapViewModel: NSObject,ObservableObject, CLLocationManagerDelegate {
     
-    //access location manager anywhere in files
-    static let shared = LocationManager()
+    var locationManager: CLLocationManager?
     
-    override init() {
-        super.init()
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.startUpdatingLocation()
+    func checkIfLocationServicesIsEnabled() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager = CLLocationManager()
+            locationManager!.delegate = self
+        }
+        else {
+            print("Show an alert to let them know to turn it on")
+        }
     }
     
-    func requestLocation() {
-        manager.requestWhenInUseAuthorization()
-    }
-}
-
-extension LocationManager: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
+    private func checkLocationAuthorization() {
+        guard let locationManager = locationManager else { return }
         
+        switch locationManager.authorizationStatus {
+            
         case .notDetermined:
-            print("DEBUG: Not Determined")
+            locationManager.requestWhenInUseAuthorization()
         case .restricted:
-            print("DEBUG: Restricted")
+            print("Your location is restricted likely due to parental controls")
         case .denied:
-            print("DEBUG: Denied")
-        case .authorizedAlways:
-            print("Auth always")
-        case .authorizedWhenInUse:
-            print("DEBUG: Auth when in use")
+            print("Crowd Check does not have permission to use location services. Go to settings to enable.")
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
         @unknown default:
             break
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        self.userLocation = location
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization()
     }
 }
