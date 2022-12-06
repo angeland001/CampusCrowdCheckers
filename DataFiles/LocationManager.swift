@@ -1,47 +1,55 @@
-//
-//  LocationManager.swift
-//  CampusCrowdCheckers
-//
-//  Created by Andrew on 12/4/22.
-//
+
+
+
+
+
+
 
 import Foundation
-import MapKit
+import CoreLocation
 
-
-final class MapViewModel: NSObject,ObservableObject, CLLocationManagerDelegate {
+class LocationManager: NSObject, ObservableObject {
+    //monitor changes in location status
+    private let manager = CLLocationManager()
+    @Published var userLocation: CLLocation?
     
-    var locationManager: CLLocationManager?
+    //access location manager anywhere in files
+    static let shared = LocationManager()
     
-    func checkIfLocationServicesIsEnabled() {
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager = CLLocationManager()
-            locationManager!.delegate = self
-        }
-        else {
-            print("Show an alert to let them know to turn it on")
-        }
+    override init() {
+        super.init()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.startUpdatingLocation()
     }
     
-    private func checkLocationAuthorization() {
-        guard let locationManager = locationManager else { return }
+    func requestLocation() {
+        manager.requestWhenInUseAuthorization()
+    }
+}
+
+extension LocationManager: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
         
-        switch locationManager.authorizationStatus {
-            
         case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
+            print("DEBUG: NOT DETERMINED")
         case .restricted:
-            print("Your location is restricted likely due to parental controls")
+            print("DEBUG: Restricted")
         case .denied:
-            print("Crowd Check does not have permission to use location services. Go to settings to enable.")
-        case .authorizedAlways, .authorizedWhenInUse:
-            break
+            print("DEBUG: Denied")
+        case .authorizedAlways:
+            print("Auth always")
+        case .authorizedWhenInUse:
+            print("DEBUG: Auth when in use")
         @unknown default:
             break
         }
     }
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        checkLocationAuthorization()
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        self.userLocation = location
     }
 }
+
