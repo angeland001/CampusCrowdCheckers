@@ -13,7 +13,7 @@ struct MainView: View {
     //keeps track of currently selected house... HOME PAGE
     @State var selectedTab = "graduationcap"
     @State private var clockStyle: ClockStyle = .steampunk
-    @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var locationManager = LocationManager.shared
     
     let icons: [String] = [
         "bubble.left", "takeoutbag.and.cup.and.straw", "graduationcap", "gearshape"
@@ -30,7 +30,14 @@ struct MainView: View {
                 case icons[0]:
                     LiveChat()
                 case icons[1]:
-                    HomeView()
+                    Group {
+                        if locationManager.userLocation == nil {
+                            LocationRequestView()
+                        }
+                        else {
+                            MapView()
+                        }
+                    }
                 case icons[2]:
                     HomeView()
                 

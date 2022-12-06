@@ -1,9 +1,9 @@
-//
-//  LocationManager.swift
-//  CampusCrowdCheckers
-//
-//  Created by Andrew on 12/4/22.
-//
+
+
+
+
+
+
 
 import Foundation
 import CoreLocation
@@ -33,7 +33,7 @@ extension LocationManager: CLLocationManagerDelegate {
         switch status {
         
         case .notDetermined:
-            print("DEBUG: Not Determined")
+            print("DEBUG: NOT DETERMINED")
         case .restricted:
             print("DEBUG: Restricted")
         case .denied:
@@ -52,3 +52,4 @@ extension LocationManager: CLLocationManagerDelegate {
         self.userLocation = location
     }
 }
+

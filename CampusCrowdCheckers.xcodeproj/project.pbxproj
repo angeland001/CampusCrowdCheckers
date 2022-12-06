@@ -15,6 +15,7 @@
 		493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306628F86B4500E3C3C8 /* SplashScreenView.swift */; };
 		493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306928FB2F2000E3C3C8 /* Color.swift */; };
 		493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306B28FB329D00E3C3C8 /* LoginScreen.swift */; };
+		4947B212293EE27A00D3812A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947B211293EE27900D3812A /* MapView.swift */; };
 		494CEE03292D94C40013D8B2 /* InfoBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CEE02292D94C40013D8B2 /* InfoBoxes.swift */; };
 		494CEE06292D9D670013D8B2 /* SwiftClockUI in Frameworks */ = {isa = PBXBuildFile; productRef = 494CEE05292D9D670013D8B2 /* SwiftClockUI */; };
 		49B5BE7F29256C74009CB7DF /* LiveChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE7E29256C74009CB7DF /* LiveChat.swift */; };
@@ -44,6 +45,7 @@
 		493B306628F86B4500E3C3C8 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		493B306928FB2F2000E3C3C8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		493B306B28FB329D00E3C3C8 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		4947B211293EE27900D3812A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		494CEE02292D94C40013D8B2 /* InfoBoxes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBoxes.swift; sourceTree = "<group>"; };
 		49B5BE7E29256C74009CB7DF /* LiveChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChat.swift; sourceTree = "<group>"; };
 		49B5BE9C2925D228009CB7DF /* BotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotResponse.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				493B306B28FB329D00E3C3C8 /* LoginScreen.swift */,
 				493B306628F86B4500E3C3C8 /* SplashScreenView.swift */,
 				49275843293D88A200CD05E3 /* LocationRequestView.swift */,
+				4947B211293EE27900D3812A /* MapView.swift */,
 			);
 			path = CoreViews;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				49023B4A291C8F7D00CF6DDF /* Infographics.swift in Sources */,
 				493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */,
 				49275842293D882D00CD05E3 /* LocationManager.swift in Sources */,
+				4947B212293EE27A00D3812A /* MapView.swift in Sources */,
 				493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */,
 				494CEE03292D94C40013D8B2 /* InfoBoxes.swift in Sources */,
 				49B5BEAB2927E590009CB7DF /* Settings.swift in Sources */,
@@ -395,6 +399,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow CrowdCheck to access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -429,6 +434,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow CrowdCheck to access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
