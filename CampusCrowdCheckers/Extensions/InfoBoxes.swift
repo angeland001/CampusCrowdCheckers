@@ -9,8 +9,9 @@ import SwiftUI
 import SwiftClockUI
 
 struct InfoBoxes: View {
-    @State private var date = Date()
+    @State var progressValue: Double = 0.0
     @State private var clockStyle: ClockStyle = .steampunk
+    
     var theme: Color
     var DataFile: String
     
@@ -23,10 +24,6 @@ struct InfoBoxes: View {
         let largestNumInArr = PopulationCountForDay.max()
         
         
-        
-        
-
-
             HStack{
                 VStack {
                     Text("Busiest Hour")
@@ -53,30 +50,23 @@ struct InfoBoxes: View {
                 Spacer()
                 VStack {
                     
-                    Text("High For Today")
+                    Text("Count at Current Hour")
+                        .multilineTextAlignment(.center)
                         .fontWeight(.bold)
                         .foregroundColor(Color.theme.text)
-                        .offset(x:-20,y:-55)
-                    
-                    Gauge(value: 0.4, label: {
+                        .offset(x:-10,y:-20)
+                    ZStack {
                         
-                    }, currentValueLabel: {
-                        Text(String(largestNumInArr ?? 10))
-                            .fontWeight(.heavy)
-                            .foregroundColor(Color.theme.text
-                            )
-                        
-                    }, minimumValueLabel: {
-                        Text("0")
-                            .foregroundColor(Color.theme.text)
-                    }, maximumValueLabel: {
-                        DataFile == "UCData1" ? Text("300").foregroundColor(Color.theme.text) : Text("30")
-                            .foregroundColor(Color.theme.text)
-                    })
-                    .scaleEffect(2)
-                    .gaugeStyle(.accessoryCircular)
-                    .tint(theme)
-                    .offset(x:-20)
+                        ProgressBar(progress: self.$progressValue, theme: theme)
+                            .frame(width: 130,height:130)
+                            .onAppear {
+                                self.progressValue = convertNumberToPercentage(PopulationCount: PopulationCountForDay)
+                            }
+                        Text(String(largestNumInArr!))
+                            .font(.title)
+                            .fontWeight(.bold)
+                            
+                    }
                        
                             
                             
@@ -91,6 +81,40 @@ struct InfoBoxes: View {
        
         
     }
+}
+
+struct ProgressBar: View {
+    @Binding var progress: Double
+    var theme: Color
+        
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(lineWidth: 20)
+                .opacity(0.20)
+                .foregroundColor(Color.gray)
+            Circle()
+                .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
+                .stroke(style: StrokeStyle(lineWidth: 12.0,lineCap: .round,lineJoin: .round))
+                .foregroundColor(theme)
+                .rotationEffect(Angle(degrees: 270))
+                .animation(.easeInOut(duration: 2.0))
+        }
+    }
+    
+    
+}
+
+private func convertNumberToPercentage(PopulationCount: [Int]) -> Double {
+    let (min,max) = (0,30)
+    let range = max - min
+    guard let input = PopulationCount.max() else { return 0 }
+        
+    let correctedStartValue = input - min
+    let percentage = (correctedStartValue * 100) / range
+        
+    return Double(percentage) / 100
+    
 }
 
 

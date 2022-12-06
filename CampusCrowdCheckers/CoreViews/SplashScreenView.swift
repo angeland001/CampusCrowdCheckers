@@ -23,9 +23,9 @@ struct SplashScreenView: View {
                 
                 VStack{
                     VStack(spacing:5){
-                        Image(systemName: "figure.wave")
+                        Image(systemName: "figure.2.and.child.holdinghands")
                             .font(.system(size: 80)).foregroundColor(.white)
-                        Text("Campus Crowd Check")
+                        Text("Crowd Check")
                             .font(Font.custom("Baskerville-Bold", size: 26))
                             .foregroundColor(Color.white)
                     }
