@@ -111,7 +111,7 @@ private func convertNumberToPercentage(PopulationCount: [Int]) -> Double {
     guard let input = PopulationCount.max() else { return 0 }
         
     let correctedStartValue = input - min
-    var percentage = (correctedStartValue * 100) / range
+    let percentage = (correctedStartValue * 100) / range
         
     return Double(percentage) / 100
     

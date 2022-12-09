@@ -7,8 +7,11 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 class LocationManager: NSObject, ObservableObject {
+    
+    @Published var region = MKCoordinateRegion()
     //monitor changes in location status
     private let manager = CLLocationManager()
     @Published var userLocation: CLLocation?
@@ -29,7 +32,9 @@ class LocationManager: NSObject, ObservableObject {
 }
 
 extension LocationManager: CLLocationManagerDelegate {
+   
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
         switch status {
         
         case .notDetermined:
@@ -50,6 +55,12 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         self.userLocation = location
+        locations.last.map {
+                    region = MKCoordinateRegion(
+                        center: CLLocationCoordinate2D(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude),
+                        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                    )
+                }
     }
 }
 

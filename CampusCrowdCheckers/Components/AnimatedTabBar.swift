@@ -39,7 +39,7 @@ struct AnimatedTabBar: View {
           Circle()
             .fill(Color.theme.TabBar)
             .frame(width:10,height:10)
-            .offset(x:getCurvePoint() - 207)
+            .offset(x:getCurvePoint() - 215)
           ,alignment: .bottom
         )
         .cornerRadius(30)
@@ -54,13 +54,13 @@ struct AnimatedTabBar: View {
         else {
             switch selectedTab {
             case "bubble.left":
-                return tabPoints[0]
-            case "takeoutbag.and.cup.and.straw":
-                return tabPoints[1]
-            case "graduationcap":
-                return tabPoints[2]
-            case "gearshape":
                 return tabPoints[3]
+            case "takeoutbag.and.cup.and.straw":
+                return tabPoints[2]
+            case "graduationcap":
+                return tabPoints[1]
+            case "gearshape":
+                return tabPoints[0]
             
             default:
                 return tabPoints[3]
