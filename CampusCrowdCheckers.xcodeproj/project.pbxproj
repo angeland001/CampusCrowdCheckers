@@ -18,6 +18,8 @@
 		4947B212293EE27A00D3812A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947B211293EE27900D3812A /* MapView.swift */; };
 		494CEE03292D94C40013D8B2 /* InfoBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CEE02292D94C40013D8B2 /* InfoBoxes.swift */; };
 		494CEE06292D9D670013D8B2 /* SwiftClockUI in Frameworks */ = {isa = PBXBuildFile; productRef = 494CEE05292D9D670013D8B2 /* SwiftClockUI */; };
+		49AE03B22946CA0B001F337B /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE03B12946CA0B001F337B /* CircleButtonView.swift */; };
+		49AE03B42946CEA5001F337B /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE03B32946CEA5001F337B /* CircleButtonAnimationView.swift */; };
 		49B5BE7F29256C74009CB7DF /* LiveChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE7E29256C74009CB7DF /* LiveChat.swift */; };
 		49B5BE9D2925D228009CB7DF /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE9C2925D228009CB7DF /* BotResponse.swift */; };
 		49B5BEA52927DFD8009CB7DF /* PopulationChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BEA42927DFD8009CB7DF /* PopulationChart.swift */; };
@@ -47,6 +49,8 @@
 		493B306B28FB329D00E3C3C8 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		4947B211293EE27900D3812A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		494CEE02292D94C40013D8B2 /* InfoBoxes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBoxes.swift; sourceTree = "<group>"; };
+		49AE03B12946CA0B001F337B /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		49AE03B32946CEA5001F337B /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 		49B5BE7E29256C74009CB7DF /* LiveChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChat.swift; sourceTree = "<group>"; };
 		49B5BE9C2925D228009CB7DF /* BotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotResponse.swift; sourceTree = "<group>"; };
 		49B5BEA42927DFD8009CB7DF /* PopulationChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationChart.swift; sourceTree = "<group>"; };
@@ -82,12 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				493B306928FB2F2000E3C3C8 /* Color.swift */,
-				4907DB9B2919CCB000C5C502 /* TabCurve.swift */,
-				4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */,
-				49023B49291C8F7D00CF6DDF /* Infographics.swift */,
-				49B5BE9C2925D228009CB7DF /* BotResponse.swift */,
-				49B5BEA42927DFD8009CB7DF /* PopulationChart.swift */,
-				494CEE02292D94C40013D8B2 /* InfoBoxes.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -95,24 +93,77 @@
 		493B306D28FB32A200E3C3C8 /* CoreViews */ = {
 			isa = PBXGroup;
 			children = (
-				49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */,
-				49FC30E328F0C4030006D87F /* HomeView.swift */,
-				49B5BEA82927E3D0009CB7DF /* MainView.swift */,
-				49B5BEAA2927E590009CB7DF /* Settings.swift */,
-				49B5BE7E29256C74009CB7DF /* LiveChat.swift */,
-				493B306B28FB329D00E3C3C8 /* LoginScreen.swift */,
-				493B306628F86B4500E3C3C8 /* SplashScreenView.swift */,
-				49275843293D88A200CD05E3 /* LocationRequestView.swift */,
-				4947B211293EE27900D3812A /* MapView.swift */,
 			);
 			path = CoreViews;
+			sourceTree = "<group>";
+		};
+		49AE03AA2946C776001F337B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				49AE03AB2946C780001F337B /* View Models */,
+				49AE03AE2946C853001F337B /* ChatBot */,
+				49AE03AD2946C7E4001F337B /* Graph Models */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		49AE03AB2946C780001F337B /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				49B5BEA82927E3D0009CB7DF /* MainView.swift */,
+				49FC30E328F0C4030006D87F /* HomeView.swift */,
+				4947B211293EE27900D3812A /* MapView.swift */,
+				49B5BEAA2927E590009CB7DF /* Settings.swift */,
+				49275843293D88A200CD05E3 /* LocationRequestView.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		49AE03AD2946C7E4001F337B /* Graph Models */ = {
+			isa = PBXGroup;
+			children = (
+				49023B49291C8F7D00CF6DDF /* Infographics.swift */,
+				49B5BEBD2928984B009CB7DF /* Database.swift */,
+				49B5BEA42927DFD8009CB7DF /* PopulationChart.swift */,
+				494CEE02292D94C40013D8B2 /* InfoBoxes.swift */,
+			);
+			path = "Graph Models";
+			sourceTree = "<group>";
+		};
+		49AE03AE2946C853001F337B /* ChatBot */ = {
+			isa = PBXGroup;
+			children = (
+				49B5BE9C2925D228009CB7DF /* BotResponse.swift */,
+				49B5BE7E29256C74009CB7DF /* LiveChat.swift */,
+			);
+			path = ChatBot;
+			sourceTree = "<group>";
+		};
+		49AE03AF2946C875001F337B /* Login Model */ = {
+			isa = PBXGroup;
+			children = (
+				49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */,
+				493B306B28FB329D00E3C3C8 /* LoginScreen.swift */,
+				493B306628F86B4500E3C3C8 /* SplashScreenView.swift */,
+			);
+			path = "Login Model";
+			sourceTree = "<group>";
+		};
+		49AE03B02946C9D7001F337B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */,
+				4907DB9B2919CCB000C5C502 /* TabCurve.swift */,
+				49AE03B12946CA0B001F337B /* CircleButtonView.swift */,
+				49AE03B32946CEA5001F337B /* CircleButtonAnimationView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		49B5BEB029288DBD009CB7DF /* DataFiles */ = {
 			isa = PBXGroup;
 			children = (
 				49B5BECB292A9B66009CB7DF /* CSVFiles */,
-				49B5BEBD2928984B009CB7DF /* Database.swift */,
 				49275841293D882D00CD05E3 /* LocationManager.swift */,
 			);
 			path = DataFiles;
@@ -134,6 +185,7 @@
 		49FC30D528F0C4030006D87F = {
 			isa = PBXGroup;
 			children = (
+				493B306828FB2F0500E3C3C8 /* Extensions */,
 				49B5BEB029288DBD009CB7DF /* DataFiles */,
 				49FC30E028F0C4030006D87F /* CampusCrowdCheckers */,
 				49FC30DF28F0C4030006D87F /* Products */,
@@ -151,8 +203,10 @@
 		49FC30E028F0C4030006D87F /* CampusCrowdCheckers */ = {
 			isa = PBXGroup;
 			children = (
+				49AE03B02946C9D7001F337B /* Components */,
+				49AE03AF2946C875001F337B /* Login Model */,
+				49AE03AA2946C776001F337B /* Home */,
 				493B306D28FB32A200E3C3C8 /* CoreViews */,
-				493B306828FB2F0500E3C3C8 /* Extensions */,
 				49FC30E528F0C4060006D87F /* Assets.xcassets */,
 				49FC30E728F0C4060006D87F /* Preview Content */,
 			);
@@ -251,10 +305,12 @@
 			files = (
 				49FC30E428F0C4030006D87F /* HomeView.swift in Sources */,
 				49B5BEA92927E3D0009CB7DF /* MainView.swift in Sources */,
+				49AE03B22946CA0B001F337B /* CircleButtonView.swift in Sources */,
 				49FC30E228F0C4030006D87F /* CampusCrowdCheckersApp.swift in Sources */,
 				4907DB9C2919CCB000C5C502 /* TabCurve.swift in Sources */,
 				49023B4A291C8F7D00CF6DDF /* Infographics.swift in Sources */,
 				493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */,
+				49AE03B42946CEA5001F337B /* CircleButtonAnimationView.swift in Sources */,
 				49275842293D882D00CD05E3 /* LocationManager.swift in Sources */,
 				4947B212293EE27A00D3812A /* MapView.swift in Sources */,
 				493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */,
