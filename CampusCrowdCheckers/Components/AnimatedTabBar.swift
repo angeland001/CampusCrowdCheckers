@@ -39,7 +39,7 @@ struct AnimatedTabBar: View {
           Circle()
             .fill(Color.theme.TabBar)
             .frame(width:10,height:10)
-            .offset(x:getCurvePoint() - 207)
+            .offset(x:getCurvePoint() - 215)
           ,alignment: .bottom
         )
         .cornerRadius(30)

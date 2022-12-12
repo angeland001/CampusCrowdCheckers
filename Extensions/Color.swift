@@ -30,6 +30,7 @@ struct ColorTheme {
     let text = Color("Text")
     let Stroke = Color("Stroke")
     let opacity = Color("Opacity")
+    let accent = Color("AccentColor")
     
     
         
