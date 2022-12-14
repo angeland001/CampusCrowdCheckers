@@ -20,6 +20,7 @@
 		494CEE06292D9D670013D8B2 /* SwiftClockUI in Frameworks */ = {isa = PBXBuildFile; productRef = 494CEE05292D9D670013D8B2 /* SwiftClockUI */; };
 		49AE03B22946CA0B001F337B /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE03B12946CA0B001F337B /* CircleButtonView.swift */; };
 		49AE03B42946CEA5001F337B /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE03B32946CEA5001F337B /* CircleButtonAnimationView.swift */; };
+		49AE03B72947B85B001F337B /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE03B62947B85B001F337B /* RestaurantModel.swift */; };
 		49B5BE7F29256C74009CB7DF /* LiveChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE7E29256C74009CB7DF /* LiveChat.swift */; };
 		49B5BE9D2925D228009CB7DF /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE9C2925D228009CB7DF /* BotResponse.swift */; };
 		49B5BEA52927DFD8009CB7DF /* PopulationChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BEA42927DFD8009CB7DF /* PopulationChart.swift */; };
@@ -51,6 +52,7 @@
 		494CEE02292D94C40013D8B2 /* InfoBoxes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBoxes.swift; sourceTree = "<group>"; };
 		49AE03B12946CA0B001F337B /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		49AE03B32946CEA5001F337B /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
+		49AE03B62947B85B001F337B /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		49B5BE7E29256C74009CB7DF /* LiveChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChat.swift; sourceTree = "<group>"; };
 		49B5BE9C2925D228009CB7DF /* BotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotResponse.swift; sourceTree = "<group>"; };
 		49B5BEA42927DFD8009CB7DF /* PopulationChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationChart.swift; sourceTree = "<group>"; };
@@ -90,16 +92,10 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		493B306D28FB32A200E3C3C8 /* CoreViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoreViews;
-			sourceTree = "<group>";
-		};
 		49AE03AA2946C776001F337B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				49AE03B52947B80A001F337B /* Core */,
 				49AE03AB2946C780001F337B /* View Models */,
 				49AE03AE2946C853001F337B /* ChatBot */,
 				49AE03AD2946C7E4001F337B /* Graph Models */,
@@ -110,11 +106,7 @@
 		49AE03AB2946C780001F337B /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				49B5BEA82927E3D0009CB7DF /* MainView.swift */,
-				49FC30E328F0C4030006D87F /* HomeView.swift */,
-				4947B211293EE27900D3812A /* MapView.swift */,
-				49B5BEAA2927E590009CB7DF /* Settings.swift */,
-				49275843293D88A200CD05E3 /* LocationRequestView.swift */,
+				49AE03B62947B85B001F337B /* RestaurantModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -145,6 +137,7 @@
 				49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */,
 				493B306B28FB329D00E3C3C8 /* LoginScreen.swift */,
 				493B306628F86B4500E3C3C8 /* SplashScreenView.swift */,
+				49275843293D88A200CD05E3 /* LocationRequestView.swift */,
 			);
 			path = "Login Model";
 			sourceTree = "<group>";
@@ -158,6 +151,17 @@
 				49AE03B32946CEA5001F337B /* CircleButtonAnimationView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		49AE03B52947B80A001F337B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				49B5BEA82927E3D0009CB7DF /* MainView.swift */,
+				49FC30E328F0C4030006D87F /* HomeView.swift */,
+				4947B211293EE27900D3812A /* MapView.swift */,
+				49B5BEAA2927E590009CB7DF /* Settings.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		49B5BEB029288DBD009CB7DF /* DataFiles */ = {
@@ -206,7 +210,6 @@
 				49AE03B02946C9D7001F337B /* Components */,
 				49AE03AF2946C875001F337B /* Login Model */,
 				49AE03AA2946C776001F337B /* Home */,
-				493B306D28FB32A200E3C3C8 /* CoreViews */,
 				49FC30E528F0C4060006D87F /* Assets.xcassets */,
 				49FC30E728F0C4060006D87F /* Preview Content */,
 			);
@@ -319,6 +322,7 @@
 				49B5BE9D2925D228009CB7DF /* BotResponse.swift in Sources */,
 				4907DB9A2919C69000C5C502 /* AnimatedTabBar.swift in Sources */,
 				49B5BE7F29256C74009CB7DF /* LiveChat.swift in Sources */,
+				49AE03B72947B85B001F337B /* RestaurantModel.swift in Sources */,
 				493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */,
 				49B5BEBE2928984B009CB7DF /* Database.swift in Sources */,
 				49275844293D88A200CD05E3 /* LocationRequestView.swift in Sources */,
