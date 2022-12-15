@@ -11,10 +11,12 @@ import Charts
 struct HomeView: View {
     
     //keep track of current infographic to change graphs when needed
-    @State var PageIndex = 0
+    
     @State private var showProfile: Bool = false
     
-    @Environment(\.colorScheme) var colorScheme
+    
+    
+    @State var showResult: Bool = false
     
     
     
@@ -25,11 +27,23 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             //content layer
-            
+        
             VStack {
                homeHeader
+                if showProfile {
+                    profileScreen
+                }
+                
+                
+
+                
+
+                
                 
                 Spacer(minLength: 0)
+                
+                
+                
             }
             
             
@@ -43,13 +57,18 @@ struct HomeView: View {
 
 
 
+
     
     
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        NavigationView {
+            HomeView()
+        }
+        
+        
     }
 }
 
@@ -83,5 +102,13 @@ extension HomeView {
         }
         .padding(.horizontal)
     }
+    
+    private var profileScreen: some View {
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
+        }
+    }
+    
 }
 

@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct CampusCrowdCheckersApp: App {
+ 
     var body: some Scene {
         WindowGroup {
-            SplashScreenView()
+            NavigationView {
+                HomeView()
+            }
         }
     }
 }
