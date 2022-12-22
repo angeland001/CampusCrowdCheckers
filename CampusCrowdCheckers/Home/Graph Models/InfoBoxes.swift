@@ -52,7 +52,7 @@ struct InfoBoxes: View {
                     
                     Text("Count at Current Hour")
                         .multilineTextAlignment(.center)
-                        .fontWeight(.bold)
+                        //.fontWeight(.bold)
                         .foregroundColor(Color.theme.text)
                         .offset(x:-10,y:-20)
                     ZStack {

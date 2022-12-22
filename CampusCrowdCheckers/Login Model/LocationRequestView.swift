@@ -24,13 +24,13 @@ struct LocationRequestView: View {
                             .foregroundColor(Color.theme.text)
                         
                         
-                            Text("Would you like to start seeing your location's population numbers?")
+                            Text("Want to see the best time to go to restaurants or bars in your area?")
                                 .font(.system(size:26,weight:.semibold))
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(Color.theme.text)
                                 .padding()
                         
-                            Text("Allow To Access Full Features to CrowdCheck")
+                            Text("Enable Location Services to get full access.")
                             .multilineTextAlignment(.center)
                             .frame(width: 140)
                             .foregroundColor(Color.theme.text)
