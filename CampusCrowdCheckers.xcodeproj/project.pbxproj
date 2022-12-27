@@ -13,11 +13,13 @@
 		49275842293D882D00CD05E3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49275841293D882D00CD05E3 /* LocationManager.swift */; };
 		49275844293D88A200CD05E3 /* LocationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49275843293D88A200CD05E3 /* LocationRequestView.swift */; };
 		4937576C2954E0EF00EA590C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937576B2954E0EF00EA590C /* String.swift */; };
+		4937576E2957A36B00EA590C /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937576D2957A36B00EA590C /* SearchBarView.swift */; };
+		493757702957AAB300EA590C /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937576F2957AAB300EA590C /* UIApplication.swift */; };
+		493757722957EF9C00EA590C /* SchoolInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493757712957EF9C00EA590C /* SchoolInformationView.swift */; };
 		493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306628F86B4500E3C3C8 /* SplashScreenView.swift */; };
 		493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306928FB2F2000E3C3C8 /* Color.swift */; };
 		493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B306B28FB329D00E3C3C8 /* LoginScreen.swift */; };
 		4944C483294BB64B00A51A94 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944C482294BB64B00A51A94 /* MapViewModel.swift */; };
-		4944C488294BB77A00A51A94 /* RestaurantDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944C487294BB77A00A51A94 /* RestaurantDataService.swift */; };
 		4944C48A294BC02800A51A94 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944C489294BC02800A51A94 /* PreviewProvider.swift */; };
 		4947B212293EE27A00D3812A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947B211293EE27900D3812A /* MapView.swift */; };
 		494CEE03292D94C40013D8B2 /* InfoBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CEE02292D94C40013D8B2 /* InfoBoxes.swift */; };
@@ -52,11 +54,13 @@
 		49275841293D882D00CD05E3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		49275843293D88A200CD05E3 /* LocationRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequestView.swift; sourceTree = "<group>"; };
 		4937576B2954E0EF00EA590C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		4937576D2957A36B00EA590C /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		4937576F2957AAB300EA590C /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		493757712957EF9C00EA590C /* SchoolInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolInformationView.swift; sourceTree = "<group>"; };
 		493B306628F86B4500E3C3C8 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		493B306928FB2F2000E3C3C8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		493B306B28FB329D00E3C3C8 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		4944C482294BB64B00A51A94 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		4944C487294BB77A00A51A94 /* RestaurantDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDataService.swift; sourceTree = "<group>"; };
 		4944C489294BC02800A51A94 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		4947B211293EE27900D3812A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		494CEE02292D94C40013D8B2 /* InfoBoxes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBoxes.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				493B306928FB2F2000E3C3C8 /* Color.swift */,
 				4944C489294BC02800A51A94 /* PreviewProvider.swift */,
 				4937576B2954E0EF00EA590C /* String.swift */,
+				4937576F2957AAB300EA590C /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -110,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				49275841293D882D00CD05E3 /* LocationManager.swift */,
-				4944C487294BB77A00A51A94 /* RestaurantDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -175,6 +179,8 @@
 				49AE03B12946CA0B001F337B /* CircleButtonView.swift */,
 				49AE03B32946CEA5001F337B /* CircleButtonAnimationView.swift */,
 				4987827E295294B50092DD11 /* UniversityRowView.swift */,
+				4937576D2957A36B00EA590C /* SearchBarView.swift */,
+				493757712957EF9C00EA590C /* SchoolInformationView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -333,7 +339,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4944C488294BB77A00A51A94 /* RestaurantDataService.swift in Sources */,
 				49FC30E428F0C4030006D87F /* HomeView.swift in Sources */,
 				49B5BEA92927E3D0009CB7DF /* MainView.swift in Sources */,
 				4937576C2954E0EF00EA590C /* String.swift in Sources */,
@@ -350,13 +355,16 @@
 				4944C48A294BC02800A51A94 /* PreviewProvider.swift in Sources */,
 				49B5BEAB2927E590009CB7DF /* Settings.swift in Sources */,
 				4987827D294E53470092DD11 /* UniversityModel.swift in Sources */,
+				493757722957EF9C00EA590C /* SchoolInformationView.swift in Sources */,
 				49B5BE9D2925D228009CB7DF /* BotResponse.swift in Sources */,
 				4907DB9A2919C69000C5C502 /* AnimatedTabBar.swift in Sources */,
 				49B5BE7F29256C74009CB7DF /* LiveChat.swift in Sources */,
 				4987827F295294B50092DD11 /* UniversityRowView.swift in Sources */,
 				4944C483294BB64B00A51A94 /* MapViewModel.swift in Sources */,
+				493757702957AAB300EA590C /* UIApplication.swift in Sources */,
 				4987827B294E532B0092DD11 /* HomeViewModel.swift in Sources */,
 				493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */,
+				4937576E2957A36B00EA590C /* SearchBarView.swift in Sources */,
 				49B5BEBE2928984B009CB7DF /* Database.swift in Sources */,
 				49275844293D88A200CD05E3 /* LocationRequestView.swift in Sources */,
 				49B5BEA52927DFD8009CB7DF /* PopulationChart.swift in Sources */,
@@ -499,6 +507,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -534,6 +543,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

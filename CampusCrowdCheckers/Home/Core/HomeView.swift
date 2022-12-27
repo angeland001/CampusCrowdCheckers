@@ -13,10 +13,9 @@ struct HomeView: View {
     //keep track of current infographic to change graphs when needed
     
     @State private var showProfile: Bool = false
-    
-    
-    
     @State var showResult: Bool = false
+    @StateObject var vm: HomeViewModel = HomeViewModel()
+    @State var searchText = ""
     
     
     
@@ -30,14 +29,14 @@ struct HomeView: View {
         
             VStack {
                homeHeader
-                if showProfile {
-                    profileScreen
-                }
+                
+               SearchBarView(searchText: $searchText)
+                
+               TitleColumns
+                
+                universityList
                 
                 
-
-                
-
                 
                 
                 Spacer(minLength: 0)
@@ -68,7 +67,6 @@ struct ContentView_Previews: PreviewProvider {
             HomeView()
         }
         
-        
     }
 }
 
@@ -91,24 +89,57 @@ extension HomeView {
                 .fontWeight(.heavy)
                 .foregroundColor(Color.theme.text)
             Spacer()
-            CircleButtonView(iconName: "chevron.right")
-                .rotationEffect(Angle(degrees: showProfile ? 180 : 0))
+            CircleButtonView(iconName: showProfile ? "person.fill" : "person")
+                
                 .onTapGesture {
                     withAnimation(.spring()) {
                         showProfile.toggle()
                     }
                 }
+                
+                .background(
+                    CircleButtonAnimationView(animate: $showProfile)
+                )
+                
             
         }
         .padding(.horizontal)
     }
     
-    private var profileScreen: some View {
-        ZStack {
-            Color.black
-                .ignoresSafeArea()
+    private var TitleColumns: some View {
+        HStack {
+            Group {
+                Text("ID")
+                //Spacer()
+                Text("Name")
+                    .offset(x:55)
+                Spacer()
+                Text("City")
+                    .offset(x:-40)
+                
+            }
+            .opacity(0.3)
+            .padding(.horizontal)
         }
     }
+    
+    private var universityList: some View {
+        List {
+            ForEach((vm.universities).filter( {"\($0)".contains(searchText) || searchText.isEmpty} )) { university in
+                NavigationLink(destination: SchoolInformationView(school: university)) {
+                    Button(action: { }) {
+                        UniversityRowView(school: university, image: university.name)
+                    }
+                }
+                 
+                    
+                
+            }
+        }
+        .listStyle(PlainListStyle())
+    }
+    
+    
     
 }
 

@@ -12,12 +12,13 @@ class HomeViewModel: ObservableObject {
     
     @Published var universities: [University] = []
     
+    
     init() {
         getUniversities()
     }
         
     func getUniversities() {
-        
+       
 
         let headers = [
             "X-RapidAPI-Key": "a14239653bmsh3d8a95ca2f725a6p129fb9jsn414e9a5b95fb",
@@ -43,6 +44,8 @@ class HomeViewModel: ObservableObject {
         })
 
         dataTask.resume()
+
+
     }
     
 

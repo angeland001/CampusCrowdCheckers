@@ -27,7 +27,7 @@ class DeveloperPreview {
                             name: "UTC",
                             colors: "Blue, Gold",
                             type: "Public",
-                            address: "615 McCallie Ave",
+                            //address: "615 McCallie Ave",
                             city: "Chattanooga",
                             state: "Tennessee",
                             stateCode: "TN",

@@ -61,6 +61,7 @@ extension LocationManager: CLLocationManagerDelegate {
                         span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
                     )
                 }
+        self.manager.stopUpdatingLocation()
     }
 }
 
