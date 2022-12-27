@@ -43,13 +43,14 @@ struct MainView: View {
                     HomeView()
                 
                 case icons[3]:
-                    Settings(clockStyle: clockStyle)
+                    Settings()
                 default:
                     HomeView()
                 }
                 
                 //Tab Bar is fixed throughout all views
                 AnimatedTabBar(selectedTab: $selectedTab)
+                    .ignoresSafeArea(.keyboard, edges: .bottom)
                     
                 
             }

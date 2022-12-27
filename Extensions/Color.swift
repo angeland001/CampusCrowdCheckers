@@ -16,7 +16,7 @@ struct ColorTheme {
 
    
     let BackGradient = LinearGradient(gradient: Gradient(colors: [Color.black,Color.white]),
-                                  startPoint: .topLeading, endPoint: .bottomTrailing)
+                                      startPoint: .leading, endPoint: .trailing)
     let GradientLoginButton = LinearGradient(gradient: Gradient(colors: [Color.white,Color.black]),
                                   startPoint: .topLeading, endPoint: .bottomTrailing)
     let GradientSignUpButton = LinearGradient(gradient: Gradient(colors: [Color.white,Color.black]),

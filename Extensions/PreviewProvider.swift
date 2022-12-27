@@ -23,18 +23,7 @@ class DeveloperPreview {
         
     }
     
-    let school = University(id: 8928,
-                            name: "UTC",
-                            colors: "Blue, Gold",
-                            type: "Public",
-                            address: "615 McCallie Ave",
-                            city: "Chattanooga",
-                            state: "Tennessee",
-                            stateCode: "TN",
-                            zip: "37403",
-                            country: "United States",
-                            countryCode: "US",
-                            website: "http://www.utc.edu/")
+    let school = University(id: 4, name: "The University of Tennessee at Chattanooga", colors: "Yellow, Blue", type: "Public", city: "Chattanooga", state: "Tennessee", zip: "37403", website: "http://www.utc.edu/")
     
     
 }

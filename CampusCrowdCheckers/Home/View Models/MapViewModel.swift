@@ -8,4 +8,22 @@
 import Foundation
 import Combine
 
+class MapViewModel: ObservableObject {
+    
+    //@Published var Restaurants: [Restaurants] = []
+    
+    
+    init() {
+        getRestaurants()
+    }
+        
+    func getRestaurants() {
+        
 
+        
+
+
+    }
+    
+
+}

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 import Foundation
 import SwiftClockUI
 
@@ -19,7 +18,7 @@ enum Constants{
     
 }
 struct Settings: View {
-    @State var clockStyle: ClockStyle
+    
     var body: some View {
         NavigationView {
             
@@ -41,7 +40,7 @@ struct Settings: View {
 struct Settings_Previews: PreviewProvider {
     
     static var previews: some View {
-        Settings(clockStyle: .steampunk)
+        Settings()
     }
 }
 
@@ -147,7 +146,7 @@ extension Settings {
             }
         Section(header: Text("Customizer"), footer: Text("Change Appearance of Clock")) {
             VStack {
-                StylePicker(clockStyle: $clockStyle)
+                //StylePicker(clockStyle: $clockStyle)
             }
         }
         

@@ -13,7 +13,7 @@ struct CampusCrowdCheckersApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                HomeView()
+                SplashScreenView()
             }
         }
     }
