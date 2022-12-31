@@ -16,6 +16,9 @@ struct UniversityRowView: View {
     
     var body: some View {
         HStack(spacing: 0) {
+            Text("\(school.id)")
+                .opacity(0.3)
+                
             
             Image(image)
                 .resizable()
@@ -28,6 +31,7 @@ struct UniversityRowView: View {
             
             Spacer()
             Text(school.city)
+                .font(.footnote)
         }
         .padding()
         
