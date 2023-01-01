@@ -24,6 +24,8 @@
 		4947B212293EE27A00D3812A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947B211293EE27900D3812A /* MapView.swift */; };
 		494CEE03292D94C40013D8B2 /* InfoBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CEE02292D94C40013D8B2 /* InfoBoxes.swift */; };
 		494CEE06292D9D670013D8B2 /* SwiftClockUI in Frameworks */ = {isa = PBXBuildFile; productRef = 494CEE05292D9D670013D8B2 /* SwiftClockUI */; };
+		495DB8AD29624A0600C76D2A /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DB8AC29624A0600C76D2A /* Wave.swift */; };
+		495DB8AF29624A8700C76D2A /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DB8AE29624A8600C76D2A /* Bundle.swift */; };
 		4987827D294E53470092DD11 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987827C294E53470092DD11 /* UniversityModel.swift */; };
 		4987827F295294B50092DD11 /* UniversityRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987827E295294B50092DD11 /* UniversityRowView.swift */; };
 		49AE03B22946CA0B001F337B /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE03B12946CA0B001F337B /* CircleButtonView.swift */; };
@@ -65,6 +67,8 @@
 		4944C489294BC02800A51A94 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		4947B211293EE27900D3812A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		494CEE02292D94C40013D8B2 /* InfoBoxes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBoxes.swift; sourceTree = "<group>"; };
+		495DB8AC29624A0600C76D2A /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		495DB8AE29624A8600C76D2A /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		4987827C294E53470092DD11 /* UniversityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		4987827E295294B50092DD11 /* UniversityRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityRowView.swift; sourceTree = "<group>"; };
 		49AE03B12946CA0B001F337B /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 				4944C489294BC02800A51A94 /* PreviewProvider.swift */,
 				4937576B2954E0EF00EA590C /* String.swift */,
 				4937576F2957AAB300EA590C /* UIApplication.swift */,
+				495DB8AE29624A8600C76D2A /* Bundle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -119,6 +124,23 @@
 				49275841293D882D00CD05E3 /* LocationManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		495DB8AA296249D500C76D2A /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				495DB8AC29624A0600C76D2A /* Wave.swift */,
+			);
+			path = Shape;
+			sourceTree = "<group>";
+		};
+		495DB8AB296249ED00C76D2A /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				4907DB9B2919CCB000C5C502 /* TabCurve.swift */,
+				4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		49AE03AA2946C776001F337B /* Home */ = {
@@ -175,8 +197,6 @@
 		49AE03B02946C9D7001F337B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */,
-				4907DB9B2919CCB000C5C502 /* TabCurve.swift */,
 				49AE03B12946CA0B001F337B /* CircleButtonView.swift */,
 				49AE03B32946CEA5001F337B /* CircleButtonAnimationView.swift */,
 				4987827E295294B50092DD11 /* UniversityRowView.swift */,
@@ -249,6 +269,8 @@
 		49FC30E028F0C4030006D87F /* CampusCrowdCheckers */ = {
 			isa = PBXGroup;
 			children = (
+				495DB8AB296249ED00C76D2A /* TabBar */,
+				495DB8AA296249D500C76D2A /* Shape */,
 				4944C484294BB6AE00A51A94 /* Services */,
 				49AE03B02946C9D7001F337B /* Components */,
 				49AE03AF2946C875001F337B /* Login Model */,
@@ -355,8 +377,10 @@
 				49B5BEA92927E3D0009CB7DF /* MainView.swift in Sources */,
 				49EDD72B295DF6B400EFC0D3 /* Stripe.swift in Sources */,
 				4937576C2954E0EF00EA590C /* String.swift in Sources */,
+				495DB8AF29624A8700C76D2A /* Bundle.swift in Sources */,
 				49AE03B22946CA0B001F337B /* CircleButtonView.swift in Sources */,
 				49FC30E228F0C4030006D87F /* CampusCrowdCheckersApp.swift in Sources */,
+				495DB8AD29624A0600C76D2A /* Wave.swift in Sources */,
 				4907DB9C2919CCB000C5C502 /* TabCurve.swift in Sources */,
 				49023B4A291C8F7D00CF6DDF /* Infographics.swift in Sources */,
 				493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */,
