@@ -12,7 +12,7 @@ import MapKit
 struct MapView: View {
     
     @StateObject var manager = LocationManager()
-    
+    @StateObject var vm: MapViewModel = MapViewModel()
     
         var body: some View {
             ZStack {
@@ -23,6 +23,8 @@ struct MapView: View {
                     header
                     
                     Spacer()
+                    locationPreviewStack
+                    
                 }
                 
                 
@@ -43,36 +45,86 @@ extension MapView {
     private var header: some View {
         VStack {
             Button {
-                //vm.toggleLocationsList()
+                vm.showLocationList.toggle()
             } label: {
-                Text("Testing for Radius")
+                Text("Chattanooga, TN")
                     .font(.title2)
                     .fontWeight(.black)
                     .foregroundColor(.primary)
                     .frame(height:55)
                     .frame(maxWidth: .infinity)
+                    .overlay(alignment: .leading) {
+                    Image(systemName: "arrow.down")
+                        .font(.headline)
+                        .foregroundColor(.primary)
+                        .padding()
+                        .rotationEffect(Angle(degrees: vm.showLocationList ? 180 : 0))
+                                        }
+                    
                     //.animation(.none, value: vm.mapLocation)
                     
-                    .overlay(alignment: .leading) {
-                        Image(systemName: "arrow.down")
-                            .font(.headline)
-                            .foregroundColor(.primary)
-                            .padding()
-                            //.rotationEffect(Angle(degrees: vm.showLocationList ? 180 : 0))
-                    }
+                    
             }
+            
+            if vm.showLocationList {
+                LocationsListView()
+            }
+            
+            
 
 
             
         }
+        
         .background(.thickMaterial)
         .cornerRadius(10)
         .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
+        .padding()
     }
     
     private var mapDetails: some View {
-        Map(coordinateRegion: $manager.region, showsUserLocation: true)
-            .ignoresSafeArea()
+
+        Map(coordinateRegion: $manager.region, annotationItems: vm.locations
+           ) { location in
+             MapAnnotation(
+               coordinate: CLLocationCoordinate2D(
+                 latitude: location.venue_lat,
+                 longitude: location.venue_lon
+               )
+             ) {
+               LocationMapAnnotationView()
+                     .shadow(radius: 10)
+                     .onTapGesture {
+                         vm.showNextLocation(location: location)
+                     }
+                     
+             }
+           }
+          
+        
+           .ignoresSafeArea()
+        
+                    
+          
+
+
+        
+    }
+    
+    private var locationPreviewStack: some View {
+        ZStack {
+            ForEach(vm.locations) { location in
+                if vm.mapLocation == location {
+                    LocationPreviewView(Venue: location)
+                        .padding()
+                        .shadow(color: Color.black.opacity(0.3), radius: 20)
+                        .padding()
+                        .transition(.asymmetric(insertion: .move(edge:.trailing), removal: .move(edge:.leading)))
+                }
+
+            }
+        }
+
     }
 }
 
@@ -81,4 +133,9 @@ struct MapView_Previews: PreviewProvider {
         MapView()
     }
 }
+
+
+
+
+
 
