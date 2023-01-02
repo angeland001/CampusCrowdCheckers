@@ -15,7 +15,7 @@ struct LiveChat: View {
                     .shadow(radius: 4)
                     .ignoresSafeArea()
                 HStack{
-                    Text("Chat With Our Bot")
+                    Text("Bot")
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(Color.theme.Background)
