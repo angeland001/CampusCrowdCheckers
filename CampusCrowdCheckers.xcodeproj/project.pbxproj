@@ -46,6 +46,7 @@
 		49B5BEC9292A9B59009CB7DF /* RRData1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEC3292A9B58009CB7DF /* RRData1.csv */; };
 		49B5BECA292A9B59009CB7DF /* MoesData1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEC4292A9B58009CB7DF /* MoesData1.csv */; };
 		49D8FFB72962851300B92281 /* LocationListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8FFB62962851300B92281 /* LocationListRow.swift */; };
+		49D8FFC32963AEB200B92281 /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8FFC22963AEB200B92281 /* LocationPreviewView.swift */; };
 		49EDD72B295DF6B400EFC0D3 /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD72A295DF6B200EFC0D3 /* Stripe.swift */; };
 		49EDD72E295E234000EFC0D3 /* VenueLocations.json in Resources */ = {isa = PBXBuildFile; fileRef = 49EDD72D295E234000EFC0D3 /* VenueLocations.json */; };
 		49FC30E228F0C4030006D87F /* CampusCrowdCheckersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC30E128F0C4030006D87F /* CampusCrowdCheckersApp.swift */; };
@@ -93,6 +94,7 @@
 		49B5BEC3292A9B58009CB7DF /* RRData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RRData1.csv; sourceTree = "<group>"; };
 		49B5BEC4292A9B58009CB7DF /* MoesData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MoesData1.csv; sourceTree = "<group>"; };
 		49D8FFB62962851300B92281 /* LocationListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListRow.swift; sourceTree = "<group>"; };
+		49D8FFC22963AEB200B92281 /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
 		49EDD72A295DF6B200EFC0D3 /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 		49EDD72D295E234000EFC0D3 /* VenueLocations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VenueLocations.json; sourceTree = "<group>"; };
 		49FC30DE28F0C4030006D87F /* CampusCrowdCheckers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusCrowdCheckers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +216,7 @@
 				49EDD72A295DF6B200EFC0D3 /* Stripe.swift */,
 				495DB8B42962590E00C76D2A /* LocationMapAnnotationView.swift */,
 				49D8FFB62962851300B92281 /* LocationListRow.swift */,
+				49D8FFC22963AEB200B92281 /* LocationPreviewView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				4947B212293EE27A00D3812A /* MapView.swift in Sources */,
 				493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */,
 				494CEE03292D94C40013D8B2 /* InfoBoxes.swift in Sources */,
+				49D8FFC32963AEB200B92281 /* LocationPreviewView.swift in Sources */,
 				4944C48A294BC02800A51A94 /* PreviewProvider.swift in Sources */,
 				49B5BEAB2927E590009CB7DF /* Settings.swift in Sources */,
 				4987827D294E53470092DD11 /* UniversityModel.swift in Sources */,

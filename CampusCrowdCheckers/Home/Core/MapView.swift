@@ -23,6 +23,8 @@ struct MapView: View {
                     header
                     
                     Spacer()
+                    locationPreviewStack
+                    
                 }
                 
                 
@@ -92,9 +94,13 @@ extension MapView {
              ) {
                LocationMapAnnotationView()
                      .shadow(radius: 10)
+                     .onTapGesture {
+                         vm.showNextLocation(location: location)
+                     }
                      
              }
            }
+          
         
            .ignoresSafeArea()
         
@@ -103,6 +109,22 @@ extension MapView {
 
 
         
+    }
+    
+    private var locationPreviewStack: some View {
+        ZStack {
+            ForEach(vm.locations) { location in
+                if vm.mapLocation == location {
+                    LocationPreviewView(Venue: location)
+                        .padding()
+                        .shadow(color: Color.black.opacity(0.3), radius: 20)
+                        .padding()
+                        .transition(.asymmetric(insertion: .move(edge:.trailing), removal: .move(edge:.leading)))
+                }
+
+            }
+        }
+
     }
 }
 
@@ -115,5 +137,5 @@ struct MapView_Previews: PreviewProvider {
 
 
 
-//Map(coordinateRegion: $manager.region, showsUserLocation: true)
-//            .ignoresSafeArea()
+
+
