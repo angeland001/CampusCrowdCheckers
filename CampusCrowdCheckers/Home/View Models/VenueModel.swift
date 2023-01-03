@@ -7,7 +7,16 @@
 
 import Foundation
 
-struct VenueElement: Identifiable, Codable{
+struct VenueElement: Equatable, Identifiable, Codable{
+    
+//    var id: String {
+//        name + cityName
+//    }
+    
+    static func == (lhs: VenueElement, rhs: VenueElement) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     var id = UUID()
     let forecast, processed: Bool
     let venue_address: String

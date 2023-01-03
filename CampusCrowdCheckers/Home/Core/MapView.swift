@@ -23,6 +23,8 @@ struct MapView: View {
                     header
                     
                     Spacer()
+                    locationPreviewStack
+                    
                 }
                 
                 
@@ -41,43 +43,30 @@ struct MapView: View {
 
 extension MapView {
     private var header: some View {
-        VStack {
-            Button {
-                vm.showLocationList.toggle()
-            } label: {
-                Text("Chattanooga, TN")
-                    .font(.title2)
-                    .fontWeight(.black)
-                    .foregroundColor(.primary)
-                    .frame(height:55)
-                    .frame(maxWidth: .infinity)
-                    .overlay(alignment: .leading) {
-                    Image(systemName: "arrow.down")
-                        .font(.headline)
+        HStack {
+                    Text("Chattanooga, TN")
+                        .font(.caption)
+                        .fontWeight(.black)
                         .foregroundColor(.primary)
+                        .frame(height:55)
+                        .padding(.horizontal)
+                        .background(.thickMaterial)
+                        .cornerRadius(10)
+                        .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
                         .padding()
-                        .rotationEffect(Angle(degrees: vm.showLocationList ? 180 : 0))
-                                        }
+                        
+                    ZStack {
+                        Circle()
+                            .foregroundColor(Color.theme.Background)
+                            .frame(width: 30,height:30)
+                        Image(systemName: "arrow.down")
+                            .font(.headline)
+                            .foregroundColor(Color.theme.text)
+                            
+                            .rotationEffect(Angle(degrees: vm.showLocationList ? 180 : 0))
+                    }
+                }
                     
-                    //.animation(.none, value: vm.mapLocation)
-                    
-                    
-            }
-            
-            if vm.showLocationList {
-                LocationsListView()
-            }
-            
-            
-
-
-            
-        }
-        
-        .background(.thickMaterial)
-        .cornerRadius(10)
-        .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
-        .padding()
     }
     
     private var mapDetails: some View {
@@ -92,9 +81,13 @@ extension MapView {
              ) {
                LocationMapAnnotationView()
                      .shadow(radius: 10)
+                     .onTapGesture {
+                         vm.showNextLocation(location: location)
+                     }
                      
              }
            }
+          
         
            .ignoresSafeArea()
         
@@ -103,6 +96,22 @@ extension MapView {
 
 
         
+    }
+    
+    private var locationPreviewStack: some View {
+        ZStack {
+            ForEach(vm.locations) { location in
+                if vm.mapLocation == location {
+                    LocationPreviewView(Venue: location)
+                        .padding()
+                        .shadow(color: Color.black.opacity(0.3), radius: 20)
+                        .padding()
+                        .transition(.asymmetric(insertion: .move(edge:.trailing), removal: .move(edge:.leading)))
+                }
+
+            }
+        }
+
     }
 }
 
@@ -115,5 +124,5 @@ struct MapView_Previews: PreviewProvider {
 
 
 
-//Map(coordinateRegion: $manager.region, showsUserLocation: true)
-//            .ignoresSafeArea()
+
+

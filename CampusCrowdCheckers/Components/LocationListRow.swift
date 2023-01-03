@@ -9,12 +9,12 @@ import SwiftUI
 
 
 struct LocationsListView: View {
-    private var locations: [VenueElement] = VenueElement.allLocations
+    @StateObject var vm: MapViewModel = MapViewModel()
     var body: some View {
         List {
-            ForEach(locations) { location in
+            ForEach(vm.locations) { location in
                 Button {
-                    
+                    vm.showNextLocation(location: location)
                 } label: {
                     listRowView(location: location)
                 }
