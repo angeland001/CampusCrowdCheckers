@@ -10,10 +10,12 @@ import SwiftUI
 @main
 struct CampusCrowdCheckersApp: App {
  
+    @StateObject private var vm = MapViewModel()
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 SplashScreenView()
+                    .environmentObject(vm)
             }
         }
     }

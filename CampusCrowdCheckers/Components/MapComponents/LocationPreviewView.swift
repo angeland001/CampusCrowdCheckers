@@ -10,7 +10,7 @@ import SwiftUI
 struct LocationPreviewView: View {
    
     var Venue: VenueElement
-    @StateObject var vm: MapViewModel = MapViewModel()
+    @EnvironmentObject var vm: MapViewModel 
     
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
@@ -22,7 +22,7 @@ struct LocationPreviewView: View {
             
             VStack(spacing: 8) {
                 //nextButton
-                learnMoreButton
+                CrowdCheckButton
                 
                 
             }
@@ -72,9 +72,9 @@ extension LocationPreviewView {
         
     }
     
-    private var learnMoreButton: some View {
+    private var CrowdCheckButton: some View {
         Button {
-            
+            vm.sheetLocation = Venue
         } label: {
             ZStack {
                 Capsule()
