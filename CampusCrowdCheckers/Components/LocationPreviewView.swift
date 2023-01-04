@@ -61,12 +61,10 @@ extension LocationPreviewView {
                 .fontWeight(.bold)
             HStack {
                 Text("Business Hours:")
-//                ForEach(vm.locations) { location in
-//                    if location.venue_name == Venue.venue_name {
-//                        let day = getCurrentDayAsInteger()
-//                        //Text("\(location.venue_foot_traffic_forecast[day].day_info.venueOpen)")
-//                    }
-//                }
+                
+                let day = getCurrentDayAsInteger()
+                
+                Text("\(Venue.venue_foot_traffic_forecast?[day].day_info?.venueOpen ?? 0)")
 
             }
         }
@@ -105,7 +103,7 @@ struct LocationPreviewView_Previews: PreviewProvider {
             LocationPreviewView(Venue: dev.Venue)
                 .padding()
         }
-       
+
     }
 }
 
