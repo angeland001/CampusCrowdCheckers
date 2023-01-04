@@ -34,7 +34,7 @@ struct HomeView: View {
             VStack {
                 ZStack(alignment: .top){
                     Wave(yOffset: -0.55)
-                        .fill(Color.gray)
+                        .fill(Color.white)
                         .frame(height: 150)
                         .shadow(radius: 4)
                         .ignoresSafeArea()
@@ -138,6 +138,7 @@ extension HomeView {
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(Color.theme.Background)
+                        
                             .offset(x:-40)
                         
                     }

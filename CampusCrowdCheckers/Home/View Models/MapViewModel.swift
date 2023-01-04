@@ -45,7 +45,6 @@ class MapViewModel: ObservableObject {
     @Published var sheetLocation: VenueElement? = nil
     
     
-    
     private func updateMapRegion(location: VenueElement) {
         withAnimation(.easeInOut) {
             mapRegion = MKCoordinateRegion(
