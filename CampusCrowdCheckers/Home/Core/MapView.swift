@@ -12,7 +12,7 @@ import MapKit
 struct MapView: View {
     
     @StateObject var manager = LocationManager()
-    @StateObject var vm: MapViewModel = MapViewModel()
+    @EnvironmentObject var vm: MapViewModel
     
         var body: some View {
             ZStack {
@@ -31,6 +31,9 @@ struct MapView: View {
                 
                 
             }
+            .sheet(item: $vm.sheetLocation, onDismiss: nil) { location in
+                        LocationDetailView(Venue: location)
+                    }
             
             
              
@@ -118,6 +121,7 @@ extension MapView {
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView()
+            .environmentObject(MapViewModel())
     }
 }
 

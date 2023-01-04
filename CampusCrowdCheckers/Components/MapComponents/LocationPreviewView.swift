@@ -10,7 +10,7 @@ import SwiftUI
 struct LocationPreviewView: View {
    
     var Venue: VenueElement
-    @StateObject var vm: MapViewModel = MapViewModel()
+    @EnvironmentObject var vm: MapViewModel 
     
     var body: some View {
         HStack(alignment: .bottom, spacing: 0) {
@@ -22,7 +22,7 @@ struct LocationPreviewView: View {
             
             VStack(spacing: 8) {
                 //nextButton
-                learnMoreButton
+                CrowdCheckButton
                 
                 
             }
@@ -61,12 +61,10 @@ extension LocationPreviewView {
                 .fontWeight(.bold)
             HStack {
                 Text("Business Hours:")
-//                ForEach(vm.locations) { location in
-//                    if location.venue_name == Venue.venue_name {
-//                        let day = getCurrentDayAsInteger()
-//                        //Text("\(location.venue_foot_traffic_forecast[day].day_info.venueOpen)")
-//                    }
-//                }
+                
+                let day = getCurrentDayAsInteger()
+                
+                Text("\(Venue.venue_foot_traffic_forecast?[day].day_info?.venueOpen ?? 0)")
 
             }
         }
@@ -74,9 +72,9 @@ extension LocationPreviewView {
         
     }
     
-    private var learnMoreButton: some View {
+    private var CrowdCheckButton: some View {
         Button {
-            
+            vm.sheetLocation = Venue
         } label: {
             ZStack {
                 Capsule()
@@ -105,7 +103,7 @@ struct LocationPreviewView_Previews: PreviewProvider {
             LocationPreviewView(Venue: dev.Venue)
                 .padding()
         }
-       
+
     }
 }
 
