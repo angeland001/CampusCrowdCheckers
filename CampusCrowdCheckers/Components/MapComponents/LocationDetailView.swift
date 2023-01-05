@@ -12,24 +12,26 @@ struct LocationDetailView: View {
     
     let Venue: VenueElement
     @EnvironmentObject var vm: MapViewModel
+    @StateObject var rm = RestaurantDetailModel()
     
     var body: some View {
         ScrollView {
-            VStack {
-                imageSection
-                    .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+            
+//                imageSection
+//                    .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
                 
-                VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading) {
+                Spacer(minLength: 120)
                     titleSection
                     Divider()
                     descriptionSection
                     //Divider()
                     //mapLayer
-                    
+                
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                //.frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
-            }
+            
             
             
         }
@@ -42,19 +44,19 @@ struct LocationDetailView: View {
 
 extension LocationDetailView {
     
-    private var imageSection: some View {
-        TabView {
-            ForEach(0...2, id: \.self) {_ in
-                Image("Beer")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: UIScreen.main.bounds.width)
-                    .clipped()
-            }
-        }
-        .frame(height: 500)
-        .tabViewStyle(PageTabViewStyle())
-    }
+//    private var imageSection: some View {
+//        TabView {
+//            ForEach(0...2, id: \.self) {_ in
+//                Image("Beer")
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(width: UIScreen.main.bounds.width)
+//                    .clipped()
+//            }
+//        }
+//        .frame(height: 500)
+//        .tabViewStyle(PageTabViewStyle())
+//    }
     
     private var titleSection: some View {
         VStack(alignment: .leading, spacing: 8) {

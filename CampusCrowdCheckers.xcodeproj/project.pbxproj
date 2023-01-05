@@ -54,6 +54,7 @@
 		49FC30E628F0C4060006D87F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FC30E528F0C4060006D87F /* Assets.xcassets */; };
 		49FC30E928F0C4060006D87F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FC30E828F0C4060006D87F /* Preview Assets.xcassets */; };
 		49FDF1D8296547A300409CCF /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDF1D7296547A300409CCF /* LocationDetailView.swift */; };
+		49FDF1DC29664C7400409CCF /* RestaurantDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDF1DB29664C7400409CCF /* RestaurantDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		49FC30E528F0C4060006D87F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49FC30E828F0C4060006D87F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49FDF1D7296547A300409CCF /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		49FDF1DB29664C7400409CCF /* RestaurantDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				4944C482294BB64B00A51A94 /* MapViewModel.swift */,
 				4987827C294E53470092DD11 /* UniversityModel.swift */,
 				495DB8B6296269E600C76D2A /* VenueModel.swift */,
+				49FDF1DB29664C7400409CCF /* RestaurantDetailModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				4987827F295294B50092DD11 /* UniversityRowView.swift in Sources */,
 				4944C483294BB64B00A51A94 /* MapViewModel.swift in Sources */,
 				493757702957AAB300EA590C /* UIApplication.swift in Sources */,
+				49FDF1DC29664C7400409CCF /* RestaurantDetailModel.swift in Sources */,
 				493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */,
 				49D8FFB72962851300B92281 /* LocationListRow.swift in Sources */,
 				4937576E2957A36B00EA590C /* SearchBarView.swift in Sources */,
