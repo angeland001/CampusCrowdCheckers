@@ -6,45 +6,32 @@
 //
 
 import SwiftUI
-
+    
 struct SchoolInformationView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let school: University
+    @State var PageIndex: Int = 0
     
     var body: some View {
         ZStack {
-            Color.theme.Background
-                .ignoresSafeArea()
-            
-            
-            
-            
-            //content layer
-            
-            VStack {
-                ZStack(alignment: .top) {
-                    Wave(yOffset: 0.65)
-                        .fill(Color[school.colors[1]])
-                        .frame(height: 150)
-                        .shadow(radius: 40)
-                        .ignoresSafeArea()
-                    Wave(yOffset: -0.55)
-                        .fill(Color[school.colors[0]])
-                        .frame(height: 150)
-                        .shadow(radius: 40)
-                        .ignoresSafeArea()
+            BackGround
+            TabView {
+                ForEach(school.schoolVenues) { venue in
+                    Infographics(venue: venue)
                 }
-                Spacer()
             }
-        }.navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading:
-                Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
-                    Image(systemName: "arrow.backward")
-                    
-                })
+            .tabViewStyle(PageTabViewStyle())
             
+            
+            
+            
+            
+        }
     }
 }
+            
+
+
 
 
 
@@ -53,3 +40,33 @@ struct SchoolInformationView_Previews: PreviewProvider {
         SchoolInformationView(school: dev.school)
     }
 }
+
+extension SchoolInformationView {
+    private var BackGround: some View {
+        ZStack {
+            Color.theme.Background
+            
+            
+
+        }
+    
+        .edgesIgnoringSafeArea(.all)
+        
+        .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading:
+                    Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
+                        Image(systemName: "arrow.backward")
+        
+                    })
+                .offset(y:-350)
+       
+            
+    }
+}
+
+
+
+
+
+
+

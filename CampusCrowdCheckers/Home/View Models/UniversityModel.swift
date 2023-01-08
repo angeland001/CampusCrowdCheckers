@@ -36,10 +36,13 @@ struct University: Identifiable, Codable {
         ]
 }
 
-struct SchoolVenues: Codable {
+struct SchoolVenues:Identifiable, Codable {
+    
+    var id = UUID()
     var VenueName: String
     var type: String
     var timeOfOperations: [TimeOfOperations]
+    
 }
 
 struct TimeOfOperations: Codable {
