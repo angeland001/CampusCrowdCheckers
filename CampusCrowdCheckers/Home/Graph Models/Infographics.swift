@@ -6,567 +6,156 @@
 //
 
 import SwiftUI
+import Charts
 
 struct Infographics: View {
-    @Binding var PageIndex: Int
-    @State var isAnimated: Bool = false
+    
+    //   @State var isAnimated: Bool = false
+    var venue: SchoolVenues
+    @Environment(\.colorScheme) var colorScheme
+    @State var Data: [GraphChart] = dataForPanda
     
     var body: some View {
-            
-        TabView(selection: $PageIndex) {
-                //insert infographics sequentially
-                HomeInfo(image: "house.circle").tag(0)
-                ChickFilAInfo(image: "chickfilalogo").tag(1)
-                StarbucksInfo(image: "StarbuckLogo").tag(2)
-                MoesInfo(image: "MoesLogo").tag(3)
-                PodInfo(image: "podlogo").tag(4)
-                PandaInfo(image: "PandaLogo").tag(5)
-                RRInfo(image: "RRLogo").tag(6)
+        VStack {
+            ZStack {
+                
+                infographic
                 
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            //.frame(height:320)
+            .padding(.top)
             
-        
-        
+            ScrollView {
+                
+                graph
+                
+                InfoBoxes(theme: Color[venue.colorOfVenue], DataFile: "ChickFilaData1")
+                    
+                
+                
+            }
+            
+            
+            Spacer()
+            
+        }.padding(.top)
     }
-        
-        
+    
+    
 }
 
 
-struct HomeInfo: View {
-   
-    var image: String
-    
-    var body: some View {
-        ZStack {
-           
-            RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.white)
-                .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.theme.Stroke, lineWidth: 5)
-                        )
+
+extension Infographics {
+    private var graph: some View {
+        VStack() {
+            HStack{
+                Text("Predicted Population Graph")
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.theme.text)
                 
+            }
             
-            HStack {
-                Image(systemName: image)
-                    .resizable()
-                    .foregroundColor(Color.black)
-                    .scaledToFit()
-                    .frame(width: 105,height:105)
-//                    .overlay {
-//                        Circle().stroke(Color.theme.Stroke, lineWidth: 4)
-//                    }
+            
+            Chart {
+                ForEach(Data) { element in
+                    BarMark(
+                        x: .value("Time", element.time),
+                        y: .value("Total Count", element.animate ?  element.Populationcount : 0)
+                    )
+                    .foregroundStyle(Color[venue.colorOfVenue].gradient)
                     
-                
-                
-                    
-                VStack {
-                    Text("Fall Hours")
-                        .foregroundColor(Color.black)
-                        .font(.title)
-                        .bold()
-                    Divider()
-                        .frame(width:200)
-                    Text("Monday - Friday")
-                        .italic()
-                        .foregroundColor(Color.black)
-                    Text("7:30AM - 8:00PM")
-                        .bold()
-                        .foregroundColor(Color.black)
-                    Text("Saturday")
-                        .italic()
-                        .foregroundColor(Color.black)
-                    Text("11:00AM - 8:00PM")
-                        .bold()
-                        .foregroundColor(Color.black)
-                    Text("Sunday")
-                        .italic()
-                        .foregroundColor(Color.black)
-                    Text("Closed")
-                        .bold()
-                        .foregroundColor(Color.black)
-                    
-                        
                 }
-               
-                
-                    
-                    
-                    
-                    
             }
-        }
-        .frame(height:200)
-        .padding()
-        
-        
-        
-    }
-        
-}
-    
-
-struct ChickFilAInfo: View {
-    var image: String
-    
-   
-    var body: some View {
-        
-        
-        ZStack {
             
-            RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.red)
-                .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.theme.Stroke, lineWidth: 5)
-                        )
-            
-                HStack {
-                    Image(image)
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(Circle())
-                        .frame(width: 105,height:105)
-                        .overlay {
-                            Circle().stroke(Color.white, lineWidth: 4)
+            .background(Color.theme.Background)
+            .frame(width:390,height:170)
+            .onAppear {
+                for (index,_) in Data.enumerated() {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.05) {
+                        withAnimation(.interactiveSpring(response: 0.8,dampingFraction: 0.8,blendDuration: 0.8)) {
+                            Data[index].animate = true
                         }
-                        .fontWeight(.semibold)
-                
-                
-                    
-                VStack {
-                    Text("Fall Hours")
-                        .foregroundColor(Color.white)
-                        .font(.title)
-                        .bold()
-                    Divider()
-                        .frame(width:200)
-                    Text("Monday - Friday")
-                        .italic()
-                        .foregroundColor(Color.white)
-                    Text("7:30AM - 8:00PM")
-                        .bold()
-                        .foregroundColor(Color.white)
-                    Text("Saturday")
-                        .italic()
-                        .foregroundColor(Color.white)
-                    Text("11:00AM - 8:00PM")
-                        .bold()
-                        .foregroundColor(Color.white)
-                    Text("Sunday")
-                        .italic()
-                        .foregroundColor(Color.white)
-                    Text("Closed")
-                        .bold()
-                        .foregroundColor(Color.white)
-                    
-                        
+                    }
                 }
-               
-                
-                    
-                    
-                    
-                    
             }
-        }
-        .frame(height:200)
-        .padding()
-        
-        
-        
-    }
-        
-}
-
-struct MoesInfo: View {
-    var image: String
-    
-    var body: some View {
-        ZStack {
             
-            RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.cyan)
-                .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.theme.Stroke, lineWidth: 5)
-                        )
-            HStack {
-                Image(image)
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(Circle())
-                    .frame(width: 100,height:110)
-                    
-                    
-                
-                VStack {
-                    Text("Fall Hours")
-                        .foregroundColor(Color.white)
-                        .font(.title)
-                        .bold()
-                    Divider()
-                       .frame(width:200)
-                    Group {
-                        Text("Monday - Thursday")
-                            .italic()
-                            .foregroundColor(Color.white)
-                        Text("10:30AM - 4:00PM")
-                            .bold()
-                            .foregroundColor(Color.white)
-                        Text("Friday")
-                            .italic()
-                            .foregroundColor(Color.white)
-                        Text("10:30AM - 2:00PM")
-                            .bold()
-                            .foregroundColor(Color.white)
-                    }
-                    .font(.system(size: 13))
-                    Group {
-                        
-                        
-                        Text("Saturday")
-                            .italic()
-                            .foregroundColor(Color.white)
-                        Text("Closed")
-                            .bold()
-                            .foregroundColor(Color.white)
-                        Text("Sunday")
-                            .italic()
-                            .foregroundColor(Color.white)
-                        Text("11:00AM - 8:00PM")
-                            .bold()
-                            .foregroundColor(Color.white)
-                    }
-                    .font(.system(size: 13))
-                        
-                }
-               
-                
-                    
-                    
-                    
-                    
-            }
-        }
-        .frame(height:200)
-        .padding()
-        
-        
-        
-    }
-        
-}
-
-struct PodInfo: View {
-    var image: String
-   
-    var body: some View {
-        ZStack {
             
-            RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.green)
-                .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.theme.Stroke, lineWidth: 5)
-                        )
-            HStack {
-                Image(image)
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(Circle())
-                    .frame(width: 120,height:100)
-                    .overlay {
-                        Circle().stroke(.white, lineWidth: 4)
-                    }
-                    
-                VStack {
-                    Text("Fall Hours")
-                        .foregroundColor(Color.white)
-                        .font(.title)
-                        .bold()
-                    Divider()
-                       .frame(width:200)
-                    Text("Monday - Thursday")
-                        .italic()
-                        .foregroundColor(Color.white)
-                    Text("8:00AM - 4:30PM")
-                        .bold()
-                        .foregroundColor(Color.white)
-                    Text("Friday")
-                        .italic()
-                        .foregroundColor(Color.white)
-                    Text("8:00AM - 2:00PM")
-                        .bold()
-                        .foregroundColor(Color.white)
-                    Text("Saturday - Sunday")
-                        .italic()
-                        .foregroundColor(Color.white)
-                    Text("Closed")
-                        .bold()
-                        .foregroundColor(Color.white)
-                    
-                    
-                    
-                        
-                }
-               
-                
-                    
-                    
-                    
-                    
-            }
         }
-        .frame(height:200)
-        .padding()
-        
-        
-        
     }
-
-}
-
-struct RRInfo: View {
     
-    var image: String
-    
-    
-    var body: some View {
+    private var infographic: some View {
         ZStack {
-            
             RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.white)
-                .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.theme.Stroke, lineWidth: 5)
-                        )
-            HStack {
-                Image(image)
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(Circle())
-                    .frame(width: 120,height:100)
-                    .overlay {
-                        Circle().stroke(.white, lineWidth: 4)
-                    }
-                    
-                VStack {
-                    Text("Fall Hours")
-                        .foregroundColor(Color.black)
-                        .font(.title)
-                        .bold()
-                    Divider()
-                       .frame(width:200)
-                    Text("Monday - Friday")
-                        .italic()
-                        .foregroundColor(Color.black)
-                    Text("11:00AM - 7:00PM")
-                        .bold()
-                        .foregroundColor(Color.black)
-                    Text("Saturday - Sunday")
-                        .italic()
-                        .foregroundColor(Color.black)
-                    Text("Closed")
-                        .bold()
-                        .foregroundColor(Color.black)
-                    
-                    
-                    
-                    
-                    
-                    
-                        
-                }
-               
+                .foregroundColor(Color.theme.Background)
+                .shadow(color: colorScheme == .dark ? .white : .black, radius: 10)
+                .frame(height: 250)
+                .padding(.horizontal)
+            VStack {
+                Text(venue.VenueName)
+                    .foregroundColor(Color.theme.text)
+                    .font(.title)
+                    .fontWeight(.heavy)
+                    .padding(.horizontal)
+                Divider()
+                    .frame(width: 60)
                 
+                HStack {
+                    Image(venue.VenueName)
+                    
+                        .resizable()
+                        .foregroundColor(Color.theme.text)
+                        .clipShape(Circle())
+                        .scaledToFit()
+                        .frame(width: 105,height:105)
+                        .shadow(color: colorScheme == .dark ? .white : .black, radius: 10)
+                    VStack {
+                        Text("Hours of Operation Today")
+                            .font(.headline)
+                        let timeForToday = convertIntToCurrentDay(arrayOfTime: venue.timeOfOperations)
+                        
+                        Text("Opening Hours: " + timeForToday.VenueOpeningHours)
+                        Text("Closing Time: " + timeForToday.VenueClosingHours)
+                        
+                        
+                    }
+                    .foregroundColor(Color.theme.text)
                     
                     
                     
                     
+                }
+                
             }
         }
-        .frame(height:200)
-        .padding()
-        
-        
-        
     }
-     
 }
 
-
-struct PandaInfo: View {
-    var image: String
+func convertIntToCurrentDay(arrayOfTime: [TimeOfOperations]) -> TimeOfOperations {
+    let currentDay = getCurrentDay()
     
-    var body: some View {
-        ZStack {
-            
-            RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.orange)
-                .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.theme.Stroke, lineWidth: 5)
-                        )
-            HStack {
-                Image(image)
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(Circle())
-                    .frame(width: 120,height:100)
-                    .overlay {
-                        Circle().stroke(Color.theme.Stroke, lineWidth: 4)
-                    }
-                    
-                VStack {
-                    Text("Fall Hours")
-                        .foregroundColor(Color.white)
-                        .font(.title)
-                        .bold()
-                    Divider()
-                       .frame(width:200)
-                    Text("Monday - Thursday")
-                        .italic()
-                        .foregroundColor(Color.white)
-                    Text("10:30AM - 5:00PM")
-                        .bold()
-                        .foregroundColor(Color.white)
-                    Text("Friday")
-                        .italic()
-                        .foregroundColor(Color.white)
-                    Text("10:30AM - 4:00PM")
-                        .bold()
-                        .foregroundColor(Color.white)
-                    Text("Saturday - Sunday")
-                        .italic()
-                        .foregroundColor(Color.white)
-                    Text("Closed")
-                        .bold()
-                        .foregroundColor(Color.white)
-                        
-                    
-                    
-                    
-                    
-                    
-                        
-                }
-               
-                
-                    
-                    
-                    
-                    
-            }
-        }
-        .frame(height:200)
-        .padding()
+    switch currentDay {
+    case "Monday":
+        return arrayOfTime[0]
+    case "Tuesday":
+        return arrayOfTime[1]
+    case "Wednesday":
+        return arrayOfTime[2]
+    case "Thursday":
+        return arrayOfTime[3]
+    case "Friday":
+        return arrayOfTime[4]
+    case "Saturday":
+        return arrayOfTime[5]
+    case "Sunday":
+        return arrayOfTime[6]
         
-        
-        
+    default:
+        return arrayOfTime[0]
     }
-      
 }
-
-struct StarbucksInfo: View {
-    var image: String
-    
-    var body: some View {
-        ZStack {
-            
-            RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.theme.StarbucksInfographic)
-                .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.theme.Stroke, lineWidth: 5)
-                        )
-            HStack {
-                
-                Image(image)
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(Circle())
-                    .frame(width: 120,height:100)
-                    .offset(x:30)
-                    .overlay {
-                        Circle().stroke(Color.white, lineWidth: 4)
-                            .offset(x:30)
-                            
-                    }
-                
-                    
-                VStack {
-                    Text("Fall Hours")
-                        .foregroundColor(Color.white)
-                        .font(.title)
-                        .bold()
-                    
-                    Divider()
-                    Group {
-                        Text("Monday - Thursday")
-                            .italic()
-                            .foregroundColor(Color.white)
-                        Text("7:30AM - 10:00PM")
-                            .bold()
-                            .foregroundColor(Color.white)
-                        Text("Friday")
-                            .italic()
-                            .foregroundColor(Color.white)
-                        Text("7:30AM - 5:00PM")
-                            .bold()
-                            .foregroundColor(Color.white)
-                    }
-                    .font(.system(size: 12))
-                    Group {
-                        
-                        
-                        Text("Saturday")
-                            .italic()
-                            .foregroundColor(Color.white)
-                        Text("12:00PM - 4:00PM")
-                            .bold()
-                            .foregroundColor(Color.white)
-                        Text("Sunday")
-                            .italic()
-                            .foregroundColor(Color.white)
-                        Text("2:00PM - 10:00PM")
-                            .bold()
-                            .foregroundColor(Color.white)
-                    }
-                    .font(.system(size: 12))
-                    
-                   
-                    
-                    
-                    
-                    
-                        
-                }
-                .padding()
-               
-                
-                    
-                    
-                    
-                    
-            }
-        }
-        .frame(height:200)
-        .padding()
-        
-        
-        
-    }
-        
-}
-
 
 struct Infographics_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        Infographics(venue: dev.schoolVenue)
     }
 }

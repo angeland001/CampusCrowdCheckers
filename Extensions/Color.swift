@@ -28,6 +28,8 @@ extension Color {
                     return Color.theme.purple
                 case "orange":
                     return Color.theme.orange
+                case "pink":
+                    return Color.pink
                     
                 default:
                     return Color.accentColor

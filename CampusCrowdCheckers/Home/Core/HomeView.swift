@@ -19,6 +19,7 @@ struct HomeView: View {
     @State var showResult: Bool = false
     @State var searchText = ""
     @State var loading: Bool = true
+    @State var pageIndex: Int = 0
     
     
     
