@@ -28,6 +28,8 @@ extension Color {
                     return Color.theme.purple
                 case "orange":
                     return Color.theme.orange
+                case "pink":
+                    return Color.pink
                     
                 default:
                     return Color.accentColor
@@ -61,6 +63,7 @@ struct ColorTheme {
     let red = Color("Red")
     let yellow = Color("Yellow")
     let black = Color("Black")
+    let infoboxes = Color("InfoBoxes")
     
     
     
