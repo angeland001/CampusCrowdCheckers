@@ -14,12 +14,15 @@ struct SchoolInformationView: View {
     
     var body: some View {
         ZStack {
+            
             BackGround
             TabView {
                 ForEach(school.schoolVenues) { venue in
                     Infographics(venue: venue)
+                    
                 }
             }
+            
             .tabViewStyle(PageTabViewStyle())
             
             
@@ -46,8 +49,6 @@ extension SchoolInformationView {
         ZStack {
             Color.theme.Background
             
-            
-
         }
     
         .edgesIgnoringSafeArea(.all)
@@ -56,7 +57,7 @@ extension SchoolInformationView {
                 .navigationBarItems(leading:
                     Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
                         Image(systemName: "arrow.backward")
-        
+
                     })
                 .offset(y:-350)
        

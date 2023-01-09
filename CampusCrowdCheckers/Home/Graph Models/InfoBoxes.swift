@@ -11,7 +11,9 @@ import SwiftClockUI
 struct InfoBoxes: View {
     @State var progressValue: Double = 0.0
     @State private var clockStyle: ClockStyle = .steampunk
+    @Environment(\.colorScheme) var colorScheme
     
+
     var theme: Color
     var DataFile: String
     
@@ -31,14 +33,13 @@ struct InfoBoxes: View {
                         .foregroundColor(Color.theme.text)
                     ZStack{
                         RoundedRectangle(cornerRadius:10)
-                            .fill(theme)
+                            
+                            .foregroundColor(Color.theme.Background)
                             .frame(
                                 width:170,
                                 height:170)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.theme.Stroke, lineWidth: 5)
-                            )
+                            .shadow(radius: 10)
+//
                         VStack {
                             ClockView().environment(\.clockStyle, clockStyle)
                                 .frame(width: 150,height:150)
@@ -58,7 +59,9 @@ struct InfoBoxes: View {
                     ZStack {
                         
                         ProgressBar(progress: self.$progressValue, theme: theme)
+                            
                             .frame(width: 130,height:130)
+                            .shadow(color: colorScheme == .dark ? .white : .black, radius: 10)
                             .onAppear {
                                 self.progressValue = convertNumberToPercentage(PopulationCount: PopulationCountForDay)
                             }
@@ -94,11 +97,12 @@ struct ProgressBar: View {
                 .opacity(0.20)
                 .foregroundColor(Color.gray)
             Circle()
+                
                 .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
                 .stroke(style: StrokeStyle(lineWidth: 12.0,lineCap: .round,lineJoin: .round))
-                .foregroundColor(theme)
                 .rotationEffect(Angle(degrees: 270))
                 .animation(.easeInOut(duration: 2.0))
+                .foregroundColor(theme)
         }
     }
     
