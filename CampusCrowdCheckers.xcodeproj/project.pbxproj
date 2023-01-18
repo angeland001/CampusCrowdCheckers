@@ -26,7 +26,6 @@
 		494CEE06292D9D670013D8B2 /* SwiftClockUI in Frameworks */ = {isa = PBXBuildFile; productRef = 494CEE05292D9D670013D8B2 /* SwiftClockUI */; };
 		495DB8AD29624A0600C76D2A /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DB8AC29624A0600C76D2A /* Wave.swift */; };
 		495DB8AF29624A8700C76D2A /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DB8AE29624A8600C76D2A /* Bundle.swift */; };
-		495DB8B32962587700C76D2A /* SchoolVenues.json in Resources */ = {isa = PBXBuildFile; fileRef = 495DB8B22962587700C76D2A /* SchoolVenues.json */; };
 		495DB8B52962590F00C76D2A /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DB8B42962590E00C76D2A /* LocationMapAnnotationView.swift */; };
 		495DB8B7296269E600C76D2A /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DB8B6296269E600C76D2A /* VenueModel.swift */; };
 		4971173729691AB500623E1D /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971173629691AB500623E1D /* UINavigationController.swift */; };
@@ -77,7 +76,6 @@
 		494CEE02292D94C40013D8B2 /* InfoBoxes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBoxes.swift; sourceTree = "<group>"; };
 		495DB8AC29624A0600C76D2A /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 		495DB8AE29624A8600C76D2A /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
-		495DB8B22962587700C76D2A /* SchoolVenues.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SchoolVenues.json; sourceTree = "<group>"; };
 		495DB8B42962590E00C76D2A /* LocationMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapAnnotationView.swift; sourceTree = "<group>"; };
 		495DB8B6296269E600C76D2A /* VenueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
 		4971173629691AB500623E1D /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
@@ -260,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				49EDD72D295E234000EFC0D3 /* VenueLocations.json */,
-				495DB8B22962587700C76D2A /* SchoolVenues.json */,
 			);
 			path = JSONFiles;
 			sourceTree = "<group>";
@@ -403,7 +400,6 @@
 				49B5BECA292A9B59009CB7DF /* MoesData1.csv in Resources */,
 				49FC30E628F0C4060006D87F /* Assets.xcassets in Resources */,
 				49B5BEC6292A9B59009CB7DF /* UCData1.csv in Resources */,
-				495DB8B32962587700C76D2A /* SchoolVenues.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

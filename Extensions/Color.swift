@@ -63,6 +63,7 @@ struct ColorTheme {
     let red = Color("Red")
     let yellow = Color("Yellow")
     let black = Color("Black")
+    let infoboxes = Color("InfoBoxes")
     
     
     

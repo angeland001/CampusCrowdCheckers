@@ -11,15 +11,14 @@ import MapKit
 struct LocationDetailView: View {
     
     let Venue: VenueElement
+    @State var isOpen = false
     @EnvironmentObject var vm: MapViewModel
     @StateObject var rm = RestaurantDetailModel()
     
     var body: some View {
         ScrollView {
             
-//                imageSection
-//                    .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
-                
+
             VStack(alignment: .leading) {
                 Spacer(minLength: 120)
                     titleSection
@@ -36,7 +35,7 @@ struct LocationDetailView: View {
             
         }
         .ignoresSafeArea()
-        .background(.ultraThinMaterial)
+        .background(Color.theme.Background)
         .overlay(backButton, alignment: .topLeading)
     }
 }
@@ -44,43 +43,88 @@ struct LocationDetailView: View {
 
 extension LocationDetailView {
     
-//    private var imageSection: some View {
-//        TabView {
-//            ForEach(0...2, id: \.self) {_ in
-//                Image("Beer")
-//                    .resizable()
-//                    .scaledToFill()
-//                    .frame(width: UIScreen.main.bounds.width)
-//                    .clipped()
-//            }
-//        }
-//        .frame(height: 500)
-//        .tabViewStyle(PageTabViewStyle())
-//    }
+
     
     private var titleSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(Venue.venue_name)
+            
                 .font(.largeTitle)
                 .fontWeight(.semibold)
             Text(Venue.venue_address)
                 .font(.title)
                 .foregroundColor(.secondary)
+                
         }
+        .foregroundColor(Color.theme.text)
+        
         
     }
     
     private var descriptionSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("Crowd Level: ")
-                .font(.headline)
-                .foregroundColor(Color.theme.text)
-
+        
+        VStack( spacing: 8) {
             
-
-
+            ZStack {
+                Button {
+                    isOpen.toggle()
+                } label: {
+                    ZStack {
+                        
+                        HStack {
+                            Image(systemName: "clock")
+                                .resizable()
+                                .frame(width:30,height:30)
+                            Spacer()
+                            VStack {
+                                Text("Open Now")
+                                    .foregroundColor(Color.theme.green)
+                                    .font(.headline)
+                                    .offset(x:-200)
+                                if isOpen {
+                                    HStack{
+//                                        Text(Venue.venue_foot_traffic_forecast[0])
+                                    }
+                                    
+                                }
+                                
+                                
+                            }
+                            
+                            
+                            Image(systemName: "arrow.down")
+                                .resizable()
+                                .frame(width:10,height:15)
+                            
+                        }
+                        .padding(.horizontal)
+                        
+                        
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(.ultraThinMaterial)
+                            
+                            
+                            
+                    )
+                    
+                }
+            }
+                
+                Text("Crowd Level ")
+                    .font(.headline)
+                //.fontWeight(.heavy)
+                    .foregroundColor(Color.theme.text)
+                    .padding(.vertical)
+                
+                
+                
+                
+                
+            
+            
         }
-
     }
     
 //    private var mapLayer: some View {
@@ -127,3 +171,5 @@ struct LocationDetailView_Previews: PreviewProvider {
         LocationDetailView(Venue: dev.Venue)
     }
 }
+
+

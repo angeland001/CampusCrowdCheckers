@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginScreen: View {
     var body: some View {
@@ -120,34 +121,22 @@ struct Home : View {
             }
             .padding(.top, 10)
             
-            HStack{
-                
-                Button(action: {
-                    
-                }) {
-                    
-                    Image("fb")
-                        .renderingMode(.original)
-                        .padding()
-                    
-                }.background(Color.white)
-                .clipShape(Circle())
-                
-                Button(action: {
-                    
-                }) {
-                    
-                    Image("google")
-                        .renderingMode(.original)
-                        .padding()
-                    
-                }
-                .background(Color.white)
-                .clipShape(Circle())
-                .padding(.leading, 25)
-            }
-            .padding(.top, 10)
             
+            SignInWithAppleButton{ (request) in
+                
+                
+            } onCompletion: { (result) in
+                switch result {
+                case.success(let user):
+                    print("success")
+                    //failure below
+                case.failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+            .frame(height:55)
+            .clipShape(Capsule())
+            .padding(.horizontal,50)
             
                 
                 
