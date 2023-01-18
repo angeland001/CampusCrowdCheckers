@@ -32,6 +32,7 @@ struct MapView: View {
                 
             }
             .sheet(item: $vm.sheetLocation, onDismiss: nil) { location in
+                
                         LocationDetailView(Venue: location)
                     }
             

@@ -42,7 +42,7 @@ struct LocationPreviewView: View {
 extension LocationPreviewView {
     private var imageSection: some View {
         ZStack {
-                Image("Beer")
+                Image("")
                     .resizable()
                     .scaledToFill()
                     .frame(width:100,height:100)
@@ -59,14 +59,7 @@ extension LocationPreviewView {
             Text(Venue.venue_name)
                 .font(.title2)
                 .fontWeight(.bold)
-            HStack {
-                Text("Business Hours:")
-                
-                let day = getCurrentDayAsInteger()
-                
-                Text("\(Venue.venue_foot_traffic_forecast?[day].day_info?.venueOpen ?? 0)")
-
-            }
+            
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         
@@ -108,25 +101,4 @@ struct LocationPreviewView_Previews: PreviewProvider {
 }
 
 
-private func getCurrentDayAsInteger() -> Int {
-    let currentDay = getCurrentDay()
-    switch currentDay {
-    case "Monday":
-        return 0
-    case "Tuesday":
-        return 1
-    case "Wednesday":
-        return 2
-    case "Thursday":
-        return 3
-    case "Friday":
-        return 4
-    case "Saturday":
-        return 5
-    case "Sunday":
-        return 6
-    default:
-        return 7
-    
-    }
-}
+

@@ -19,8 +19,8 @@ struct InfoBoxes: View {
     
     var body: some View {
         
-        let datasheet = loadCSV(from: DataFile)
-        let PopulationCountForDay = fillArrayOfCurrentDayCount(CurrentWeekDay: getCurrentDays(), datasheet: datasheet)
+        
+        let PopulationCountForDay = fillArrayOfCurrentDayCount()
         
         
         let largestNumInArr = PopulationCountForDay.max()

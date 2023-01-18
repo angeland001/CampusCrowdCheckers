@@ -11,32 +11,30 @@ import MapKit
 struct LocationDetailView: View {
     
     let Venue: VenueElement
+    @State var isOpen = false
     @EnvironmentObject var vm: MapViewModel
-    @StateObject var rm = RestaurantDetailModel()
+    
     
     var body: some View {
         ScrollView {
             
-//                imageSection
-//                    .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
-                
+
             VStack(alignment: .leading) {
                 Spacer(minLength: 120)
                     titleSection
                     Divider()
                     descriptionSection
-                    //Divider()
-                    //mapLayer
+                    
                 
                 }
-                //.frame(maxWidth: .infinity, alignment: .leading)
+                
                 .padding()
             
             
             
         }
         .ignoresSafeArea()
-        .background(.ultraThinMaterial)
+        .background(Color.theme.Background)
         .overlay(backButton, alignment: .topLeading)
     }
 }
@@ -44,65 +42,101 @@ struct LocationDetailView: View {
 
 extension LocationDetailView {
     
-//    private var imageSection: some View {
-//        TabView {
-//            ForEach(0...2, id: \.self) {_ in
-//                Image("Beer")
-//                    .resizable()
-//                    .scaledToFill()
-//                    .frame(width: UIScreen.main.bounds.width)
-//                    .clipped()
-//            }
-//        }
-//        .frame(height: 500)
-//        .tabViewStyle(PageTabViewStyle())
-//    }
+
     
     private var titleSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(Venue.venue_name)
+            
                 .font(.largeTitle)
                 .fontWeight(.semibold)
-            Text(Venue.venue_address)
-                .font(.title)
-                .foregroundColor(.secondary)
+//            Text(Venue.venue_address)
+//                .font(.title)
+//                .foregroundColor(.secondary)
+                
         }
+        .foregroundColor(Color.theme.text)
+        
         
     }
     
     private var descriptionSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("Crowd Level: ")
-                .font(.headline)
-                .foregroundColor(Color.theme.text)
-
+        
+        VStack( spacing: 8) {
             
-
-
+            ZStack {
+                Rectangle()
+                    .fill(.ultraThinMaterial)
+                    .frame(height: isOpen ? 80: 50)
+                    .cornerRadius(10)
+                    
+                Button {
+                    isOpen.toggle()
+                } label: {
+                    
+                        HStack {
+                            Image(systemName: isOpen ? "clock.fill" : "clock")
+                                .resizable()
+                                .frame(width:30,height:30)
+                                .animation(.none)
+                            Spacer()
+                            VStack(alignment:.leading, spacing:10) {
+                                Text("Open Now")
+                                    .foregroundColor(Color.theme.green)
+                                    .font(.headline)
+                                    
+                                if isOpen {
+                                    HStack{
+                                        let day = getCurrentDay()
+                                        let dayAsInt = getCurrentDayAsInteger()
+                                        Text("Hours for \(day)")
+                                        Text("\(Venue.venue_foot_traffic_forecast?[dayAsInt].day_info?.venueOpen ?? 0)")
+                                    }
+                                    
+                                }
+                                
+                               
+                            }
+                            
+                            Spacer()
+                           
+                            
+                            Image(systemName: isOpen ? "arrow.up" : "arrow.down")
+                                .resizable()
+                                .frame(width:10,height:15)
+                                .animation(.none)
+                            
+                        }
+                        .padding(.horizontal)
+                        
+                        
+                    
+                    
+                            
+                            
+                            
+                    
+                    
+                }
+            }
+            
+                
+                Text("Crowd Level ")
+                    .font(.headline)
+                
+                    .foregroundColor(Color.theme.text)
+                    .padding(.vertical)
+                
+                
+                
+                
+                
+            
+            
         }
-
     }
     
-//    private var mapLayer: some View {
-//        Map(coordinateRegion: .constant(MKCoordinateRegion(
-//            center: location.coordinates,
-//            span: vm.mapSpan)),
-//            annotationItems: [location]) { location in
-//            MapAnnotation(coordinate: location.coordinates) {
-//                LocationMapAnnotationView()
-//                    .shadow(radius: 10)
-//
-//            }
-//
-//
-//
-//        }
-//            .allowsHitTesting(false)
-//            .aspectRatio(1, contentMode: .fit)
-//            .cornerRadius(30)
-//
-//
-//    }
+
     
     private var backButton: some View {
         Button {
@@ -121,9 +155,33 @@ extension LocationDetailView {
     }
 }
 
+private func getCurrentDayAsInteger() -> Int {
+    let currentDay = getCurrentDay()
+    switch currentDay {
+    case "Monday":
+        return 0
+    case "Tuesday":
+        return 1
+    case "Wednesday":
+        return 2
+    case "Thursday":
+        return 3
+    case "Friday":
+        return 4
+    case "Saturday":
+        return 5
+    case "Sunday":
+        return 6
+    default:
+        return 7
+    
+    }
+}
 
 struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
         LocationDetailView(Venue: dev.Venue)
     }
 }
+
+
