@@ -7,12 +7,14 @@
 
 import SwiftUI
 import MapKit
+import Charts
 
 struct LocationDetailView: View {
     
     let Venue: VenueElement
     @State var isOpen = false
     @EnvironmentObject var vm: MapViewModel
+    
     
     
     var body: some View {
@@ -62,7 +64,7 @@ extension LocationDetailView {
     
     private var descriptionSection: some View {
         
-        VStack( spacing: 8) {
+        VStack( alignment: .leading, spacing: 8) {
             
             ZStack {
                 Rectangle()
@@ -90,7 +92,7 @@ extension LocationDetailView {
                                         let day = getCurrentDay()
                                         let dayAsInt = getCurrentDayAsInteger()
                                         Text("Hours for \(day)")
-                                        Text("\(Venue.venue_foot_traffic_forecast?[dayAsInt].day_info?.venueOpen ?? 0)")
+                                        Text("\(Venue.venue_foot_traffic_forecast?[dayAsInt].day_info?.day_rank_max ?? 0)")
                                     }
                                     
                                 }
@@ -121,11 +123,14 @@ extension LocationDetailView {
             }
             
                 
-                Text("Crowd Level ")
+                Text("Visitor Forecast Today ")
                     .font(.headline)
-                
                     .foregroundColor(Color.theme.text)
                     .padding(.vertical)
+                    
+            
+            
+            
                 
                 
                 
@@ -173,7 +178,7 @@ private func getCurrentDayAsInteger() -> Int {
     case "Sunday":
         return 6
     default:
-        return 7
+        return 0
     
     }
 }

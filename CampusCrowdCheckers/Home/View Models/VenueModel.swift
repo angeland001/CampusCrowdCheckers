@@ -9,10 +9,7 @@ import Foundation
 
 struct VenueElement: Equatable, Identifiable, Codable{
     
-//    var id: String {
-//        name + cityName
-//    }
-    
+
     static func == (lhs: VenueElement, rhs: VenueElement) -> Bool {
         lhs.id == rhs.id
     }
