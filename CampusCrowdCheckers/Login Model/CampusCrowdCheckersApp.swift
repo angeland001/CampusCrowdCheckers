@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseCore
+import FirebaseAuth
 
 @main
 struct CampusCrowdCheckersApp: App {
- 
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var vm = MapViewModel()
     var body: some Scene {
         WindowGroup {
@@ -20,3 +24,13 @@ struct CampusCrowdCheckersApp: App {
         }
     }
 }
+
+class AppDelegate: NSObject,UIApplicationDelegate{
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        FirebaseApp.configure()
+        return true
+    }
+}
+
