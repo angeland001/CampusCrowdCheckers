@@ -17,7 +17,7 @@ struct UniversityRowView: View {
     var body: some View {
         HStack(spacing: 0) {
             Text("\(school.id)")
-                .opacity(0.3)
+                .opacity(0.7)
                 
             
             Image(image)
@@ -27,11 +27,12 @@ struct UniversityRowView: View {
             Text(school.name)
                 .font(.headline)
                 .padding(.leading,6)
-                .foregroundColor(Color.theme.text)
+                .foregroundColor(Color.black)
             
             Spacer()
             Text(school.city)
                 .font(.footnote)
+                .foregroundColor(Color.black)
         }
         .padding()
         

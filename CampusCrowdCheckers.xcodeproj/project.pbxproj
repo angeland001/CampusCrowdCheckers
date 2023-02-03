@@ -10,6 +10,8 @@
 		49023B4A291C8F7D00CF6DDF /* Infographics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49023B49291C8F7D00CF6DDF /* Infographics.swift */; };
 		4907DB9A2919C69000C5C502 /* AnimatedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */; };
 		4907DB9C2919CCB000C5C502 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907DB9B2919CCB000C5C502 /* TabCurve.swift */; };
+		490AC38729AB046600CA14EB /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490AC38629AB046600CA14EB /* GifImage.swift */; };
+		490AC39129AB094700CA14EB /* geolocation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 490AC39029AB094700CA14EB /* geolocation.gif */; };
 		49275842293D882D00CD05E3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49275841293D882D00CD05E3 /* LocationManager.swift */; };
 		49275844293D88A200CD05E3 /* LocationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49275843293D88A200CD05E3 /* LocationRequestView.swift */; };
 		4937576C2954E0EF00EA590C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937576B2954E0EF00EA590C /* String.swift */; };
@@ -28,6 +30,7 @@
 		495DB8AF29624A8700C76D2A /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DB8AE29624A8600C76D2A /* Bundle.swift */; };
 		495DB8B52962590F00C76D2A /* LocationMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DB8B42962590E00C76D2A /* LocationMapAnnotationView.swift */; };
 		495DB8B7296269E600C76D2A /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DB8B6296269E600C76D2A /* VenueModel.swift */; };
+		4969F4EA298DB2F700660258 /* people.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4969F4E9298DB2F700660258 /* people.mp4 */; };
 		4971173729691AB500623E1D /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971173629691AB500623E1D /* UINavigationController.swift */; };
 		4987827D294E53470092DD11 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987827C294E53470092DD11 /* UniversityModel.swift */; };
 		4987827F295294B50092DD11 /* UniversityRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987827E295294B50092DD11 /* UniversityRowView.swift */; };
@@ -45,6 +48,17 @@
 		49B5BEC8292A9B59009CB7DF /* PodData1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEC2292A9B58009CB7DF /* PodData1.csv */; };
 		49B5BEC9292A9B59009CB7DF /* RRData1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEC3292A9B58009CB7DF /* RRData1.csv */; };
 		49B5BECA292A9B59009CB7DF /* MoesData1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49B5BEC4292A9B58009CB7DF /* MoesData1.csv */; };
+		49B83ED2298D9E02000664D8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 49B83ED1298D9E02000664D8 /* FirebaseAnalytics */; };
+		49B83ED4298D9E02000664D8 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 49B83ED3298D9E02000664D8 /* FirebaseAnalyticsSwift */; };
+		49B83ED6298D9E02000664D8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 49B83ED5298D9E02000664D8 /* FirebaseAuth */; };
+		49B83ED8298DA1A1000664D8 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B83ED7298DA1A1000664D8 /* IntroView.swift */; };
+		49B83EDA298DA1FB000664D8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B83ED9298DA1FB000664D8 /* LoginViewModel.swift */; };
+		49B83EDC298DA23A000664D8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B83EDB298DA23A000664D8 /* PlayerView.swift */; };
+		49B83EDE298DA29E000664D8 /* TestLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B83EDD298DA29E000664D8 /* TestLogin.swift */; };
+		49B83EE2298DA38F000664D8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B83EE1298DA38F000664D8 /* CardView.swift */; };
+		49B83EE4298DA3C7000664D8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B83EE3298DA3C7000664D8 /* Card.swift */; };
+		49B83EE6298DA4DC000664D8 /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B83EE5298DA4DC000664D8 /* BlankView.swift */; };
+		49B83EEA298DA699000664D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49B83EE9298DA699000664D8 /* GoogleService-Info.plist */; };
 		49D8FFB72962851300B92281 /* LocationListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8FFB62962851300B92281 /* LocationListRow.swift */; };
 		49D8FFC32963AEB200B92281 /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8FFC22963AEB200B92281 /* LocationPreviewView.swift */; };
 		49EDD72B295DF6B400EFC0D3 /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD72A295DF6B200EFC0D3 /* Stripe.swift */; };
@@ -61,6 +75,8 @@
 		49023B49291C8F7D00CF6DDF /* Infographics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infographics.swift; sourceTree = "<group>"; };
 		4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTabBar.swift; sourceTree = "<group>"; };
 		4907DB9B2919CCB000C5C502 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
+		490AC38629AB046600CA14EB /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		490AC39029AB094700CA14EB /* geolocation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = geolocation.gif; sourceTree = "<group>"; };
 		49275841293D882D00CD05E3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		49275843293D88A200CD05E3 /* LocationRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequestView.swift; sourceTree = "<group>"; };
 		4937576B2954E0EF00EA590C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -78,6 +94,8 @@
 		495DB8AE29624A8600C76D2A /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		495DB8B42962590E00C76D2A /* LocationMapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapAnnotationView.swift; sourceTree = "<group>"; };
 		495DB8B6296269E600C76D2A /* VenueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
+		4969F4E9298DB2F700660258 /* people.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = people.mp4; sourceTree = "<group>"; };
+		496BCCD029899EB90037573B /* CampusCrowdCheckers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CampusCrowdCheckers.entitlements; sourceTree = "<group>"; };
 		4971173629691AB500623E1D /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		4987827C294E53470092DD11 /* UniversityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		4987827E295294B50092DD11 /* UniversityRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityRowView.swift; sourceTree = "<group>"; };
@@ -95,6 +113,14 @@
 		49B5BEC2292A9B58009CB7DF /* PodData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodData1.csv; sourceTree = "<group>"; };
 		49B5BEC3292A9B58009CB7DF /* RRData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RRData1.csv; sourceTree = "<group>"; };
 		49B5BEC4292A9B58009CB7DF /* MoesData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MoesData1.csv; sourceTree = "<group>"; };
+		49B83ED7298DA1A1000664D8 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		49B83ED9298DA1FB000664D8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		49B83EDB298DA23A000664D8 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		49B83EDD298DA29E000664D8 /* TestLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLogin.swift; sourceTree = "<group>"; };
+		49B83EE1298DA38F000664D8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		49B83EE3298DA3C7000664D8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		49B83EE5298DA4DC000664D8 /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
+		49B83EE9298DA699000664D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49D8FFB62962851300B92281 /* LocationListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListRow.swift; sourceTree = "<group>"; };
 		49D8FFC22963AEB200B92281 /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
 		49EDD72A295DF6B200EFC0D3 /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
@@ -113,7 +139,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B83ED4298D9E02000664D8 /* FirebaseAnalyticsSwift in Frameworks */,
+				49B83ED2298D9E02000664D8 /* FirebaseAnalytics in Frameworks */,
 				494CEE06292D9D670013D8B2 /* SwiftClockUI in Frameworks */,
+				49B83ED6298D9E02000664D8 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +158,7 @@
 				4937576F2957AAB300EA590C /* UIApplication.swift */,
 				495DB8AE29624A8600C76D2A /* Bundle.swift */,
 				4971173629691AB500623E1D /* UINavigationController.swift */,
+				490AC38629AB046600CA14EB /* GifImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -208,6 +238,8 @@
 				493B306B28FB329D00E3C3C8 /* LoginScreen.swift */,
 				493B306628F86B4500E3C3C8 /* SplashScreenView.swift */,
 				49275843293D88A200CD05E3 /* LocationRequestView.swift */,
+				49B83ED7298DA1A1000664D8 /* IntroView.swift */,
+				49B83ED9298DA1FB000664D8 /* LoginViewModel.swift */,
 			);
 			path = "Login Model";
 			sourceTree = "<group>";
@@ -217,6 +249,11 @@
 			children = (
 				49FDF1DA296547E100409CCF /* SchoolComponents */,
 				49FDF1D9296547B300409CCF /* MapComponents */,
+				49B83EDB298DA23A000664D8 /* PlayerView.swift */,
+				49B83EDD298DA29E000664D8 /* TestLogin.swift */,
+				49B83EE1298DA38F000664D8 /* CardView.swift */,
+				49B83EE3298DA3C7000664D8 /* Card.swift */,
+				49B83EE5298DA4DC000664D8 /* BlankView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -265,6 +302,8 @@
 		49FC30D528F0C4030006D87F = {
 			isa = PBXGroup;
 			children = (
+				49B83EE9298DA699000664D8 /* GoogleService-Info.plist */,
+				490AC39029AB094700CA14EB /* geolocation.gif */,
 				493B306828FB2F0500E3C3C8 /* Extensions */,
 				49B5BEB029288DBD009CB7DF /* DataFiles */,
 				49FC30E028F0C4030006D87F /* CampusCrowdCheckers */,
@@ -283,6 +322,7 @@
 		49FC30E028F0C4030006D87F /* CampusCrowdCheckers */ = {
 			isa = PBXGroup;
 			children = (
+				496BCCD029899EB90037573B /* CampusCrowdCheckers.entitlements */,
 				495DB8AB296249ED00C76D2A /* TabBar */,
 				495DB8AA296249D500C76D2A /* Shape */,
 				4944C484294BB6AE00A51A94 /* Services */,
@@ -290,6 +330,7 @@
 				49AE03AF2946C875001F337B /* Login Model */,
 				49AE03AA2946C776001F337B /* Home */,
 				49FC30E528F0C4060006D87F /* Assets.xcassets */,
+				4969F4E9298DB2F700660258 /* people.mp4 */,
 				49FC30E728F0C4060006D87F /* Preview Content */,
 			);
 			path = CampusCrowdCheckers;
@@ -344,6 +385,9 @@
 			name = CampusCrowdCheckers;
 			packageProductDependencies = (
 				494CEE05292D9D670013D8B2 /* SwiftClockUI */,
+				49B83ED1298D9E02000664D8 /* FirebaseAnalytics */,
+				49B83ED3298D9E02000664D8 /* FirebaseAnalyticsSwift */,
+				49B83ED5298D9E02000664D8 /* FirebaseAuth */,
 			);
 			productName = CampusCrowdCheckers;
 			productReference = 49FC30DE28F0C4030006D87F /* CampusCrowdCheckers.app */;
@@ -376,6 +420,7 @@
 			packageReferences = (
 				494CEE04292D9D670013D8B2 /* XCRemoteSwiftPackageReference "SwiftClockUI" */,
 				4944C48D294D02D900A51A94 /* XCRemoteSwiftPackageReference "PythonKit" */,
+				49B83ED0298D9E02000664D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 49FC30DF28F0C4030006D87F /* Products */;
 			projectDirPath = "";
@@ -393,11 +438,14 @@
 			files = (
 				49FC30E928F0C4060006D87F /* Preview Assets.xcassets in Resources */,
 				49B5BEC8292A9B59009CB7DF /* PodData1.csv in Resources */,
+				4969F4EA298DB2F700660258 /* people.mp4 in Resources */,
 				49B5BEC9292A9B59009CB7DF /* RRData1.csv in Resources */,
+				490AC39129AB094700CA14EB /* geolocation.gif in Resources */,
 				49B5BEC5292A9B59009CB7DF /* PandaData1.csv in Resources */,
 				49EDD72E295E234000EFC0D3 /* VenueLocations.json in Resources */,
 				49B5BEC7292A9B59009CB7DF /* ChickFilaData1.csv in Resources */,
 				49B5BECA292A9B59009CB7DF /* MoesData1.csv in Resources */,
+				49B83EEA298DA699000664D8 /* GoogleService-Info.plist in Resources */,
 				49FC30E628F0C4060006D87F /* Assets.xcassets in Resources */,
 				49B5BEC6292A9B59009CB7DF /* UCData1.csv in Resources */,
 			);
@@ -414,8 +462,10 @@
 				49B5BEA92927E3D0009CB7DF /* MainView.swift in Sources */,
 				49FDF1D8296547A300409CCF /* LocationDetailView.swift in Sources */,
 				49EDD72B295DF6B400EFC0D3 /* Stripe.swift in Sources */,
+				490AC38729AB046600CA14EB /* GifImage.swift in Sources */,
 				4937576C2954E0EF00EA590C /* String.swift in Sources */,
 				495DB8AF29624A8700C76D2A /* Bundle.swift in Sources */,
+				49B83EE2298DA38F000664D8 /* CardView.swift in Sources */,
 				49AE03B22946CA0B001F337B /* CircleButtonView.swift in Sources */,
 				49FC30E228F0C4030006D87F /* CampusCrowdCheckersApp.swift in Sources */,
 				495DB8B52962590F00C76D2A /* LocationMapAnnotationView.swift in Sources */,
@@ -427,19 +477,24 @@
 				49AE03B42946CEA5001F337B /* CircleButtonAnimationView.swift in Sources */,
 				49275842293D882D00CD05E3 /* LocationManager.swift in Sources */,
 				4947B212293EE27A00D3812A /* MapView.swift in Sources */,
+				49B83ED8298DA1A1000664D8 /* IntroView.swift in Sources */,
 				493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */,
 				494CEE03292D94C40013D8B2 /* InfoBoxes.swift in Sources */,
 				49D8FFC32963AEB200B92281 /* LocationPreviewView.swift in Sources */,
 				4944C48A294BC02800A51A94 /* PreviewProvider.swift in Sources */,
 				49B5BEAB2927E590009CB7DF /* Settings.swift in Sources */,
+				49B83EDC298DA23A000664D8 /* PlayerView.swift in Sources */,
 				4987827D294E53470092DD11 /* UniversityModel.swift in Sources */,
 				4971173729691AB500623E1D /* UINavigationController.swift in Sources */,
 				493757722957EF9C00EA590C /* SchoolInformationView.swift in Sources */,
 				49B5BE9D2925D228009CB7DF /* BotResponse.swift in Sources */,
 				4907DB9A2919C69000C5C502 /* AnimatedTabBar.swift in Sources */,
+				49B83EDA298DA1FB000664D8 /* LoginViewModel.swift in Sources */,
+				49B83EE6298DA4DC000664D8 /* BlankView.swift in Sources */,
 				49B5BE7F29256C74009CB7DF /* LiveChat.swift in Sources */,
 				4987827F295294B50092DD11 /* UniversityRowView.swift in Sources */,
 				4944C483294BB64B00A51A94 /* MapViewModel.swift in Sources */,
+				49B83EDE298DA29E000664D8 /* TestLogin.swift in Sources */,
 				493757702957AAB300EA590C /* UIApplication.swift in Sources */,
 				49FDF1DC29664C7400409CCF /* RestaurantDetailModel.swift in Sources */,
 				493B306C28FB329D00E3C3C8 /* LoginScreen.swift in Sources */,
@@ -448,6 +503,7 @@
 				49B5BEBE2928984B009CB7DF /* Database.swift in Sources */,
 				49275844293D88A200CD05E3 /* LocationRequestView.swift in Sources */,
 				49B5BEA52927DFD8009CB7DF /* PopulationChart.swift in Sources */,
+				49B83EE4298DA3C7000664D8 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,10 +629,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CampusCrowdCheckers/CampusCrowdCheckers.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CampusCrowdCheckers/Preview Content\"";
-				DEVELOPMENT_TEAM = 6V95J2JS3Z;
+				DEVELOPMENT_TEAM = 7Z9GQ4Y72B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
@@ -610,10 +667,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CampusCrowdCheckers/CampusCrowdCheckers.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CampusCrowdCheckers/Preview Content\"";
-				DEVELOPMENT_TEAM = 6V95J2JS3Z;
+				DEVELOPMENT_TEAM = 7Z9GQ4Y72B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
@@ -681,6 +739,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		49B83ED0298D9E02000664D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -688,6 +754,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 494CEE04292D9D670013D8B2 /* XCRemoteSwiftPackageReference "SwiftClockUI" */;
 			productName = SwiftClockUI;
+		};
+		49B83ED1298D9E02000664D8 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49B83ED0298D9E02000664D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		49B83ED3298D9E02000664D8 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49B83ED0298D9E02000664D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		49B83ED5298D9E02000664D8 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49B83ED0298D9E02000664D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
