@@ -27,7 +27,8 @@ struct HomeView: View {
     var body: some View {
         
         ZStack {
-            Color.theme.Background
+            Color.white
+            //Color.theme.Background
                 .ignoresSafeArea()
             
             //content layer
@@ -35,12 +36,12 @@ struct HomeView: View {
             VStack {
                 ZStack(alignment: .top){
                     Wave(yOffset: -0.55)
-                        .fill(Color.white)
+                        .fill(Color("WaveColor"))
                         .frame(height: 150)
                         .shadow(radius: 4)
                         .ignoresSafeArea()
                     Wave(yOffset: 0.55)
-                        .fill(Color.theme.text)
+                        .fill(Color("WaveColor"))
                         .frame(height: 150)
                         .shadow(radius: 4)
                         .ignoresSafeArea()
@@ -51,6 +52,7 @@ struct HomeView: View {
                             homeHeader
                             
                             SearchBarView(searchText: $searchText)
+                                .offset(y:10)
                             
                             if loading {
                                 Spacer()
@@ -76,21 +78,7 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                   
-                    
-                    
-                    
-                    
-                    
-                    
+   
                     
                     
                     Spacer(minLength: 0)
@@ -109,12 +97,6 @@ struct HomeView: View {
     
     
     
-    
-    
-    
-    
-    
-    
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
@@ -130,30 +112,23 @@ extension HomeView {
                 Spacer()
                 ZStack {
                     VStack {
-                        Text("Welcome Back")
+                        Text("Welcome Back,")
                         
                             .font(.headline)
-                            .foregroundColor(Color.theme.Background)
-                            .offset(x:-70)
-                        Text("Andres Angel")
+                            .foregroundColor(Color("Jenni"))
+                            .offset(x:-68)
+                        Text("Andres")
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(Color.theme.Background)
+                            .foregroundColor(Color("Jenni"))
                         
-                            .offset(x:-40)
+                            .offset(x:-80)
                         
                     }
                     .italic()
                     
                     .multilineTextAlignment(.leading)
-                                
-                        
-
-                    
-                    
-
-                    
-                    
+                            
                     
                 }
                 
@@ -168,6 +143,7 @@ extension HomeView {
                 
                     .background(
                         CircleButtonAnimationView(animate: $showProfile)
+
                     )
                 
                 
@@ -188,24 +164,32 @@ extension HomeView {
                     
                     
                 }
-                .opacity(0.3)
+                .foregroundColor(Color.gray)
+                //.opacity(0.8)
             }
         }
         
         private var universityList: some View {
-            List {
-                ForEach((University.universities).filter( {"\($0)".contains(searchText) || searchText.isEmpty} )) { university in
-                    NavigationLink(destination: SchoolInformationView(school: university)) {
-                        Button(action: { }) {
-                            UniversityRowView(school: university, image: university.name)
+            ZStack {
+                List {
+                    ForEach((University.universities).filter( {"\($0)".contains(searchText) || searchText.isEmpty} )) { university in
+                        NavigationLink(destination: SchoolInformationView(school: university)) {
+                            Button(action: { }) {
+                                UniversityRowView(school: university, image: university.name)
+                            }
                         }
+                        .listRowBackground(Color.white)
+                        
+                        
                     }
-                    
-                    
-                    
+                    .foregroundColor(Color("WaveColor"))
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
+                .listStyle(.plain)
             }
-            .listStyle(PlainListStyle())
+            .background(Color.white)
+            
         }
         
         private var LoadingIcon: some View {
@@ -215,7 +199,7 @@ extension HomeView {
                     
                     ForEach(0..<6) { i in
                         Stripe(time: time, size: 200)
-                            .foregroundColor(Color.theme.Stroke)
+                            .foregroundColor(Color.black)
                             .rotationEffect(.degrees((360 / 6) * Double(i)))
                     }
                 }

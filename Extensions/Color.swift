@@ -64,6 +64,7 @@ struct ColorTheme {
     let yellow = Color("Yellow")
     let black = Color("Black")
     let infoboxes = Color("InfoBoxes")
+    let SearchBar = UIColor(red: CGFloat(0.11), green: CGFloat(0.11), blue: CGFloat(0.12), alpha: CGFloat(1.0))
     
     
     

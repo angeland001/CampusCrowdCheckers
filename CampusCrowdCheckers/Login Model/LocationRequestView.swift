@@ -11,30 +11,26 @@ struct LocationRequestView: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         ZStack {
-            Color.theme.Background
+            Color.white
                         .ignoresSafeArea()
                     VStack {
                         Spacer()
-                        Image(systemName: "paperplane.circle.fill")
-                            
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200,height:200)
-                            .padding(.bottom,32)
-                            .foregroundColor(Color.theme.text)
+                        GifImage("geolocation")
+                            .frame(width:300,height:300)
                         
                         
-                            Text("Want to see the best time to go to restaurants or bars in your area?")
+                            Text("Enable Geolocation")
                                 .font(.system(size:26,weight:.semibold))
                                 .multilineTextAlignment(.center)
-                                .foregroundColor(Color.theme.text)
+                                .foregroundColor(Color.black)
                                 .padding()
-                        
-                            Text("Enable Location Services to get full access.")
-                            .multilineTextAlignment(.center)
-                            .frame(width: 140)
-                            .foregroundColor(Color.theme.text)
-                            .padding()
+                        HStack {
+                            Text("Enable Location Services to get full access to CrowdCheck.")
+                                .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(Color.black).opacity(0.5)
+                                
+                        }
                         Spacer()
                         
                         VStack {
@@ -48,7 +44,7 @@ struct LocationRequestView: View {
                             }
                             .frame(width: UIScreen.main.bounds.width)
                             .padding(.horizontal,-50)
-                            .background(Color.theme.text)
+                            .background(Color.black)
                             .clipShape(Capsule())
                             .padding()
                             

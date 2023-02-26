@@ -18,29 +18,32 @@ enum Constants{
     
 }
 struct Settings: View {
-    
+    //we are gonna have to play with the list style to override the colors but using the list style below will change the background color but will mess up the design of each block
     var body: some View {
         NavigationView {
-            
-            List {
-                DisplayandCustomizationSection
-                CreatorsSection
-                DevelopersSection
-                TermsSection
-                
-                
+            ZStack {
+                Color("Jenni")
+                VStack {
+                    List {
+                        DisplayandCustomizationSection
+                        CreatorsSection
+                        DevelopersSection
+                        TermsSection
+                    }
+//                   .listStyle(.plain)
+                    //.background(Color("Jenni"))
+                }
+                .navigationTitle("Settings")
+                .font(.headline)
             }
-            .font(.headline)
-            .navigationTitle("Settings")
-            
         }
-        
     }
 }
 struct Settings_Previews: PreviewProvider {
     
     static var previews: some View {
-        Settings()
+            Settings()
+        
     }
 }
 
@@ -48,7 +51,7 @@ extension Settings {
     private var CreatorsSection: some View {
         Section(header: Text("Creator")){
             VStack(alignment: .leading) {
-                Image("CreatorImage")
+                Image("leaf")
                     .resizable()
                     .frame(width: 100,height: 100)
                     .clipShape(Circle())
@@ -62,6 +65,8 @@ extension Settings {
                     .fontWeight(.medium)
                         
             }
+            .foregroundColor(Color.black)
+            
             Link(destination: URL(string: Constants.instagramOfCreator)!,
                                         label: {
                 HStack {
@@ -74,16 +79,21 @@ extension Settings {
                 .offset(x:4)
                 
                                 })
-            .foregroundColor(Color.theme.text)
+            .foregroundColor(Color.black)
+//            .foregroundColor(Color.theme.text)
           
             Link(destination: URL(string: Constants.emailOfCompany)!,
                                         label: {
                                             Label("Email", systemImage: "envelope.open.fill")
                                 })
-            .foregroundColor(Color.theme.text)
+            .foregroundColor(Color.black)
+//            .foregroundColor(Color.theme.text)
                                 
             
         }
+        .listRowBackground(Color("WaveColor"))
+
+        
     }
     
     private var DevelopersSection: some View {
@@ -105,6 +115,7 @@ extension Settings {
                     .fontWeight(.medium)
                         
             }
+            .foregroundColor(Color.black)
             Link(destination: URL(string: Constants.instagramOfDeveloper)!,
                                         label: {
                 HStack {
@@ -116,16 +127,19 @@ extension Settings {
                 .offset(x:4)
                 
                                 })
-            .foregroundColor(Color.theme.text)
+            .foregroundColor(Color.black)
+//            .foregroundColor(Color.theme.text)
                                
             
             Link(destination: URL(string: Constants.emailOfDeveloper)!,
                                         label: {
                                             Label("Email", systemImage: "envelope.open.fill")
                                 })
-            .foregroundColor(Color.theme.text)
+            .foregroundColor(Color.black)
+//            .foregroundColor(Color.theme.text)
                                 
         }
+        .listRowBackground(Color("WaveColor"))
     }
                  
     @ViewBuilder
@@ -144,11 +158,15 @@ extension Settings {
                         Text("Use System Settings")
                         })
             }
+        //ALL IT TAKES IS CHANGING THE SECTION OR LIST ELEMENTS
+                    .listRowBackground(Color("WaveColor"))
+                    .foregroundColor(Color.black)
         Section(header: Text("Customizer"), footer: Text("Change Appearance of Clock")) {
             VStack {
                 //StylePicker(clockStyle: $clockStyle)
             }
         }
+        .listRowBackground(Color("WaveColor"))
         
                         
                     
@@ -160,7 +178,9 @@ extension Settings {
             Link("Privacy Policy", destination: URL(string: Constants.emailOfCompany)!)
             Link("Company Website", destination: URL(string: Constants.emailOfCompany)!)
             }
-        .foregroundColor(Color.theme.text)
+        .foregroundColor(Color.black)
+//        .foregroundColor(Color.theme.text)
+        .listRowBackground(Color("WaveColor"))
             
         }
     }
@@ -179,3 +199,14 @@ struct StylePicker: View {
 }
     
 
+/*
+ List {
+     DisplayandCustomizationSection
+     CreatorsSection
+     DevelopersSection
+     TermsSection
+ }
+ .navigationTitle("Settings")
+ .font(.headline)
+}
+ */

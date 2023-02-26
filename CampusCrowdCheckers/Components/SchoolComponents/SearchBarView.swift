@@ -16,15 +16,15 @@ struct SearchBarView: View {
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
-                .foregroundColor(colorScheme == .dark && searchText.isEmpty ? Color.gray : Color.theme.Stroke)
+                .foregroundColor(Color.black)
             
             TextField("Search by School Name or City...", text: $searchText)
-                .foregroundColor(Color.theme.text)
+                .foregroundColor(Color.black)
                 .overlay(
                     Image(systemName: "xmark.circle.fill")
                         .padding()
                         .offset(x:10)
-                        .foregroundColor(Color.theme.Stroke)
+                        .foregroundColor(Color.white)
                         .opacity(searchText.isEmpty ? 0.0 : 1.0)
                         .onTapGesture {
                             UIApplication.shared.endEditing()
@@ -38,9 +38,9 @@ struct SearchBarView: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 25)
-                .fill(Color.theme.Background)
-                .shadow(color: Color.theme.Stroke.opacity(0.15),
-                        radius: 10, x:0, y:0)
+                .fill(Color.white).opacity(0.8)
+                .shadow(color: Color.black.opacity(0.25),
+                        radius: 20, x:10, y:10)
         )
         .padding()
     }
@@ -51,3 +51,7 @@ struct SearchBarView_Previews: PreviewProvider {
         SearchBarView(searchText: .constant(""))
     }
 }
+
+
+//    .padding()
+//    .background(Color(UIColor.secondarySystemBackground))
