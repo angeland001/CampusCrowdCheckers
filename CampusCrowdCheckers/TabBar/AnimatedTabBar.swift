@@ -33,13 +33,14 @@ struct AnimatedTabBar: View {
         }
         .padding()
         .background(
-            Color.theme.TabBar
+            Color("WaveColor") //this is the new tab bar color. TabBar is useless rn
+            //Color.theme.TabBar
                 .clipShape(TabCurve(tabPoint: getCurvePoint() - 15)))
         .overlay (
           Circle()
-            .fill(Color.theme.TabBar)
+            .fill(Color.black)
             .frame(width:10,height:10)
-            .offset(x:getCurvePoint() - 207)
+            .offset(x:getCurvePoint() - 213)
           ,alignment: .bottom
         )
         .cornerRadius(30)
@@ -103,7 +104,8 @@ struct TabBarButton: View {
                 //filling the color if its selected
                 Image(systemName: "\(image)\(selectedTab == image ? ".fill" : "")")
                     .font(.system(size:25,weight:.semibold))
-                    .foregroundColor(Color.theme.Background)
+                    //.foregroundColor(Color.theme.Background)
+                    .foregroundColor(Color("TabBarItemColor"))
                     // Lifting View
                     //if its selected
                     .offset(y:selectedTab == image ? -10 : 0)
@@ -126,4 +128,5 @@ struct AnimatedTabBar_Previews: PreviewProvider {
         MainView()
     }
 }
+
 

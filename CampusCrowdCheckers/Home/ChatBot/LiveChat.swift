@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LiveChat: View {
     @State private var messageText = ""
-    @State var messages: [String] = ["Welcome to Crowd Check 1.0!"]
+    @State var messages: [String] = ["My name is Jenni, how can I help you?"]
     @State private var change = false
     var body: some View {
         
@@ -10,19 +10,22 @@ struct LiveChat: View {
             ZStack {
                 
                 Wave(yOffset: 0.75)
-                    .fill(Color.theme.text)
+                    .fill(Color("WaveColor"))
+                    //.fill(Color.theme.text)
                     .frame(height: 150)
                     .shadow(radius: 4)
                     .ignoresSafeArea()
                 HStack{
-                    Text("Bot")
+                    Text("Jenni")
                         .font(.largeTitle)
                         .bold()
-                        .foregroundColor(Color.theme.Background)
+                        .foregroundColor(Color("Jenni"))
+                        
             
                     Image(systemName: "person.fill")
                         .font(.system(size: 26))
-                        .foregroundColor(Color.theme.Background)
+                        .foregroundColor(Color("Jenni"))
+                        
                     
                 }
                 .offset(y:-40)
@@ -49,22 +52,25 @@ struct LiveChat: View {
                         HStack{
                             Text(message)
                                 .padding()
-                                .background(.black.opacity(0.2))
+                                .background(Color(UIColor.secondarySystemBackground))
+                                //.background(.black.opacity(0.2))
                                 .cornerRadius(10)
                                 .padding(.horizontal, 16)
                                 .padding(.bottom, 10)
+                            
                             Spacer()
         
                         }
+                        
                     }
                 }.rotationEffect(.degrees(180))
             }.rotationEffect(.degrees(180))
-                .background(Color.theme.Background)
+                .background(Color("MainViewBackground"))
         
             HStack{
-                TextField("Ask Us About Locations", text: $messageText)
+                TextField("Type something here", text: $messageText)
                     .padding()
-                    .background(Color.white.opacity(0.5))
+                    .background(Color(UIColor.secondarySystemBackground))
         
                     .cornerRadius(10)
                     .overlay(
@@ -80,14 +86,15 @@ struct LiveChat: View {
                     sendMessage(message: messageText)
                 }label: {
                     Image(systemName: "paperplane.fill")
-                        .foregroundColor(Color.blue)
+                        //.foregroundColor(Color.white)
+                        .foregroundColor(Color("Airplane"))
                 }
                 .font(.system(size: 26))
                 .padding(.horizontal, 10)
             }
             .padding()
         }
-        .background(Color.theme.Background)
+        .background(Color("MainViewBackground"))
         
         
         }

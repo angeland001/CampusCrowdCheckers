@@ -10,6 +10,8 @@
 		49023B4A291C8F7D00CF6DDF /* Infographics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49023B49291C8F7D00CF6DDF /* Infographics.swift */; };
 		4907DB9A2919C69000C5C502 /* AnimatedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */; };
 		4907DB9C2919CCB000C5C502 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907DB9B2919CCB000C5C502 /* TabCurve.swift */; };
+		490AC38729AB046600CA14EB /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490AC38629AB046600CA14EB /* GifImage.swift */; };
+		490AC39129AB094700CA14EB /* geolocation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 490AC39029AB094700CA14EB /* geolocation.gif */; };
 		49275842293D882D00CD05E3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49275841293D882D00CD05E3 /* LocationManager.swift */; };
 		49275844293D88A200CD05E3 /* LocationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49275843293D88A200CD05E3 /* LocationRequestView.swift */; };
 		4937576C2954E0EF00EA590C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937576B2954E0EF00EA590C /* String.swift */; };
@@ -73,6 +75,8 @@
 		49023B49291C8F7D00CF6DDF /* Infographics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infographics.swift; sourceTree = "<group>"; };
 		4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTabBar.swift; sourceTree = "<group>"; };
 		4907DB9B2919CCB000C5C502 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
+		490AC38629AB046600CA14EB /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		490AC39029AB094700CA14EB /* geolocation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = geolocation.gif; sourceTree = "<group>"; };
 		49275841293D882D00CD05E3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		49275843293D88A200CD05E3 /* LocationRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequestView.swift; sourceTree = "<group>"; };
 		4937576B2954E0EF00EA590C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				4937576F2957AAB300EA590C /* UIApplication.swift */,
 				495DB8AE29624A8600C76D2A /* Bundle.swift */,
 				4971173629691AB500623E1D /* UINavigationController.swift */,
+				490AC38629AB046600CA14EB /* GifImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				49B83EE9298DA699000664D8 /* GoogleService-Info.plist */,
+				490AC39029AB094700CA14EB /* geolocation.gif */,
 				493B306828FB2F0500E3C3C8 /* Extensions */,
 				49B5BEB029288DBD009CB7DF /* DataFiles */,
 				49FC30E028F0C4030006D87F /* CampusCrowdCheckers */,
@@ -434,6 +440,7 @@
 				49B5BEC8292A9B59009CB7DF /* PodData1.csv in Resources */,
 				4969F4EA298DB2F700660258 /* people.mp4 in Resources */,
 				49B5BEC9292A9B59009CB7DF /* RRData1.csv in Resources */,
+				490AC39129AB094700CA14EB /* geolocation.gif in Resources */,
 				49B5BEC5292A9B59009CB7DF /* PandaData1.csv in Resources */,
 				49EDD72E295E234000EFC0D3 /* VenueLocations.json in Resources */,
 				49B5BEC7292A9B59009CB7DF /* ChickFilaData1.csv in Resources */,
@@ -455,6 +462,7 @@
 				49B5BEA92927E3D0009CB7DF /* MainView.swift in Sources */,
 				49FDF1D8296547A300409CCF /* LocationDetailView.swift in Sources */,
 				49EDD72B295DF6B400EFC0D3 /* Stripe.swift in Sources */,
+				490AC38729AB046600CA14EB /* GifImage.swift in Sources */,
 				4937576C2954E0EF00EA590C /* String.swift in Sources */,
 				495DB8AF29624A8700C76D2A /* Bundle.swift in Sources */,
 				49B83EE2298DA38F000664D8 /* CardView.swift in Sources */,
