@@ -10,7 +10,7 @@ struct LiveChat: View {
             ZStack {
                 
                 Wave(yOffset: 0.75)
-                    .fill(Color("WaveColor"))
+                    .fill(Color.white)
                     //.fill(Color.theme.text)
                     .frame(height: 150)
                     .shadow(radius: 4)
@@ -19,12 +19,12 @@ struct LiveChat: View {
                     Text("Jenni")
                         .font(.largeTitle)
                         .bold()
-                        .foregroundColor(Color("Jenni"))
+                        .foregroundColor(Color.black)
                         
             
                     Image(systemName: "person.fill")
                         .font(.system(size: 26))
-                        .foregroundColor(Color("Jenni"))
+                        .foregroundColor(Color.black)
                         
                     
                 }
@@ -65,7 +65,7 @@ struct LiveChat: View {
                     }
                 }.rotationEffect(.degrees(180))
             }.rotationEffect(.degrees(180))
-                .background(Color("MainViewBackground"))
+                .background(Color("Jenni"))
         
             HStack{
                 TextField("Type something here", text: $messageText)
@@ -94,7 +94,7 @@ struct LiveChat: View {
             }
             .padding()
         }
-        .background(Color("MainViewBackground"))
+        .background(Color("Jenni"))
         
         
         }

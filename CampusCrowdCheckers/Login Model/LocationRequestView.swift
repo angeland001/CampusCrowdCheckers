@@ -11,24 +11,25 @@ struct LocationRequestView: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         ZStack {
-            Color.white
+            Color("Jenni")
                         .ignoresSafeArea()
                     VStack {
                         Spacer()
-                        GifImage("geolocation")
+                        Image(systemName: "map.fill")
+                            .resizable()
                             .frame(width:300,height:300)
                         
                         
                             Text("Enable Geolocation")
                                 .font(.system(size:26,weight:.semibold))
                                 .multilineTextAlignment(.center)
-                                .foregroundColor(Color.black)
+                                .foregroundColor(Color.white)
                                 .padding()
                         HStack {
                             Text("Enable Location Services to get full access to CrowdCheck.")
                                 .multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity)
-                                .foregroundColor(Color.black).opacity(0.5)
+                                .foregroundColor(Color.white).opacity(0.5)
                                 
                         }
                         Spacer()

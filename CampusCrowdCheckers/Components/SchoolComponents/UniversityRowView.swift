@@ -27,12 +27,12 @@ struct UniversityRowView: View {
             Text(school.name)
                 .font(.headline)
                 .padding(.leading,6)
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.white)
             
             Spacer()
             Text(school.city)
                 .font(.footnote)
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.white)
         }
         .padding()
         
