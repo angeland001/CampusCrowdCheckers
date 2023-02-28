@@ -65,7 +65,7 @@ struct LiveChat: View {
                     }
                 }.rotationEffect(.degrees(180))
             }.rotationEffect(.degrees(180))
-                .background(Color("MainViewBackground"))
+                .background(Color("Jenni"))
         
             HStack{
                 TextField("Type something here", text: $messageText)
@@ -94,7 +94,7 @@ struct LiveChat: View {
             }
             .padding()
         }
-        .background(Color("MainViewBackground"))
+        .background(Color("Jenni"))
         
         
         }

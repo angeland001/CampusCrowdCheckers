@@ -15,14 +15,14 @@ struct WelcomeCardViews: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             TabView(selection: $selectedTab) {
-                OnboardView(image: "eye.fill", title: "Observe", description: "See the crowd levels of numerous hot spots around your area")
+                OnboardView(image: "eye.fill", title: "Observe", description: "Select your school and see how crowded your dining hall, gym, and parking lots are")
                     .tag(0)
-                OnboardView(image: "globe.americas.fill", title: "Check The Crowd", description: "See the crowd levels of numerous hot spots around your area")
+                OnboardView(image: "globe.americas.fill", title: "Going Out?", description: "Check out the map to find your next move")
                     .tag(1)
                 
                 if (selectedTab == 1 || selectedTab == 2) {
                     VStack {
-                        OnboardView(image: "person.crop.circle.fill.badge.checkmark", title: "View Best Spots", description: "See the crowd levels of numerous hot spots around your area")
+                        OnboardView(image: "person.crop.circle.fill.badge.checkmark", title: "You're All Set!", description: "Tap 'Get Started' to begin your journey")
                             .tag(2)
                             
                         NavigationLink(

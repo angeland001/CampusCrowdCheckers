@@ -19,12 +19,12 @@ struct SearchBarView: View {
                 .foregroundColor(Color.black)
             
             TextField("Search by School Name or City...", text: $searchText)
-                .foregroundColor(Color.black)
+                .foregroundColor(Color("Text"))
                 .overlay(
                     Image(systemName: "xmark.circle.fill")
                         .padding()
                         .offset(x:10)
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.theme.Stroke)
                         .opacity(searchText.isEmpty ? 0.0 : 1.0)
                         .onTapGesture {
                             UIApplication.shared.endEditing()
@@ -38,8 +38,8 @@ struct SearchBarView: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 25)
-                .fill(Color.white).opacity(0.8)
-                .shadow(color: Color.black.opacity(0.25),
+                .fill(Color(UIColor.secondarySystemBackground))
+                .shadow(color: Color.white.opacity(0.25),
                         radius: 20, x:10, y:10)
         )
         .padding()
