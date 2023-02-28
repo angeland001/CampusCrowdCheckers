@@ -33,7 +33,7 @@ struct AnimatedTabBar: View {
         }
         .padding()
         .background(
-            Color.white //this is the new tab bar color. TabBar is useless rn
+            Color("WaveColor") //this is the new tab bar color. TabBar is useless rn
             //Color.theme.TabBar
                 .clipShape(TabCurve(tabPoint: getCurvePoint() - 15)))
         .overlay (

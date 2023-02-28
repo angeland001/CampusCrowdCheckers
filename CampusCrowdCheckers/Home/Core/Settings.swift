@@ -29,13 +29,13 @@ struct Settings: View {
                 
                 
                 Wave(yOffset: -0.75)
-                    .fill(Color.white)
+                    .fill(Color("WaveColor"))
                 //.fill(Color.theme.text)
                     .frame(height: 150)
                     .shadow(radius: 4)
                     .ignoresSafeArea()
                 HStack{
-                    Text("Options")
+                    Text("Settings")
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(Color.black)
@@ -108,7 +108,7 @@ extension Settings {
 
         }
         .foregroundColor(Color.white)
-        .listRowBackground(Color.white)
+        .listRowBackground(Color("WaveColor"))
 
 
     }
@@ -158,6 +158,7 @@ extension Settings {
 
         }
         .foregroundColor(Color.white)
+        .listRowBackground(Color("WaveColor"))
         
     }
 
@@ -172,6 +173,7 @@ extension Settings {
                 .foregroundColor(Color.black)
             }
         .foregroundColor(Color.white)
+        .listRowBackground(Color("WaveColor"))
         
 
 
