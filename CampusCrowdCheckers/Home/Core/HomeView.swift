@@ -27,7 +27,7 @@ struct HomeView: View {
     var body: some View {
         
         ZStack {
-            Color.white
+            Color("Jenni")
             //Color.theme.Background
                 .ignoresSafeArea()
             
@@ -36,12 +36,12 @@ struct HomeView: View {
             VStack {
                 ZStack(alignment: .top){
                     Wave(yOffset: -0.55)
-                        .fill(Color("WaveColor"))
+                        .fill(Color.white).opacity(0.5)
                         .frame(height: 150)
                         .shadow(radius: 4)
                         .ignoresSafeArea()
                     Wave(yOffset: 0.55)
-                        .fill(Color("WaveColor"))
+                        .fill(Color.white)
                         .frame(height: 150)
                         .shadow(radius: 4)
                         .ignoresSafeArea()
@@ -115,12 +115,12 @@ extension HomeView {
                         Text("Welcome Back,")
                         
                             .font(.headline)
-                            .foregroundColor(Color("Jenni"))
+                            .foregroundColor(Color.black)
                             .offset(x:-68)
                         Text("Andres")
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(Color("Jenni"))
+                            .foregroundColor(Color.black)
                         
                             .offset(x:-80)
                         
@@ -134,7 +134,7 @@ extension HomeView {
                 
                 Spacer()
                 CircleButtonView(iconName: showProfile ? "person.fill" : "person")
-                
+
                     .onTapGesture {
                         withAnimation(.spring()) {
                             showProfile.toggle()
@@ -178,12 +178,12 @@ extension HomeView {
                                 UniversityRowView(school: university, image: university.name)
                             }
                         }
-                        .listRowBackground(Color.white)
+                        .listRowBackground(Color("Jenni"))
                         
                         
                     }
                     .foregroundColor(Color("WaveColor"))
-                    .background(Color.white)
+                    .background(Color("Jenni"))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 .listStyle(.plain)
@@ -199,7 +199,7 @@ extension HomeView {
                     
                     ForEach(0..<6) { i in
                         Stripe(time: time, size: 200)
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.white)
                             .rotationEffect(.degrees((360 / 6) * Double(i)))
                     }
                 }

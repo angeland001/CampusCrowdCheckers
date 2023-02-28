@@ -12,7 +12,7 @@ struct LoginScreen: View {
     var body: some View {
         ZStack{
                     
-            LinearGradient(gradient: .init(colors: [Color("DarkGray"),Color("Philippine Silver"),Color("X11 Gray"),Color("Silver Sand"),Color("Chinese Silver"),Color.white.opacity(0.1)]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: .init(colors: [Color("X11 Gray"),Color.white,Color("Cadet Gray 3"),Color("Cadet Gray 2"),Color("Cadet Gray 3"),Color.white.opacity(0.1)]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
                     
                     if UIScreen.main.bounds.height > 800{
                         
@@ -37,7 +37,10 @@ struct Home : View {
         
         VStack{
             
-            GifImage("icons8-geography")
+            Image("Map")
+                .resizable()
+                .frame(width:200,height:200)
+                .padding()
             
             HStack{
                 
