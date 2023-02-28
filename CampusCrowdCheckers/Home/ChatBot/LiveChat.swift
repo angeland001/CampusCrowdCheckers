@@ -10,7 +10,7 @@ struct LiveChat: View {
             ZStack {
                 
                 Wave(yOffset: 0.75)
-                    .fill(Color.white)
+                    .fill(Color("WaveColor"))
                     //.fill(Color.theme.text)
                     .frame(height: 150)
                     .shadow(radius: 4)
@@ -19,12 +19,12 @@ struct LiveChat: View {
                     Text("Jenni")
                         .font(.largeTitle)
                         .bold()
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color("Jenni"))
                         
             
                     Image(systemName: "person.fill")
                         .font(.system(size: 26))
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color("Jenni"))
                         
                     
                 }

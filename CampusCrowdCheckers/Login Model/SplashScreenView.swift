@@ -17,15 +17,9 @@ struct SplashScreenView: View {
     
     var body: some View {
         if isActive{
-            if !hasSeenWelcome {
-                    WelcomeCardViews()
-                        .onDisappear {
-                            hasSeenWelcome = true
-                        }
-                } else {
-                    MainView()
-                }
-        } else{
+            MainView()
+        }
+        else{
             ZStack {
                 Color.black
                     .ignoresSafeArea()

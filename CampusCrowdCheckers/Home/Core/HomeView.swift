@@ -41,7 +41,7 @@ struct HomeView: View {
                         .shadow(radius: 4)
                         .ignoresSafeArea()
                     Wave(yOffset: 0.55)
-                        .fill(Color.white)
+                        .fill(Color("WaveColor"))
                         .frame(height: 150)
                         .shadow(radius: 4)
                         .ignoresSafeArea()
@@ -115,12 +115,12 @@ extension HomeView {
                         Text("Welcome Back,")
                         
                             .font(.headline)
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color("Jenni"))
                             .offset(x:-68)
-                        Text("Andres")
+                        Text("Daniel")
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color("Jenni"))
                         
                             .offset(x:-80)
                         
@@ -164,7 +164,7 @@ extension HomeView {
                     
                     
                 }
-                .foregroundColor(Color.gray)
+                .foregroundColor(Color("Text"))
                 //.opacity(0.8)
             }
         }
@@ -188,7 +188,7 @@ extension HomeView {
                 }
                 .listStyle(.plain)
             }
-            .background(Color.white)
+            .background(Color("Jenni"))
             
         }
         
