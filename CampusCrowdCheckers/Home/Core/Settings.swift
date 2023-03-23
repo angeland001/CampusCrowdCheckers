@@ -29,7 +29,7 @@ struct Settings: View {
                 
                 
                 Wave(yOffset: -0.75)
-                    .fill(Color("WaveColor"))
+                    .fill(Color.white)
                 //.fill(Color.theme.text)
                     .frame(height: 150)
                     .shadow(radius: 4)
@@ -107,8 +107,9 @@ extension Settings {
 
 
         }
+        .listStyle(.sidebar)
         .foregroundColor(Color.white)
-        .listRowBackground(Color("WaveColor"))
+        .listRowBackground(Color.white)
 
 
     }
@@ -158,7 +159,7 @@ extension Settings {
 
         }
         .foregroundColor(Color.white)
-        .listRowBackground(Color("WaveColor"))
+        .listRowBackground(Color.white)
         
     }
 
@@ -173,25 +174,13 @@ extension Settings {
                 .foregroundColor(Color.black)
             }
         .foregroundColor(Color.white)
-        .listRowBackground(Color("WaveColor"))
+        .listRowBackground(Color.white)
         
 
 
         }
     }
 
-struct StylePicker: View {
-    @Binding var clockStyle: ClockStyle
-
-    var body: some View {
-        Picker("Style", selection: $clockStyle) {
-            ForEach(ClockStyle.allCases) { style in
-                Text(style.description).tag(style)
-            }
-        }
-        .pickerStyle(SegmentedPickerStyle())
-    }
-}
 
 
 

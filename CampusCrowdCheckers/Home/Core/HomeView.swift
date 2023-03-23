@@ -41,7 +41,7 @@ struct HomeView: View {
                         .shadow(radius: 4)
                         .ignoresSafeArea()
                     Wave(yOffset: 0.55)
-                        .fill(Color("WaveColor"))
+                        .fill(Color.white)
                         .frame(height: 150)
                         .shadow(radius: 4)
                         .ignoresSafeArea()
@@ -53,6 +53,7 @@ struct HomeView: View {
                             
                             SearchBarView(searchText: $searchText)
                                 .offset(y:10)
+                                .frame(width:450)
                             
                             if loading {
                                 Spacer()
@@ -112,17 +113,17 @@ extension HomeView {
                 Spacer()
                 ZStack {
                     VStack {
-                        Text("Welcome Back,")
+                        Text("Welcome to")
                         
                             .font(.headline)
                             .foregroundColor(Color("Jenni"))
                             .offset(x:-68)
-                        Text("Daniel")
+                        Text("CrowdCheck")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(Color("Jenni"))
                         
-                            .offset(x:-80)
+                            .offset(x:-60)
                         
                     }
                     .italic()
