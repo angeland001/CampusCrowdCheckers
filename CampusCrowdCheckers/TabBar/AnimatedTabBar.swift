@@ -36,7 +36,7 @@ struct AnimatedTabBar: View {
         .frame(width:400,height:20)
         .padding()
         .background(
-            Color("WaveColor")
+            Color.white
         )
         //.cornerRadius(30)
         .padding(.horizontal)

@@ -10,8 +10,6 @@
 		49023B4A291C8F7D00CF6DDF /* Infographics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49023B49291C8F7D00CF6DDF /* Infographics.swift */; };
 		4907DB9A2919C69000C5C502 /* AnimatedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */; };
 		4907DB9C2919CCB000C5C502 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4907DB9B2919CCB000C5C502 /* TabCurve.swift */; };
-		490AC38729AB046600CA14EB /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490AC38629AB046600CA14EB /* GifImage.swift */; };
-		490AC39329ABDAF300CA14EB /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490AC39229ABDAF300CA14EB /* OnboardView.swift */; };
 		49275842293D882D00CD05E3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49275841293D882D00CD05E3 /* LocationManager.swift */; };
 		49275844293D88A200CD05E3 /* LocationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49275843293D88A200CD05E3 /* LocationRequestView.swift */; };
 		4937576C2954E0EF00EA590C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937576B2954E0EF00EA590C /* String.swift */; };
@@ -32,7 +30,6 @@
 		495DB8B7296269E600C76D2A /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DB8B6296269E600C76D2A /* VenueModel.swift */; };
 		4969F4EA298DB2F700660258 /* people.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4969F4E9298DB2F700660258 /* people.mp4 */; };
 		4971173729691AB500623E1D /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971173629691AB500623E1D /* UINavigationController.swift */; };
-		497C585129CBDD4500A093EA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C585029CBDD4500A093EA /* TabBar.swift */; };
 		4987827D294E53470092DD11 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987827C294E53470092DD11 /* UniversityModel.swift */; };
 		4987827F295294B50092DD11 /* UniversityRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987827E295294B50092DD11 /* UniversityRowView.swift */; };
 		49AE03B22946CA0B001F337B /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE03B12946CA0B001F337B /* CircleButtonView.swift */; };
@@ -53,9 +50,7 @@
 		49B83ED4298D9E02000664D8 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 49B83ED3298D9E02000664D8 /* FirebaseAnalyticsSwift */; };
 		49B83ED6298D9E02000664D8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 49B83ED5298D9E02000664D8 /* FirebaseAuth */; };
 		49B83EDA298DA1FB000664D8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B83ED9298DA1FB000664D8 /* LoginViewModel.swift */; };
-		49B83EDC298DA23A000664D8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B83EDB298DA23A000664D8 /* PlayerView.swift */; };
 		49B83EEA298DA699000664D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49B83EE9298DA699000664D8 /* GoogleService-Info.plist */; };
-		49BB129429AD635E002206AF /* geolocationtwo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 49BB129329AD635E002206AF /* geolocationtwo.gif */; };
 		49D8FFB72962851300B92281 /* LocationListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8FFB62962851300B92281 /* LocationListRow.swift */; };
 		49D8FFC32963AEB200B92281 /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8FFC22963AEB200B92281 /* LocationPreviewView.swift */; };
 		49EDD72B295DF6B400EFC0D3 /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDD72A295DF6B200EFC0D3 /* Stripe.swift */; };
@@ -72,8 +67,6 @@
 		49023B49291C8F7D00CF6DDF /* Infographics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infographics.swift; sourceTree = "<group>"; };
 		4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTabBar.swift; sourceTree = "<group>"; };
 		4907DB9B2919CCB000C5C502 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
-		490AC38629AB046600CA14EB /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
-		490AC39229ABDAF300CA14EB /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		49275841293D882D00CD05E3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		49275843293D88A200CD05E3 /* LocationRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequestView.swift; sourceTree = "<group>"; };
 		4937576B2954E0EF00EA590C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -94,7 +87,6 @@
 		4969F4E9298DB2F700660258 /* people.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = people.mp4; sourceTree = "<group>"; };
 		496BCCD029899EB90037573B /* CampusCrowdCheckers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CampusCrowdCheckers.entitlements; sourceTree = "<group>"; };
 		4971173629691AB500623E1D /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		497C585029CBDD4500A093EA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		4987827C294E53470092DD11 /* UniversityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		4987827E295294B50092DD11 /* UniversityRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityRowView.swift; sourceTree = "<group>"; };
 		49AE03B12946CA0B001F337B /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
@@ -112,9 +104,7 @@
 		49B5BEC3292A9B58009CB7DF /* RRData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RRData1.csv; sourceTree = "<group>"; };
 		49B5BEC4292A9B58009CB7DF /* MoesData1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MoesData1.csv; sourceTree = "<group>"; };
 		49B83ED9298DA1FB000664D8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		49B83EDB298DA23A000664D8 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		49B83EE9298DA699000664D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		49BB129329AD635E002206AF /* geolocationtwo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = geolocationtwo.gif; sourceTree = "<group>"; };
 		49D8FFB62962851300B92281 /* LocationListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListRow.swift; sourceTree = "<group>"; };
 		49D8FFC22963AEB200B92281 /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
 		49EDD72A295DF6B200EFC0D3 /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
@@ -152,7 +142,6 @@
 				4937576F2957AAB300EA590C /* UIApplication.swift */,
 				495DB8AE29624A8600C76D2A /* Bundle.swift */,
 				4971173629691AB500623E1D /* UINavigationController.swift */,
-				490AC38629AB046600CA14EB /* GifImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -179,7 +168,6 @@
 			children = (
 				4907DB9B2919CCB000C5C502 /* TabCurve.swift */,
 				4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */,
-				497C585029CBDD4500A093EA /* TabBar.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -234,7 +222,6 @@
 				493B306628F86B4500E3C3C8 /* SplashScreenView.swift */,
 				49275843293D88A200CD05E3 /* LocationRequestView.swift */,
 				49B83ED9298DA1FB000664D8 /* LoginViewModel.swift */,
-				490AC39229ABDAF300CA14EB /* OnboardView.swift */,
 			);
 			path = "Login Model";
 			sourceTree = "<group>";
@@ -244,7 +231,6 @@
 			children = (
 				49FDF1DA296547E100409CCF /* SchoolComponents */,
 				49FDF1D9296547B300409CCF /* MapComponents */,
-				49B83EDB298DA23A000664D8 /* PlayerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -294,7 +280,6 @@
 			isa = PBXGroup;
 			children = (
 				49B83EE9298DA699000664D8 /* GoogleService-Info.plist */,
-				49BB129329AD635E002206AF /* geolocationtwo.gif */,
 				493B306828FB2F0500E3C3C8 /* Extensions */,
 				49B5BEB029288DBD009CB7DF /* DataFiles */,
 				49FC30E028F0C4030006D87F /* CampusCrowdCheckers */,
@@ -428,7 +413,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FC30E928F0C4060006D87F /* Preview Assets.xcassets in Resources */,
-				49BB129429AD635E002206AF /* geolocationtwo.gif in Resources */,
 				49B5BEC8292A9B59009CB7DF /* PodData1.csv in Resources */,
 				4969F4EA298DB2F700660258 /* people.mp4 in Resources */,
 				49B5BEC9292A9B59009CB7DF /* RRData1.csv in Resources */,
@@ -453,7 +437,6 @@
 				49B5BEA92927E3D0009CB7DF /* MainView.swift in Sources */,
 				49FDF1D8296547A300409CCF /* LocationDetailView.swift in Sources */,
 				49EDD72B295DF6B400EFC0D3 /* Stripe.swift in Sources */,
-				490AC38729AB046600CA14EB /* GifImage.swift in Sources */,
 				4937576C2954E0EF00EA590C /* String.swift in Sources */,
 				495DB8AF29624A8700C76D2A /* Bundle.swift in Sources */,
 				49AE03B22946CA0B001F337B /* CircleButtonView.swift in Sources */,
@@ -461,12 +444,10 @@
 				495DB8B52962590F00C76D2A /* LocationMapAnnotationView.swift in Sources */,
 				495DB8AD29624A0600C76D2A /* Wave.swift in Sources */,
 				495DB8B7296269E600C76D2A /* VenueModel.swift in Sources */,
-				490AC39329ABDAF300CA14EB /* OnboardView.swift in Sources */,
 				4907DB9C2919CCB000C5C502 /* TabCurve.swift in Sources */,
 				49023B4A291C8F7D00CF6DDF /* Infographics.swift in Sources */,
 				493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */,
 				49AE03B42946CEA5001F337B /* CircleButtonAnimationView.swift in Sources */,
-				497C585129CBDD4500A093EA /* TabBar.swift in Sources */,
 				49275842293D882D00CD05E3 /* LocationManager.swift in Sources */,
 				4947B212293EE27A00D3812A /* MapView.swift in Sources */,
 				493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */,
@@ -474,7 +455,6 @@
 				49D8FFC32963AEB200B92281 /* LocationPreviewView.swift in Sources */,
 				4944C48A294BC02800A51A94 /* PreviewProvider.swift in Sources */,
 				49B5BEAB2927E590009CB7DF /* Settings.swift in Sources */,
-				49B83EDC298DA23A000664D8 /* PlayerView.swift in Sources */,
 				4987827D294E53470092DD11 /* UniversityModel.swift in Sources */,
 				4971173729691AB500623E1D /* UINavigationController.swift in Sources */,
 				493757722957EF9C00EA590C /* SchoolInformationView.swift in Sources */,
@@ -632,6 +612,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -670,6 +651,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

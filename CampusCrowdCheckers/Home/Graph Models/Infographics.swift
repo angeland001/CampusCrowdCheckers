@@ -16,28 +16,10 @@ struct Infographics: View {
     @State var Data: [GraphChart] = dataForPanda
     
     var body: some View {
-        VStack {
-            ZStack {
-                
-                infographic
-                
-            }
-            .padding(.top)
-            
-            ScrollView {
-                
-                graph
-                
-                InfoBoxes(theme: Color[venue.colorOfVenue], DataFile: "ChickFilaData1")
+        
+        infographic
                     
-                
-                
-            }
-            
-            
-            Spacer()
-            
-        }.padding(.top)
+               
     }
     
     
@@ -46,58 +28,24 @@ struct Infographics: View {
 
 
 extension Infographics {
-    private var graph: some View {
-        VStack() {
-            HStack{
-                Text("Predicted Population Graph")
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.theme.text)
-                
-            }
-            
-            
-            Chart {
-                ForEach(Data) { element in
-                    BarMark(
-                        x: .value("Time", element.time),
-                        y: .value("Total Count", element.animate ?  element.Populationcount : 0)
-                    )
-                    .foregroundStyle(Color[venue.colorOfVenue].gradient)
-                    
-                }
-            }
-            
-            .background(Color.theme.Background)
-            .frame(width:390,height:170)
-            .onAppear {
-                for (index,_) in Data.enumerated() {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.05) {
-                        withAnimation(.interactiveSpring(response: 0.8,dampingFraction: 0.8,blendDuration: 0.8)) {
-                            Data[index].animate = true
-                        }
-                    }
-                }
-            }
-            
-            
-        }
-    }
-    
+        
     private var infographic: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0)
-                .foregroundColor(Color.theme.Background)
-                .shadow(color: colorScheme == .dark ? .white : .black, radius: 10)
+                .foregroundColor(Color.white)
+                .shadow(color: .white, radius: 10)
                 .frame(height: 250)
                 .padding(.horizontal)
+                
             VStack {
                 Text(venue.VenueName)
-                    .foregroundColor(Color.theme.text)
-                    .font(.title)
+                    .foregroundColor(Color.black)
+                    .font(.title2)
                     .fontWeight(.heavy)
                     .padding(.horizontal)
-                Divider()
-                    .frame(width: 60)
+                
+                
+                
                 
                 HStack {
                     Image(venue.VenueName)
@@ -106,26 +54,39 @@ extension Infographics {
                         .foregroundColor(Color.theme.text)
                         .clipShape(Circle())
                         .scaledToFit()
-                        .frame(width: 105,height:105)
-                        .shadow(color: colorScheme == .dark ? .white : .black, radius: 10)
-                    VStack {
-                        Text("Hours of Operation Today")
-                            .font(.headline)
+                        .frame(width: 75,height:75)
+                        .shadow(color: .black, radius: 10)
+                    
+                    
+                    VStack(alignment: .leading) {
                         let timeForToday = convertIntToCurrentDay(arrayOfTime: venue.timeOfOperations)
                         
-                        Text("Opening Hours: " + timeForToday.VenueOpeningHours)
-                        Text("Closing Time: " + timeForToday.VenueClosingHours)
+                        Text("Opening Hours: ")
+                            .fontWeight(.bold)
+                        Text(timeForToday.VenueOpeningHours)
+                        Text("Closing Time: ")
+                            .fontWeight(.bold)
+                        Text(timeForToday.VenueClosingHours)
+                        
+                        
                         
                         
                     }
-                    .foregroundColor(Color.theme.text)
+                    .foregroundColor(Color.black)
                     
                     
                     
+                    VStack {
+                        Text("Current Crowd: ")
+                        Text("15")
+                            .bold()
+                    }
                     
                 }
                 
+                
             }
+            
         }
     }
 }

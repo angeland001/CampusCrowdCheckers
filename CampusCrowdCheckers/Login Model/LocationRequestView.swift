@@ -28,7 +28,7 @@ struct LocationRequestView: View {
                         HStack {
                             Text("Enable Location Services to get full access to CrowdCheck.")
                                 .multilineTextAlignment(.center)
-                                .frame(maxWidth: .infinity)
+                                .frame(maxWidth: .none)
                                 .foregroundColor(Color.white).opacity(0.5)
                                 
                         }
@@ -41,11 +41,11 @@ struct LocationRequestView: View {
                                 Text("Allow Location")
                                     .padding()
                                     .font(.headline)
-                                    .foregroundColor(colorScheme == .dark ? Color.black:Color.white)
+                                    .foregroundColor(Color.black)
                             }
                             .frame(width: UIScreen.main.bounds.width)
                             .padding(.horizontal,-50)
-                            .background(Color.black)
+                            .background(Color.white)
                             .clipShape(Capsule())
                             .padding()
                             
