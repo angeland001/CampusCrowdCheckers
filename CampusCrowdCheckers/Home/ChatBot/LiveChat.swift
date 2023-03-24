@@ -10,7 +10,7 @@ struct LiveChat: View {
             ZStack {
                 
                 Wave(yOffset: 0.75)
-                    .fill(Color("WaveColor"))
+                    .fill(Color.white)
                     //.fill(Color.theme.text)
                     .frame(height: 150)
                     .shadow(radius: 4)

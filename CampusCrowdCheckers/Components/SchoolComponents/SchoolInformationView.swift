@@ -16,14 +16,25 @@ struct SchoolInformationView: View {
         ZStack {
             
             BackGround
-            TabView {
+            
+            ScrollView {
+                
                 ForEach(school.schoolVenues) { venue in
-                    Infographics(venue: venue)
+                    Button {
+                        
+                    } label: {
+                        Infographics(venue: venue)
+                            .padding()
+                    }
+                    .buttonStyle(.plain)
+
+                    
                     
                 }
             }
             
-            .tabViewStyle(PageTabViewStyle())
+            
+            
             
             
             
@@ -47,7 +58,7 @@ struct SchoolInformationView_Previews: PreviewProvider {
 extension SchoolInformationView {
     private var BackGround: some View {
         ZStack {
-            Color.theme.Background
+            Color.white
             
         }
     
@@ -59,6 +70,7 @@ extension SchoolInformationView {
                         Image(systemName: "arrow.backward")
 
                     })
+                
                 .offset(y:-350)
        
             
