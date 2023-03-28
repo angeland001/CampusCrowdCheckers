@@ -36,7 +36,7 @@ extension Infographics {
                 .shadow(color: .black, radius: 10)
                 .frame(height: 250)
                 .padding(.horizontal)
-                .background(.thinMaterial)
+                
             VStack {
                 Text(venue.VenueName)
                     .foregroundColor(Color.black)

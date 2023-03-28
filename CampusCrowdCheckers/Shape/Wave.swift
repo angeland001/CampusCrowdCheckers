@@ -31,12 +31,18 @@ struct Wave: Shape {
     
 }
 
+
+
+
+
+
 struct Wave_Previews: PreviewProvider {
     static var previews: some View {
-        Wave(yOffset: 0.7)
-            .stroke(Color.red, lineWidth: 5)
-            .padding()
+        Wave(yOffset: -0.55)
+            .fill(Color.white).opacity(0.5)
+            .frame(height: 150)
+            .shadow(radius: 4)
+            .ignoresSafeArea()
             
-            .frame(height: 200)
     }
 }
