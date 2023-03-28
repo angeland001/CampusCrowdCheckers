@@ -30,7 +30,6 @@
 		495DB8B7296269E600C76D2A /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DB8B6296269E600C76D2A /* VenueModel.swift */; };
 		4969F4EA298DB2F700660258 /* people.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4969F4E9298DB2F700660258 /* people.mp4 */; };
 		4971173729691AB500623E1D /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971173629691AB500623E1D /* UINavigationController.swift */; };
-		497C585129CBDD4500A093EA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C585029CBDD4500A093EA /* TabBar.swift */; };
 		4987827D294E53470092DD11 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987827C294E53470092DD11 /* UniversityModel.swift */; };
 		4987827F295294B50092DD11 /* UniversityRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987827E295294B50092DD11 /* UniversityRowView.swift */; };
 		49AE03B22946CA0B001F337B /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE03B12946CA0B001F337B /* CircleButtonView.swift */; };
@@ -88,7 +87,6 @@
 		4969F4E9298DB2F700660258 /* people.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = people.mp4; sourceTree = "<group>"; };
 		496BCCD029899EB90037573B /* CampusCrowdCheckers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CampusCrowdCheckers.entitlements; sourceTree = "<group>"; };
 		4971173629691AB500623E1D /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		497C585029CBDD4500A093EA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		4987827C294E53470092DD11 /* UniversityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		4987827E295294B50092DD11 /* UniversityRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityRowView.swift; sourceTree = "<group>"; };
 		49AE03B12946CA0B001F337B /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 			children = (
 				4907DB9B2919CCB000C5C502 /* TabCurve.swift */,
 				4907DB992919C68F00C5C502 /* AnimatedTabBar.swift */,
-				497C585029CBDD4500A093EA /* TabBar.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -451,7 +448,6 @@
 				49023B4A291C8F7D00CF6DDF /* Infographics.swift in Sources */,
 				493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */,
 				49AE03B42946CEA5001F337B /* CircleButtonAnimationView.swift in Sources */,
-				497C585129CBDD4500A093EA /* TabBar.swift in Sources */,
 				49275842293D882D00CD05E3 /* LocationManager.swift in Sources */,
 				4947B212293EE27A00D3812A /* MapView.swift in Sources */,
 				493B306728F86B4500E3C3C8 /* SplashScreenView.swift in Sources */,

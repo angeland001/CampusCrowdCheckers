@@ -13,34 +13,65 @@ struct SchoolInformationView: View {
     @State var PageIndex: Int = 0
     
     var body: some View {
-        ZStack {
+        
+    
             
-            BackGround
             
-            ScrollView {
-                
-                ForEach(school.schoolVenues) { venue in
-                    Button {
-                        
-                    } label: {
-                        Infographics(venue: venue)
-                            .padding()
+            
+            VStack {
+                ZStack {
+                    HeaderWave(cornerRadius: 40, corners: [.bottomLeft, .bottomRight])
+                        .foregroundColor(Color[school.colors[0]])
+                        .frame(width: 450, height: 150)
+                        .edgesIgnoringSafeArea(.top)
+                    
+                    HStack {
+                        Image(school.name)
+                            .resizable()
+                            .frame(width: 80,height: 80)
+                        Text(school.name)
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.black)
                     }
-                    .buttonStyle(.plain)
-
-                    
-                    
                 }
+                
+                
+                
+                
+                ZStack {
+                    LinearGradient(gradient: .init(colors: [Color[school.colors[0]],Color.white]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+                    ScrollView {
+                    
+                        
+                        ForEach(school.schoolVenues) { venue in
+                            Button {
+                                
+                            } label: {
+                                Infographics(venue: venue)
+                                    .padding()
+                            }
+                            .buttonStyle(.plain)
+                            
+                            
+                            
+                        }
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    }
+                }
+                
+                
             }
-            
-            
-            
-            
-            
-            
-            
-            
-        }
+        
+        
+        
     }
 }
             
@@ -55,31 +86,18 @@ struct SchoolInformationView_Previews: PreviewProvider {
     }
 }
 
-extension SchoolInformationView {
-    private var BackGround: some View {
-        ZStack {
-            Color.white
-            
-        }
-    
-        .edgesIgnoringSafeArea(.all)
-        
-        .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading:
-                    Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
-                        Image(systemName: "arrow.backward")
-
-                    })
-                
-                .offset(y:-350)
-       
-            
-    }
-}
 
 
 
 
+//        .navigationBarBackButtonHidden(true)
+//                .navigationBarItems(leading:
+//                    Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
+//                        Image(systemName: "arrow.backward")
+//
+//                    })
+//
+//                .offset(y:-350)
 
 
 
