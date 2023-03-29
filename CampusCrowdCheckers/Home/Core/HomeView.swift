@@ -47,13 +47,17 @@ struct HomeView: View {
                         .ignoresSafeArea()
                     
                     ZStack {
+                        
                         VStack {
                             
                             homeHeader
                             
+                            
+                            
                             SearchBarView(searchText: $searchText)
                                 .offset(y:10)
                                 .frame(width:450)
+                            
                             
                             if loading {
                                 Spacer()
@@ -69,6 +73,7 @@ struct HomeView: View {
                             
                             if !loading {
                                 TitleColumns
+                                
                                 universityList
                             }
                         }
@@ -134,18 +139,22 @@ extension HomeView {
                 }
                 
                 Spacer()
+                
                 CircleButtonView(iconName: showProfile ? "person.fill" : "person")
 
-                    .onTapGesture {
-                        withAnimation(.spring()) {
-                            showProfile.toggle()
-                        }
-                    }
-                
-                    .background(
-                        CircleButtonAnimationView(animate: $showProfile)
+                                    .onTapGesture {
+                                        withAnimation(.spring()) {
+                                            showProfile.toggle()
+                                        }
+                                    }
+                                
+                                    .background(
+                                        CircleButtonAnimationView(animate: $showProfile)
 
-                    )
+                                    ) 
+
+                
+                
                 
                 
             }
@@ -172,6 +181,7 @@ extension HomeView {
         
         private var universityList: some View {
             ZStack {
+                
                 List {
                     ForEach((University.universities).filter( {"\($0)".contains(searchText) || searchText.isEmpty} )) { university in
                         NavigationLink(destination: SchoolInformationView(school: university)) {

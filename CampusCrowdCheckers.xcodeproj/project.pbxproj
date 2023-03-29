@@ -32,6 +32,7 @@
 		4971173729691AB500623E1D /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971173629691AB500623E1D /* UINavigationController.swift */; };
 		4987827D294E53470092DD11 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987827C294E53470092DD11 /* UniversityModel.swift */; };
 		4987827F295294B50092DD11 /* UniversityRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987827E295294B50092DD11 /* UniversityRowView.swift */; };
+		49A08FA129D4CA1700482E3B /* VenueCrowdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A08FA029D4CA1700482E3B /* VenueCrowdView.swift */; };
 		49AE03B22946CA0B001F337B /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE03B12946CA0B001F337B /* CircleButtonView.swift */; };
 		49AE03B42946CEA5001F337B /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE03B32946CEA5001F337B /* CircleButtonAnimationView.swift */; };
 		49B5BE7F29256C74009CB7DF /* LiveChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5BE7E29256C74009CB7DF /* LiveChat.swift */; };
@@ -89,6 +90,7 @@
 		4971173629691AB500623E1D /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		4987827C294E53470092DD11 /* UniversityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		4987827E295294B50092DD11 /* UniversityRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityRowView.swift; sourceTree = "<group>"; };
+		49A08FA029D4CA1700482E3B /* VenueCrowdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueCrowdView.swift; sourceTree = "<group>"; };
 		49AE03B12946CA0B001F337B /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		49AE03B32946CEA5001F337B /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 		49B5BE7E29256C74009CB7DF /* LiveChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChat.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				4987827E295294B50092DD11 /* UniversityRowView.swift */,
 				4937576D2957A36B00EA590C /* SearchBarView.swift */,
 				493757712957EF9C00EA590C /* SchoolInformationView.swift */,
+				49A08FA029D4CA1700482E3B /* VenueCrowdView.swift */,
 			);
 			path = SchoolComponents;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				495DB8AD29624A0600C76D2A /* Wave.swift in Sources */,
 				495DB8B7296269E600C76D2A /* VenueModel.swift in Sources */,
 				4907DB9C2919CCB000C5C502 /* TabCurve.swift in Sources */,
+				49A08FA129D4CA1700482E3B /* VenueCrowdView.swift in Sources */,
 				49023B4A291C8F7D00CF6DDF /* Infographics.swift in Sources */,
 				493B306A28FB2F2000E3C3C8 /* Color.swift in Sources */,
 				49AE03B42946CEA5001F337B /* CircleButtonAnimationView.swift in Sources */,

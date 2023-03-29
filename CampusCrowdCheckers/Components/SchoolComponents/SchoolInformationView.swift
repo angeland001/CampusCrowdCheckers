@@ -13,63 +13,62 @@ struct SchoolInformationView: View {
     @State var PageIndex: Int = 0
     
     var body: some View {
-        
-    
+        ZStack {
+            LinearGradient(gradient: .init(colors: [Color[school.colors[0]],Color.white]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+                    .navigationBarBackButtonHidden(true)
+                            .navigationBarItems(leading:
+                                Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
+                                    Image(systemName: "arrow.backward")
+                                    .foregroundColor(Color.white)
             
+                                })
             
-            
+                            .offset(y:-350)
             VStack {
-                ZStack {
-                    HeaderWave(cornerRadius: 40, corners: [.bottomLeft, .bottomRight])
-                        .foregroundColor(Color[school.colors[0]])
-                        .frame(width: 450, height: 150)
-                        .edgesIgnoringSafeArea(.top)
+                ZStack(alignment: .top) {
+                    Wave(yOffset: -0.35)
+                        .fill(Color.white).opacity(0.8)
+                        .frame(height: 150)
+                        .shadow(radius: 4)
+                        .ignoresSafeArea()
+                    Wave(yOffset: 0.35)
+                        .fill(Color.white)
+                        .frame(height: 150)
+                        .shadow(radius: 4)
+                        .ignoresSafeArea()
                     
-                    HStack {
-                        Image(school.name)
-                            .resizable()
-                            .frame(width: 80,height: 80)
+                    
+                    HStack(alignment: .center){
+                        
                         Text(school.name)
+                            
+                            .fontWeight(.semibold)
                             .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.black)
+                            .offset(y:-20)
+                        
                     }
-                }
-                
-                
-                
-                
-                ZStack {
-                    LinearGradient(gradient: .init(colors: [Color[school.colors[0]],Color.white]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
-                    ScrollView {
                     
-                        
-                        ForEach(school.schoolVenues) { venue in
-                            Button {
-                                
-                            } label: {
-                                Infographics(venue: venue)
-                                    .padding()
-                            }
-                            .buttonStyle(.plain)
+                }
+                
+                
+                ScrollView {
+                    ForEach(school.schoolVenues) { venue in
+                        Button {
                             
-                            
-                            
+                        } label: {
+                            Infographics(venue: venue)
+                                .padding()
                         }
-                        
-                        
-                        
-                        
-                        
+                        .buttonStyle(.plain)
                         
                         
                         
                     }
                 }
-                
-                
+                .ignoresSafeArea()
+                .offset(y:-80)
             }
-        
+        }
         
         
     }
@@ -90,14 +89,33 @@ struct SchoolInformationView_Previews: PreviewProvider {
 
 
 
-//        .navigationBarBackButtonHidden(true)
-//                .navigationBarItems(leading:
-//                    Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
-//                        Image(systemName: "arrow.backward")
+
+
+
+//ZStack {
+//    LinearGradient(gradient: .init(colors: [Color[school.colors[0]],Color.white]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+//    ScrollView {
 //
-//                    })
 //
-//                .offset(y:-350)
-
-
-
+//        ForEach(school.schoolVenues) { venue in
+//            Button {
+//
+//            } label: {
+//                Infographics(venue: venue)
+//                    .padding()
+//            }
+//            .buttonStyle(.plain)
+//
+//
+//
+//        }
+//
+//
+        
+        
+        
+        
+        
+        
+//    }
+//}

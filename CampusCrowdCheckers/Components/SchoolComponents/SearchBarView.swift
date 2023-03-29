@@ -19,7 +19,7 @@ struct SearchBarView: View {
                 .foregroundColor(Color.black)
             
             TextField("Search by School Name or City...", text: $searchText)
-                .foregroundColor(Color("Text"))
+                .foregroundColor(Color.black)
                 .overlay(
                     Image(systemName: "xmark.circle.fill")
                         .padding()
