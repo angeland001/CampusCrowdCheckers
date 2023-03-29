@@ -33,7 +33,7 @@ extension Infographics {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.white)
-                .shadow(color: .white, radius: 10)
+                .shadow(color: .black, radius: 10)
                 .frame(height: 250)
                 .padding(.horizontal)
                 
@@ -81,6 +81,7 @@ extension Infographics {
                         Text("15")
                             .bold()
                     }
+                    .foregroundColor(Color.black)
                     
                 }
                 

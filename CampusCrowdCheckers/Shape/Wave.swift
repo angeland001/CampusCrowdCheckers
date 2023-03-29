@@ -31,27 +31,18 @@ struct Wave: Shape {
     
 }
 
-struct HeaderWave: Shape {
-    let cornerRadius: CGFloat
-        let corners: UIRectCorner
 
-        func path(in rect: CGRect) -> Path {
-            let path = UIBezierPath(
-                roundedRect: rect,
-                byRoundingCorners: corners,
-                cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)
-            )
-            return Path(path.cgPath)
-        }
-}
 
 
 
 
 struct Wave_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderWave(cornerRadius: 40, corners: [.bottomLeft, .bottomRight])
-            .frame(width: 450, height: 100)
+        Wave(yOffset: -0.55)
+            .fill(Color.white).opacity(0.5)
+            .frame(height: 150)
+            .shadow(radius: 4)
+            .ignoresSafeArea()
             
     }
 }
