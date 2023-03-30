@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct VenueCrowdView: View {
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var school: University
-    var schoolVenue: SchoolVenues
+    var venue: SchoolVenues
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color.red.opacity(0.95), Color.pink.opacity(0.8)], startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(colors: [Color[venue.colorOfVenue], Color.white], startPoint: .top, endPoint: .bottomTrailing)
+                .navigationBarBackButtonHidden(true)
+                        .navigationBarItems(leading:
+                            Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
+                                Image(systemName: "arrow.backward")
+                                .foregroundColor(Color[venue.colorOfVenue])
+        
+                            })
             
-            VStack(spacing: 100) {
+            VStack(spacing: 40) {
                 HStack {
                     VStack(alignment: .center) {
-                        Image("CFA")
+                        Image(venue.VenueName)
                             .resizable()
                             .foregroundColor(Color.white)
                             .clipShape(Circle())
@@ -28,25 +37,36 @@ struct VenueCrowdView: View {
                     Spacer()
                     
                     VStack(alignment: .center) {
-                        Text("Opens at: 11:00 AM")
-                            .font(.body)
-                        Text("Closes at: 8:00 PM")
-                            .font(.body)
+                        
+                        let timeForToday = convertIntToCurrentDay(arrayOfTime: venue.timeOfOperations)
+                        
+                        Text("Opening at: ")
+                            
+                        Text(timeForToday.VenueOpeningHours)
+                        Text("Closes at: ")
+                            
+                        Text(timeForToday.VenueClosingHours)
+
                     }
+                    .foregroundColor(Color.black)
+                    .font(.body)
                     
                     Spacer()
                     
                     VStack(alignment: .center) {
                         Text("Crowd Now")
-                            .font(.body)
-                        Text("29")
-                            .font(.body)
+                            
+                        Text("TBD")
+                            
                     }
+                    .foregroundColor(Color.black)
+                    .font(.body)
                 }
                 .padding()
                 .frame(width: 360)
                 .foregroundStyle(LinearGradient(colors: [Color.white, Color.white], startPoint: .top, endPoint: .bottom))
             .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+               
                 
                 VStack(alignment: .leading, spacing: 2){
                     Text("More Info".uppercased())
@@ -58,8 +78,7 @@ struct VenueCrowdView: View {
                             .font(.caption)
                             .frame(width: 250, height: 32)
                         Spacer()
-                        Text("Busiest Hour")
-                            .font(.caption)
+                        
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.horizontal)
@@ -94,6 +113,8 @@ struct VenueCrowdView: View {
                 .frame(width: 360)
                 .foregroundColor(Color.black.opacity(0.8))
                 .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                
+                SchoolVenueChart(school:venue)
             }
         }
         .ignoresSafeArea()
@@ -102,6 +123,6 @@ struct VenueCrowdView: View {
 
 struct VenueCrowdView_Previews: PreviewProvider {
     static var previews: some View {
-        VenueCrowdView(school: dev.school, schoolVenue: dev.schoolVenue)
+        VenueCrowdView(school: dev.school, venue: dev.schoolVenue)
     }
 }

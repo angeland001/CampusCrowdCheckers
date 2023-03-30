@@ -14,7 +14,7 @@ struct SchoolInformationView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: .init(colors: [Color[school.colors[0]],Color.white]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: .init(colors: [Color.black,Color.white]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
                     .navigationBarBackButtonHidden(true)
                             .navigationBarItems(leading:
                                 Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
@@ -53,20 +53,19 @@ struct SchoolInformationView: View {
                 
                 ScrollView {
                     ForEach(school.schoolVenues) { venue in
-                        Button {
+                        NavigationLink(destination: VenueCrowdView(school: school, venue: venue)) {
                             
-                        } label: {
                             Infographics(venue: venue)
-                                .padding()
+                            
                         }
-                        .buttonStyle(.plain)
                         
                         
                         
                     }
                 }
-                .ignoresSafeArea()
-                .offset(y:-80)
+                
+                //.ignoresSafeArea()
+                
             }
         }
         

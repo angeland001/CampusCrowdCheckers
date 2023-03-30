@@ -81,6 +81,7 @@ extension Infographics {
                         Text("15")
                             .bold()
                     }
+                    .foregroundColor(Color.black)
                     
                 }
                 
