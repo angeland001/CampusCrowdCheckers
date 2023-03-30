@@ -25,22 +25,22 @@ struct GraphChart: Identifiable {
     var id = UUID()
 }
 
-struct ChartofUC: View {
+struct SchoolVenueChart: View {
     
     
     @State var Data: [GraphChart] = dataForPanda
     
     @Environment(\.colorScheme) var colorScheme
-    
+    var school: SchoolVenues
     
     var body: some View {
         
 
         VStack() {
             HStack{
-                Text("Population of " + ("University Center"))
+                Text("Population of " + school.VenueName)
                     .fontWeight(.bold)
-                    .foregroundColor(Color.theme.text)
+                    .foregroundColor(Color.black)
                 
             }
             
@@ -51,12 +51,12 @@ struct ChartofUC: View {
                         x: .value("Time", element.time),
                         y: .value("Total Count", element.animate ?  element.Populationcount : 0)
                     )
-                    .foregroundStyle(colorScheme == .dark ? Color.white.gradient : Color.black.gradient)
+                    .foregroundStyle(Color[school.colorOfVenue])
+                    
                     
                 }
             }
-            
-            .background(Color.theme.Background)
+            .background(.clear)
             .frame(width:390,height:170)
             .onAppear {
                 for (index,_) in Data.enumerated() {
@@ -101,7 +101,7 @@ struct ChartofUC: View {
     
     struct PopulationChart_Previews: PreviewProvider {
         static var previews: some View {
-            ChartofUC()
+            SchoolVenueChart(school: dev.schoolVenue)
         }
     }
     

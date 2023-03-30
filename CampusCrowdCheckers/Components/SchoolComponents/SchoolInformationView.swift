@@ -53,13 +53,11 @@ struct SchoolInformationView: View {
                 
                 ScrollView {
                     ForEach(school.schoolVenues) { venue in
-                        Button {
+                        NavigationLink(destination: VenueCrowdView(school: school, venue: venue)) {
                             
-                        } label: {
                             Infographics(venue: venue)
-                                .padding()
+                            
                         }
-                        .buttonStyle(.plain)
                         
                         
                         
