@@ -7,95 +7,99 @@
 
 import SwiftUI
 
-struct AnimatedTabBar: View {
-    @Binding var selectedTab: String
-    let size: CGFloat = 30
-    
-    //storing each tab midpoints to animate in future.
-    
-    @State var tabPoints : [CGFloat] = []
-    
-    var body: some View {
-        HStack (spacing:50) {
-            
-            //Tab bar buttons
-            
-            TabBarButton(selectedTab: $selectedTab,size: size, image: "bubble.left",  color: .black)
-            
-            
-            TabBarButton(selectedTab: $selectedTab,size: size,image: "takeoutbag.and.cup.and.straw", color: .black)
-            
-            
-            TabBarButton(selectedTab: $selectedTab,size: size,image: "graduationcap", color: .black)
-            
-            TabBarButton(selectedTab: $selectedTab,size: size,image: "gearshape", color: .black)
-            
-            
-        }
-        .offset(y:10)
-        .frame(width:400,height:20)
-        .padding()
-        .background(
-            Color.white
-        )
-        //.cornerRadius(30)
-        .padding(.horizontal)
-    }
-    
+enum Tab: String, CaseIterable {
+    case message = "message"
+    case takeout = "takeoutbag.and.cup.and.straw"
+    case todo = "list.clipboard"
+    case graduationcap = "graduationcap"
+    case gear = "gearshape"
     
 }
 
-
-struct TabBarButton: View {
-    
-    
-    @Binding var selectedTab: String
-    
+struct AnimatedTabBar: View {
     @State private var animate: Bool = false
-    
+        
     let size: CGFloat
-    var image: String
-    let color: Color
+
+    @Binding var currentTab: Tab
+    @State var YOffset: CGFloat = 0
     var body: some View {
-        ZStack {
-            Rectangle()
-                .frame(width: size * 1.2, height: size * 1.2)
-                .foregroundColor(.clear)
-            Button {
-                selectedTab = image
-                animate.toggle()
-            } label: {
-                ZStack {
-                    ZStack(alignment: .bottom) {
-                        Rectangle()
-                            .frame(width: 1, height: size)
-                            .foregroundColor(.clear)
-                        HStack(alignment: .bottom, spacing: 0) {
-                            ForEach(0..<5, id: \.self) { i in
-                                Rectangle()
-                                    .frame(width: size / 4, height: animate ? size * 1.1 : 0.5)
-                                    .animation(.easeInOut.delay(0.1 * Double(i)), value: animate)
-                                    .foregroundColor(color)
-                                    .opacity(1 - (0.15 * Double(i)))
-                            }
-                        }
+        GeometryReader{proxy in
+            let width = proxy.size.width
+            HStack(spacing:0) {
+                ForEach(Tab.allCases, id: \.rawValue) { tab in
+                    Button {
+                        currentTab = tab
+                        animate.toggle()
+                    } label: {
+                        ZStack {
+                            ZStack(alignment: .bottom) {
+                                    Rectangle()
+                                        .frame(width: 1, height: size)
+                                        .foregroundColor(.clear)
+                                
+                            HStack(alignment: .bottom, spacing: 0) {
+                                ForEach(0..<5, id: \.self) { i in
+                                    Rectangle()
+                                        .frame(width: size / 4, height: animate ? size * 1.1 : 0.5)
+                                        .animation(.easeInOut.delay(0.1 * Double(i)), value: animate)
+                                        .foregroundColor(Color.black)
+                                        .opacity(1 - (0.15 * Double(i)))
+                                                }
+                                
+                                
+                                            }
+                                        }
+                                        .rotationEffect(.degrees(45))
+                                        .mask {
+                                            Image(systemName: "\(tab.rawValue).fill")
+                                        .font(.system(size: size))
+                                    }
+                                        Image(systemName: tab.rawValue)
+                                        .font(.system(size: size))
+                                }
+
                     }
-                    .rotationEffect(.degrees(45))
-                    .mask {
-                        Image(systemName: "\(image).fill")
-                            .font(.system(size: size))
-                    }
-                    Image(systemName: image)
-                        .font(.system(size: size))
+                    .buttonStyle(.plain)
                 }
             }
-            .buttonStyle(.plain)
+            .frame(maxWidth: .infinity)
+            
+            
+        }
+        .frame(height:30)
+        .padding(.bottom,10)
+        .padding([.horizontal,.top])
+    }
+    
+    func indicatorOffset(width: CGFloat) -> CGFloat {
+        let index = CGFloat(getIndex())
+        if index == 0 {
+            return 0
+        }
+        
+        let buttonWidth = width / CGFloat(Tab.allCases.count)
+        
+        return index * buttonWidth
+    }
+    
+    func getIndex() -> Int {
+        switch currentTab {
+            
+        case .message:
+            return 0
+        case .takeout:
+            return 1
+        case .todo:
+            return 2
+        case .graduationcap:
+            return 3
+        case .gear:
+            return 4
+        
         }
     }
 }
-
-
-
 
 struct AnimatedTabBar_Previews: PreviewProvider {
    

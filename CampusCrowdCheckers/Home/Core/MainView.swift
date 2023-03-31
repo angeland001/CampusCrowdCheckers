@@ -11,54 +11,40 @@ import SwiftClockUI
 struct MainView: View {
     
     //keeps track of currently selected house... HOME PAGE
-    @State var selectedTab = "graduationcap"
-    @State private var clockStyle: ClockStyle = .steampunk
+    @EnvironmentObject var listViewModel: ListViewModel
+    @State var selectedTab: Tab = .graduationcap
+    let size: CGFloat = 30
     @ObservedObject var locationManager = LocationManager.shared
     
-    let icons: [String] = [
-        "bubble.left", "takeoutbag.and.cup.and.straw", "graduationcap", "gearshape"
-    ]
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+    
     
     var body: some View {
-        ZStack {
-            //BackGround layer
-            Color("Jenni")
-            //Color.theme.Background
-                .ignoresSafeArea()
-            
-            VStack(spacing: 0) {
-                //Switches views depending on tab selected
-                switch selectedTab {
-                case icons[0]:
-                    LiveChat()
-                case icons[1]:
-                    Group {
-                        if locationManager.userLocation == nil {
-                            LocationRequestView()
-                        }
-                        else {
-                            MapView()
-                        }
+        VStack(spacing: 0) {
+            TabView(selection: $selectedTab) {
+                LiveChat()
+                    .tag(Tab.message)
+                Group {
+                    if locationManager.userLocation == nil {
+                        LocationRequestView()
                     }
-                case icons[2]:
-                    HomeView()
-                
-                case icons[3]:
-                    Settings()
-                default:
-                    HomeView()
+                    else {
+                        MapView()
+                    }
                 }
+                .tag(Tab.takeout)
+                ListView()
+                    .tag(Tab.todo)
                 
-                //Tab Bar is fixed throughout all views
-                AnimatedTabBar(selectedTab: $selectedTab)
-                    .ignoresSafeArea(.keyboard, edges: .bottom)
-                    .background(Color("Jenni"))
-                    
-                
-                    
-                
+                HomeView()
+                    .tag(Tab.graduationcap)
+                Settings()
+                    .tag(Tab.gear)
             }
             
+            AnimatedTabBar(size: size, currentTab: $selectedTab)
         }
         
     }
@@ -67,5 +53,9 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(ListViewModel())
+        
     }
 }
+
+

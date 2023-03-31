@@ -56,7 +56,7 @@ struct HomeView: View {
                             
                             SearchBarView(searchText: $searchText)
                                 .offset(y:10)
-                                .frame(width:450)
+                                .frame(width:420)
                             
                             
                             if loading {

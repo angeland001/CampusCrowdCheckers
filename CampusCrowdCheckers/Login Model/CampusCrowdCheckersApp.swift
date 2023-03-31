@@ -15,12 +15,20 @@ struct CampusCrowdCheckersApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var vm = MapViewModel()
+    @StateObject private var listViewModel: ListViewModel = ListViewModel()
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 SplashScreenView()
                     .environmentObject(vm)
+                    
+                    
             }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .environmentObject(listViewModel)
+
+            
+            
         }
     }
 }
