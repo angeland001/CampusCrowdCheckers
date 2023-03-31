@@ -11,54 +11,36 @@ import SwiftClockUI
 struct MainView: View {
     
     //keeps track of currently selected house... HOME PAGE
-    @State var selectedTab = "graduationcap"
-    @State private var clockStyle: ClockStyle = .steampunk
+    @State var selectedTab: Tab = .graduationcap
     @ObservedObject var locationManager = LocationManager.shared
     
-    let icons: [String] = [
-        "bubble.left", "takeoutbag.and.cup.and.straw", "graduationcap", "gearshape"
-    ]
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+    
     
     var body: some View {
-        ZStack {
-            //BackGround layer
-            Color("Jenni")
-            //Color.theme.Background
-                .ignoresSafeArea()
-            
-            VStack(spacing: 0) {
-                //Switches views depending on tab selected
-                switch selectedTab {
-                case icons[0]:
-                    LiveChat()
-                case icons[1]:
-                    Group {
-                        if locationManager.userLocation == nil {
-                            LocationRequestView()
-                        }
-                        else {
-                            MapView()
-                        }
+        VStack(spacing: 0) {
+            TabView(selection: $selectedTab) {
+                LiveChat()
+                    
+                    .tag(Tab.message)
+                Group {
+                    if locationManager.userLocation == nil {
+                        LocationRequestView()
                     }
-                case icons[2]:
-                    HomeView()
-                
-                case icons[3]:
-                    Settings()
-                default:
-                    HomeView()
+                    else {
+                        MapView()
+                    }
                 }
-                
-                //Tab Bar is fixed throughout all views
-                AnimatedTabBar(selectedTab: $selectedTab)
-                    .ignoresSafeArea(.keyboard, edges: .bottom)
-                    .background(Color("Jenni"))
-                    
-                
-                    
-                
+                    .tag(Tab.takeout)
+                HomeView()
+                    .tag(Tab.graduationcap)
+                Settings()
+                    .tag(Tab.gear)
             }
             
+            AnimatedTabBar(currentTab: $selectedTab)
         }
         
     }
@@ -68,4 +50,16 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
     }
+}
+
+extension View {
+    func applyBG() -> some View {
+        self
+            .frame(maxWidth: .infinity,maxHeight: .infinity)
+            .background {
+                Color("Jenni")
+                    .ignoresSafeArea()
+            }
+    }
+        
 }
