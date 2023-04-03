@@ -11,7 +11,9 @@ import SwiftClockUI
 struct MainView: View {
     
     //keeps track of currently selected house... HOME PAGE
+    @EnvironmentObject var listViewModel: ListViewModel
     @State var selectedTab: Tab = .graduationcap
+    let size: CGFloat = 30
     @ObservedObject var locationManager = LocationManager.shared
     
     init() {
@@ -23,7 +25,6 @@ struct MainView: View {
         VStack(spacing: 0) {
             TabView(selection: $selectedTab) {
                 LiveChat()
-                    
                     .tag(Tab.message)
                 Group {
                     if locationManager.userLocation == nil {
@@ -33,14 +34,17 @@ struct MainView: View {
                         MapView()
                     }
                 }
-                    .tag(Tab.takeout)
+                .tag(Tab.takeout)
+                ListView()
+                    .tag(Tab.todo)
+                
                 HomeView()
                     .tag(Tab.graduationcap)
                 Settings()
                     .tag(Tab.gear)
             }
             
-            AnimatedTabBar(currentTab: $selectedTab)
+            AnimatedTabBar(size: size, currentTab: $selectedTab)
         }
         
     }
@@ -49,17 +53,9 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(ListViewModel())
+        
     }
 }
 
-extension View {
-    func applyBG() -> some View {
-        self
-            .frame(maxWidth: .infinity,maxHeight: .infinity)
-            .background {
-                Color("Jenni")
-                    .ignoresSafeArea()
-            }
-    }
-        
-}
+
