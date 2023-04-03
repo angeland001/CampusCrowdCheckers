@@ -10,12 +10,17 @@ import SwiftUI
 enum Tab: String, CaseIterable {
     case message = "message"
     case takeout = "takeoutbag.and.cup.and.straw"
+    case todo = "list.clipboard"
     case graduationcap = "graduationcap"
     case gear = "gearshape"
     
 }
 
 struct AnimatedTabBar: View {
+    @State private var animate: Bool = false
+        
+    let size: CGFloat
+
     @Binding var currentTab: Tab
     @State var YOffset: CGFloat = 0
     var body: some View {
@@ -24,33 +29,42 @@ struct AnimatedTabBar: View {
             HStack(spacing:0) {
                 ForEach(Tab.allCases, id: \.rawValue) { tab in
                     Button {
-                        withAnimation(.easeInOut(duration: 0.2)) {
-                            currentTab = tab
-                            YOffset = -80
-                        }
-                        withAnimation(.easeInOut(duration: 0.1).delay(0.1)) {
-                            YOffset = 0
-                        }
+                        currentTab = tab
+                        animate.toggle()
                     } label: {
-                        Image(tab.rawValue)
-                            .renderingMode(.template)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 30,height:30)
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(currentTab == tab ? Color.black : .gray)
-                            .scaleEffect(currentTab == tab && YOffset != 0 ? 1.5 : 1)
+                        ZStack {
+                            ZStack(alignment: .bottom) {
+                                    Rectangle()
+                                        .frame(width: 1, height: size)
+                                        .foregroundColor(.clear)
+                                
+                            HStack(alignment: .bottom, spacing: 0) {
+                                ForEach(0..<5, id: \.self) { i in
+                                    Rectangle()
+                                        .frame(width: size / 4, height: animate ? size * 1.1 : 0.5)
+                                        .animation(.easeInOut.delay(0.1 * Double(i)), value: animate)
+                                        .foregroundColor(Color.black)
+                                        .opacity(1 - (0.15 * Double(i)))
+                                                }
+                                
+                                
+                                            }
+                                        }
+                                        .rotationEffect(.degrees(45))
+                                        .mask {
+                                            Image(systemName: "\(tab.rawValue).fill")
+                                        .font(.system(size: size))
+                                    }
+                                        Image(systemName: tab.rawValue)
+                                        .font(.system(size: size))
+                                }
+
                     }
+                    .buttonStyle(.plain)
                 }
             }
             .frame(maxWidth: .infinity)
-            .background(alignment: .leading) {
-                Circle()
-                    .fill(Color("Jenni")).opacity(0.5)
-                    .frame(width:25, height: 25)
-                    .offset(x:33, y: YOffset)
-                    .offset(x: indicatorOffset(width: width))
-            }
+            
             
         }
         .frame(height:30)
@@ -76,10 +90,13 @@ struct AnimatedTabBar: View {
             return 0
         case .takeout:
             return 1
-        case .graduationcap:
+        case .todo:
             return 2
-        case .gear:
+        case .graduationcap:
             return 3
+        case .gear:
+            return 4
+        
         }
     }
 }
