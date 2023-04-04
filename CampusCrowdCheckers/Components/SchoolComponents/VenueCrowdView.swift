@@ -85,15 +85,18 @@ struct VenueCrowdView: View {
                     
                     HStack{
                         VStack(alignment: .center){
-                            Text("4.3")
+                            let randomNumber = Double.random(in: 6.0...13.0)
+                            Text("\(randomNumber, specifier: "%.1f")")
+
                                 .font(.system(size: 24, weight: .bold, design: .rounded))
-                            Text("avg texts/day".uppercased())
+                            Text("avg crowd/hour".uppercased())
                                 .font(.system(size: 12, weight: .regular, design: .rounded))
                         }
                         Spacer()
                         
                         VStack(alignment: .center){
-                            Text("+19%")
+                            let randomNumber = Double.random(in: 6.0...13.0)
+                            Text("\(randomNumber, specifier: "%.1f") %" )
                                 .font(.system(size: 24, weight: .bold, design: .rounded))
                                 .foregroundColor(Color.green)
                             Text("this month".uppercased())
@@ -102,9 +105,10 @@ struct VenueCrowdView: View {
                         Spacer()
                         
                         VStack(alignment: .center){
-                            Text("12 hrs")
+                            let randomNumber = Int.random(in: 6...13)
+                            Text("\(randomNumber) Hrs")
                                 .font(.system(size: 24, weight: .bold, design: .rounded))
-                            Text("last spoke".uppercased())
+                            Text("Before Rush".uppercased())
                                 .font(.system(size: 12, weight: .regular, design: .rounded))
                         }
                     }

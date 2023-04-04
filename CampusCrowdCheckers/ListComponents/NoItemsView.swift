@@ -12,14 +12,17 @@ struct NoItemsView: View {
     let SecondAccentColor = Color("SecondAccentColor")
     var body: some View {
         ScrollView{
-            VStack{
+            
+            VStack(spacing:20) {
                 Text("You have no items")
                     .foregroundColor(Color("Text"))
                     .font(.title)
                     .fontWeight(.semibold)
+                
                 Text("Have some things you need to get done today? If so, click the add button below to create your list!")
                     .foregroundColor(Color("Text"))
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 30)
+                    .font(.body)
                 
                 NavigationLink(destination: AddView(), label: {
                     Text("Add Something")
