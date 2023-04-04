@@ -2,7 +2,7 @@
 //  AnimatedTabBar.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 11/7/22.
+//  
 //
 
 import SwiftUI
@@ -30,7 +30,7 @@ struct AnimatedTabBar: View {
                 ForEach(Tab.allCases, id: \.rawValue) { tab in
                     Button {
                         currentTab = tab
-                        animate.toggle()
+                        
                     } label: {
                         ZStack {
                             ZStack(alignment: .bottom) {
@@ -38,13 +38,17 @@ struct AnimatedTabBar: View {
                                         .frame(width: 1, height: size)
                                         .foregroundColor(.clear)
                                 
-                            HStack(alignment: .bottom, spacing: 0) {
+                            HStack(alignment: .bottom, spacing: 8) {
                                 ForEach(0..<5, id: \.self) { i in
                                     Rectangle()
-                                        .frame(width: size / 4, height: animate ? size * 1.1 : 0.5)
-                                        .animation(.easeInOut.delay(0.1 * Double(i)), value: animate)
+
+                                        
+                                        .frame(width: size / 4, height: currentTab == tab ? size * 1.1 : 0.5)
+
+                                        .animation(.easeInOut.delay(0.1 * Double(i)), value: currentTab == tab ? true: false)
                                         .foregroundColor(Color.black)
                                         .opacity(1 - (0.15 * Double(i)))
+                                        
                                                 }
                                 
                                 
@@ -105,6 +109,7 @@ struct AnimatedTabBar_Previews: PreviewProvider {
    
     static var previews: some View {
         MainView()
+            .environmentObject(ListViewModel())
     }
 }
 

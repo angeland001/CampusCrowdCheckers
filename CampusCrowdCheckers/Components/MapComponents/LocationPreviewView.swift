@@ -2,7 +2,7 @@
 //  LocationPreviewView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 1/2/23.
+//  
 //
 
 import SwiftUI
@@ -71,11 +71,12 @@ extension LocationPreviewView {
         } label: {
             ZStack {
                 Capsule()
-                    .foregroundColor(Color.theme.Background)
+                    .foregroundColor(Color.black)
                     .frame(width:120,height:50)
                 Text("CrowdCheck")
                     .font(.headline)
                     .frame(width: 125, height: 35)
+                    .foregroundColor(Color.white)
             }
             
         }

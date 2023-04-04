@@ -2,7 +2,7 @@
 //  MapViewModel.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 12/15/22.
+//  
 //
 
 import Foundation
@@ -50,6 +50,8 @@ class MapViewModel: ObservableObject {
             mapRegion = MKCoordinateRegion(
                 center:  CLLocationCoordinate2D(latitude: location.venue_lat, longitude: location.venue_lon),
                 span: mapSpan)
+            
+            
         }
     }
     

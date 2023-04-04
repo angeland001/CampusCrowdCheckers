@@ -2,7 +2,7 @@
 //  InfoBoxes.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 11/22/22.
+//  
 //
 
 import SwiftUI

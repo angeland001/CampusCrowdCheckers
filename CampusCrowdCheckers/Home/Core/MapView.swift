@@ -2,7 +2,7 @@
 //  MapView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 12/5/22.
+//  
 //
 
 
@@ -47,29 +47,73 @@ struct MapView: View {
 
 extension MapView {
     private var header: some View {
-        HStack {
-                    Text("Chattanooga, TN")
-                        .font(.caption)
-                        .fontWeight(.black)
-                        .foregroundColor(.primary)
-                        .frame(height:55)
+        VStack(alignment: .leading){
+            
+            
+                
+                ZStack {
+                    Capsule()
+                        .frame(maxWidth: .infinity,maxHeight: 70)
                         .padding(.horizontal)
-                        .background(.thickMaterial)
-                        .cornerRadius(10)
-                        .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
-                        .padding()
+                        .padding(20)
+                        .foregroundColor(Color.white)
+                    HStack {
+                        Text("Chattanooga")
+                            .fontWeight(.bold)
                         
-                    ZStack {
-                        Circle()
-                            .foregroundColor(Color.theme.Background)
-                            .frame(width: 30,height:30)
-                        Image(systemName: "arrow.down")
-                            .font(.headline)
-                            .foregroundColor(Color.theme.text)
+                        
                             
-                            .rotationEffect(Angle(degrees: vm.showLocationList ? 180 : 0))
                     }
+                    
+                    
                 }
+            HStack {
+                ZStack {
+                    Capsule()
+                        .frame(width:80, height:40)
+                        .padding(.horizontal)
+                        .padding(20)
+                        .foregroundColor(Color.white)
+                    HStack {
+                        Text("Closest")
+                            .fontWeight(.bold)
+                        
+                    }
+                    
+                }
+                
+                ZStack {
+                    Capsule()
+                        .frame(width:110, height:40)
+                        .padding(.horizontal)
+                        .padding(20)
+                        .foregroundColor(Color("SecondAccentColor"))
+                        .opacity(0.8)
+                    HStack {
+                        Text("Open Now")
+                            
+                            .foregroundColor(Color.white)
+                            
+                    }
+                    
+                }
+                .offset(x:-60)
+                
+            }
+            .offset(y:-20)
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        .padding(.horizontal)
+        
+        
                     
     }
     
@@ -91,6 +135,8 @@ extension MapView {
                      
              }
            }
+           .allowsHitTesting(false)
+        
           
         
            .ignoresSafeArea()

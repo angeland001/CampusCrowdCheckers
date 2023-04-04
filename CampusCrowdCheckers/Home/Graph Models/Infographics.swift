@@ -2,7 +2,7 @@
 //  Infographics.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 11/9/22.
+//  
 //
 
 import SwiftUI
@@ -77,8 +77,9 @@ extension Infographics {
                     
                     
                     VStack {
+                        let randomNumber = Int.random(in: 1...30)
                         Text("Current Crowd: ")
-                        Text("15")
+                        Text("\(randomNumber)")
                             .bold()
                     }
                     .foregroundColor(Color.black)

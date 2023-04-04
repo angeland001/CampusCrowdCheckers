@@ -2,7 +2,7 @@
 //  SchoolInformationView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 12/24/22.
+//  
 //
 
 import SwiftUI
@@ -14,7 +14,7 @@ struct SchoolInformationView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: .init(colors: [Color.black,Color.white]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: .init(colors: [Color("SchoolColor"),Color.white]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
                     .navigationBarBackButtonHidden(true)
                             .navigationBarItems(leading:
                                 Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
@@ -26,27 +26,25 @@ struct SchoolInformationView: View {
                             .offset(y:-350)
             VStack {
                 ZStack(alignment: .top) {
-                    Wave(yOffset: -0.35)
-                        .fill(Color.white).opacity(0.8)
-                        .frame(height: 150)
-                        .shadow(radius: 4)
+                    Rectangle()
                         .ignoresSafeArea()
-                    Wave(yOffset: 0.35)
-                        .fill(Color.white)
-                        .frame(height: 150)
-                        .shadow(radius: 4)
-                        .ignoresSafeArea()
-                    
+                        .foregroundColor(Color.white)
+                        .frame(width: .infinity, height: 60)
                     
                     HStack(alignment: .center){
-                        
+                        Image(school.name)
+                            
+                            .resizable()
+                            .frame(width:60,height:60)
+                            
                         Text(school.name)
                             
-                            .fontWeight(.semibold)
-                            .font(.title2)
-                            .offset(y:-20)
+                            
+                            .font(.title)
+                            
                         
                     }
+                    .offset(y:-20)
                     
                 }
                 
@@ -64,10 +62,12 @@ struct SchoolInformationView: View {
                     }
                 }
                 
+                
                 //.ignoresSafeArea()
                 
             }
         }
+        //.background(Color("SchoolColor"))
         
         
     }
