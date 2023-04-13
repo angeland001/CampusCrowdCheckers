@@ -2,7 +2,7 @@
 //  MapView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 12/5/22.
+//  
 //
 
 
@@ -11,6 +11,8 @@ import MapKit
 
 struct MapView: View {
     
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 35.045631, longitude:  -85.309677), span: MKCoordinateSpan(latitudeDelta: 0.04, longitudeDelta: 0.01))
+
     @StateObject var manager = LocationManager()
     @EnvironmentObject var vm: MapViewModel
     
@@ -47,35 +49,47 @@ struct MapView: View {
 
 extension MapView {
     private var header: some View {
-        HStack {
-                    Text("Chattanooga, TN")
-                        .font(.caption)
-                        .fontWeight(.black)
-                        .foregroundColor(.primary)
-                        .frame(height:55)
+        VStack(alignment: .leading){
+            
+            
+                
+                ZStack {
+                    Capsule()
+                        .frame(maxWidth: .infinity,maxHeight: 70)
                         .padding(.horizontal)
-                        .background(.thickMaterial)
-                        .cornerRadius(10)
-                        .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
-                        .padding()
+                        .padding(20)
+                        .foregroundColor(Color.white)
+                    HStack {
+                        Text("Chattanooga")
+                            .fontWeight(.bold)
                         
-                    ZStack {
-                        Circle()
-                            .foregroundColor(Color.theme.Background)
-                            .frame(width: 30,height:30)
-                        Image(systemName: "arrow.down")
-                            .font(.headline)
-                            .foregroundColor(Color.theme.text)
+                        
                             
-                            .rotationEffect(Angle(degrees: vm.showLocationList ? 180 : 0))
                     }
+                    
+                    
                 }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        .padding(.horizontal)
+        
+        
                     
     }
     
     private var mapDetails: some View {
+        
 
-        Map(coordinateRegion: $manager.region, annotationItems: vm.locations
+        Map(coordinateRegion: $region, annotationItems: vm.locations
            ) { location in
              MapAnnotation(
                coordinate: CLLocationCoordinate2D(
@@ -84,6 +98,7 @@ extension MapView {
                )
              ) {
                LocationMapAnnotationView()
+                     .scaleEffect(vm.mapLocation == location ? 1 : 0.7)
                      .shadow(radius: 10)
                      .onTapGesture {
                          vm.showNextLocation(location: location)
@@ -91,6 +106,9 @@ extension MapView {
                      
              }
            }
+           
+           
+        
           
         
            .ignoresSafeArea()

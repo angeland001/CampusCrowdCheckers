@@ -2,16 +2,19 @@ import SwiftUI
 
 struct LiveChat: View {
     @State private var messageText = ""
-    @State var messages: [String] = ["My name is Jenni, how can I help you?"]
+    @State var messages: [String] = ["Hello, my name is Jenni! I am an artificial intellegence chat bot that can assist you with any questions you have regarding the app. I am still in early development, so please type in one of the following options to learn about me: 1,2,3."]
     @State private var change = false
     var body: some View {
         
         VStack {
             ZStack {
-                
-                Wave(yOffset: 0.75)
+                Wave(yOffset: -0.55)
+                    .fill(Color.white).opacity(0.5)
+                    .frame(height: 150)
+                    .shadow(radius: 4)
+                    .ignoresSafeArea()
+                Wave(yOffset: 0.55)
                     .fill(Color.white)
-                    //.fill(Color.theme.text)
                     .frame(height: 150)
                     .shadow(radius: 4)
                     .ignoresSafeArea()

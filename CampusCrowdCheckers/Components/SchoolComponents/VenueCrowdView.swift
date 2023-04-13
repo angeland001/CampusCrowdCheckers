@@ -2,7 +2,7 @@
 //  VenueCrowdView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 3/29/23.
+//  
 //
 
 import SwiftUI

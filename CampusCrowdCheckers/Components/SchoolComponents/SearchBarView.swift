@@ -2,7 +2,7 @@
 //  SearchBarView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 12/24/22.
+//  
 //
 
 import SwiftUI

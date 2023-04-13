@@ -2,7 +2,7 @@
 //  UniversityRowView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 12/20/22.
+//  
 //
 
 import SwiftUI

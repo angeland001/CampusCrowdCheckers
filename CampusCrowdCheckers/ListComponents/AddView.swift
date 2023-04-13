@@ -2,9 +2,10 @@
 //  AddView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andres Angel on 4/2/23.
+//  
 //
 
+import Foundation
 import SwiftUI
 
 struct AddView: View {
@@ -69,4 +70,3 @@ struct AddView_Previews: PreviewProvider {
         .environmentObject(ListViewModel())
     }
 }
-
