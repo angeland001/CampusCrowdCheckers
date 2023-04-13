@@ -2,7 +2,7 @@
 //  MapViewModel.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 12/15/22.
+//  
 //
 
 import Foundation
@@ -23,7 +23,7 @@ class MapViewModel: ObservableObject {
     }
     
     //All loaded Locations
-   
+    
     
     //current location on map
     @Published var mapLocation: VenueElement {
@@ -50,6 +50,9 @@ class MapViewModel: ObservableObject {
             mapRegion = MKCoordinateRegion(
                 center:  CLLocationCoordinate2D(latitude: location.venue_lat, longitude: location.venue_lon),
                 span: mapSpan)
+            
+            
+            
         }
     }
     
@@ -62,6 +65,36 @@ class MapViewModel: ObservableObject {
     }
     
     
+    func nextLocationPressed() {
+        //current index
+        
+        
+        
+        
+            
+            guard let current = locations.firstIndex(where: { $0 == mapLocation}) else {
+                print("error")
+                return
+            }
+            
+            let nextIndex = current + 1
+            
+            
+            guard locations.indices.contains(nextIndex) else {
+                
+                guard let firstLocation = locations.first else { return }
+                
+                showNextLocation(location: firstLocation)
+                return
+            }
+            
+            let nextLocation = locations[nextIndex]
+            showNextLocation(location: nextLocation)
+        }
+        
+        
+    
+    
     
     
     func toggleLocationsList() {
@@ -70,19 +103,4 @@ class MapViewModel: ObservableObject {
         }
     }
     
-    
 }
-
-    
-    
-    //        func showNextLocation(location: Location) {
-    //            withAnimation(.easeInOut) {
-    //                mapLocation  = location
-    //                showLocationList = false
-    //            }
-    //        }
-    
-    
-    
-
-

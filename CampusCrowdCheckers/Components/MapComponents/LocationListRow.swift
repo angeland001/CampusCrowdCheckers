@@ -2,7 +2,7 @@
 //  LocationListRow.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 1/1/23.
+//  
 //
 
 import SwiftUI

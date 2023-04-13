@@ -2,7 +2,7 @@
 //  VenueCrowdView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 3/29/23.
+//  
 //
 
 import SwiftUI
@@ -13,14 +13,19 @@ struct VenueCrowdView: View {
     var school: University
     var venue: SchoolVenues
     
+    
+    
     var body: some View {
+        
+        let timeForToday = convertIntToCurrentDay(arrayOfTime: venue.timeOfOperations)
+        
         ZStack {
             LinearGradient(colors: [Color[venue.colorOfVenue], Color.white], startPoint: .top, endPoint: .bottomTrailing)
                 .navigationBarBackButtonHidden(true)
                         .navigationBarItems(leading:
                             Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
                                 Image(systemName: "arrow.backward")
-                                .foregroundColor(Color[venue.colorOfVenue])
+                                .foregroundColor(Color.white)
         
                             })
             
@@ -38,7 +43,7 @@ struct VenueCrowdView: View {
                     
                     VStack(alignment: .center) {
                         
-                        let timeForToday = convertIntToCurrentDay(arrayOfTime: venue.timeOfOperations)
+                        
                         
                         Text("Opening at: ")
                             
@@ -67,58 +72,61 @@ struct VenueCrowdView: View {
                 .foregroundStyle(LinearGradient(colors: [Color.white, Color.white], startPoint: .top, endPoint: .bottom))
             .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                
-                
-                VStack(alignment: .leading, spacing: 2){
-                    Text("More Info".uppercased())
-                        .font(.headline)
+                if (timeForToday.VenueOpeningHours != "Closed") {
+                    VStack(alignment: .leading, spacing: 2){
+                        Text("More Info".uppercased())
+                            .font(.headline)
+                            .padding()
+                        
+                        HStack(alignment: .top){
+                            Text("This is generally the most crowded at 2:00 pm")
+                                .font(.caption)
+                                .frame(width: 250, height: 32)
+                            Spacer()
+                            
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        
+                        HStack{
+                            VStack(alignment: .center){
+                                let randomNumber = Double.random(in: 6.0...13.0)
+                                Text("\(randomNumber, specifier: "%.1f")")
+                                
+                                    .font(.system(size: 24, weight: .bold, design: .rounded))
+                                Text("avg crowd/hour".uppercased())
+                                    .font(.system(size: 12, weight: .regular, design: .rounded))
+                            }
+                            Spacer()
+                            
+                            VStack(alignment: .center){
+                                let randomNumber = Double.random(in: 6.0...13.0)
+                                Text("\(randomNumber, specifier: "%.1f") %" )
+                                    .font(.system(size: 24, weight: .bold, design: .rounded))
+                                    .foregroundColor(Color.green)
+                                Text("this month".uppercased())
+                                    .font(.system(size: 12, weight: .regular, design: .rounded))
+                            }
+                            Spacer()
+                            
+                            VStack(alignment: .center){
+                                let randomNumber = Int.random(in: 1...5)
+                                Text("\(randomNumber) Hrs")
+                                    .font(.system(size: 24, weight: .bold, design: .rounded))
+                                Text("Before Rush".uppercased())
+                                    .font(.system(size: 12, weight: .regular, design: .rounded))
+                            }
+                        }
                         .padding()
-                    
-                    HStack(alignment: .top){
-                        Text("This is generally the most crowded at 2:00 pm")
-                            .font(.caption)
-                            .frame(width: 250, height: 32)
-                        Spacer()
-                        
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
-                    
-                    HStack{
-                        VStack(alignment: .center){
-                            let randomNumber = Double.random(in: 6.0...13.0)
-                            Text("\(randomNumber, specifier: "%.1f")")
-
-                                .font(.system(size: 24, weight: .bold, design: .rounded))
-                            Text("avg crowd/hour".uppercased())
-                                .font(.system(size: 12, weight: .regular, design: .rounded))
-                        }
-                        Spacer()
-                        
-                        VStack(alignment: .center){
-                            let randomNumber = Double.random(in: 6.0...13.0)
-                            Text("\(randomNumber, specifier: "%.1f") %" )
-                                .font(.system(size: 24, weight: .bold, design: .rounded))
-                                .foregroundColor(Color.green)
-                            Text("this month".uppercased())
-                                .font(.system(size: 12, weight: .regular, design: .rounded))
-                        }
-                        Spacer()
-                        
-                        VStack(alignment: .center){
-                            let randomNumber = Int.random(in: 6...13)
-                            Text("\(randomNumber) Hrs")
-                                .font(.system(size: 24, weight: .bold, design: .rounded))
-                            Text("Before Rush".uppercased())
-                                .font(.system(size: 12, weight: .regular, design: .rounded))
-                        }
-                    }
-                    .padding()
+                    .frame(width: 360)
+                    .foregroundColor(Color.black.opacity(0.8))
+                    .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                 }
-                .frame(width: 360)
-                .foregroundColor(Color.black.opacity(0.8))
-                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                if (timeForToday.VenueOpeningHours != "Closed") {
+                    SchoolVenueChart(school:venue)
+                }
                 
-                SchoolVenueChart(school:venue)
             }
         }
         .ignoresSafeArea()

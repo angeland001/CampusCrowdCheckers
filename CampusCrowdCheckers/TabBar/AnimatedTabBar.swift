@@ -2,7 +2,7 @@
 //  AnimatedTabBar.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 11/7/22.
+//  
 //
 
 import SwiftUI
@@ -38,7 +38,7 @@ struct AnimatedTabBar: View {
                                         .frame(width: 1, height: size)
                                         .foregroundColor(.clear)
                                 
-                            HStack(alignment: .bottom, spacing: 10) {
+                            HStack(alignment: .bottom, spacing: 8) {
                                 ForEach(0..<5, id: \.self) { i in
                                     Rectangle()
 

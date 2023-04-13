@@ -2,7 +2,7 @@
 //  VenueModel.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 1/1/23.
+//  
 //
 
 import Foundation
@@ -53,11 +53,11 @@ struct VenueFootTrafficForecast: Codable {
 // MARK: - DayInfo
 struct DayInfo: Codable {
     let day_int, day_max, day_mean, day_rank_max: Int?
-    let day_rank_mean,venueClosed, venueOpen: Int?
+    let day_rank_mean, venue_closed, venue_open: Int?
     
     enum CodingKeys: CodingKey {
         case day_int, day_max, day_mean, day_rank_max
-        case day_rank_mean, venueClosed, venueOpen
+        case day_rank_mean, venue_closed, venue_open
     }
 
     

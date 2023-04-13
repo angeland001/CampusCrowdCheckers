@@ -2,7 +2,7 @@
 //  Infographics.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 11/9/22.
+//  
 //
 
 import SwiftUI
@@ -13,9 +13,10 @@ struct Infographics: View {
     //   @State var isAnimated: Bool = false
     var venue: SchoolVenues
     @Environment(\.colorScheme) var colorScheme
-    @State var Data: [GraphChart] = dataForPanda
+    
     
     var body: some View {
+        
         
         infographic
                     
@@ -28,8 +29,9 @@ struct Infographics: View {
 
 
 extension Infographics {
-        
+    
     private var infographic: some View {
+        
         ZStack {
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(Color.white)
@@ -58,12 +60,13 @@ extension Infographics {
                         .shadow(color: .black, radius: 10)
                     
                     
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .center,spacing:10) {
                         let timeForToday = convertIntToCurrentDay(arrayOfTime: venue.timeOfOperations)
                         
                         Text("Opening Hours: ")
                             .fontWeight(.bold)
                         Text(timeForToday.VenueOpeningHours)
+                        
                         Text("Closing Time: ")
                             .fontWeight(.bold)
                         Text(timeForToday.VenueClosingHours)
@@ -76,13 +79,7 @@ extension Infographics {
                     
                     
                     
-                    VStack {
-                        let randomNumber = Int.random(in: 1...30)
-                        Text("Current Crowd: ")
-                        Text("\(randomNumber)")
-                            .bold()
-                    }
-                    .foregroundColor(Color.black)
+                    
                     
                 }
                 
