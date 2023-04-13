@@ -2,7 +2,7 @@
 //  Stripe.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 12/29/22.
+//  
 //
 
 import SwiftUI

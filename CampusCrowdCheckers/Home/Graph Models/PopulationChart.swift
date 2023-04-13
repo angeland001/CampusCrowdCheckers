@@ -2,7 +2,7 @@
 //  PopulationChart.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 11/18/22.
+//  
 //
 
 import SwiftUI
@@ -25,10 +25,11 @@ struct GraphChart: Identifiable {
     var id = UUID()
 }
 
-struct SchoolVenueChart: View {
+
+struct EmptyVenueChart: View {
     
     
-    @State var Data: [GraphChart] = dataForPanda
+    @State var Data: [GraphChart] = EmptyChart
     
     @Environment(\.colorScheme) var colorScheme
     var school: SchoolVenues
@@ -83,6 +84,147 @@ struct SchoolVenueChart: View {
 
 
 
+
+
+struct SchoolVenueChart: View {
+    
+    
+    @State var Data: [GraphChart] = DataChartOne
+    
+    @Environment(\.colorScheme) var colorScheme
+    var school: SchoolVenues
+    
+    var body: some View {
+        
+
+        VStack() {
+            HStack{
+                Text("Population of " + school.VenueName)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.black)
+                
+            }
+            
+            
+            Chart {
+                ForEach(Data) { element in
+                    BarMark(
+                        x: .value("Time", element.time),
+                        y: .value("Total Count", element.animate ?  element.Populationcount : 0)
+                    )
+                    .foregroundStyle(Color[school.colorOfVenue])
+                    
+                    
+                }
+            }
+            .background(.clear)
+            .frame(width:390,height:170)
+            .onAppear {
+                for (index,_) in Data.enumerated() {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.05) {
+                        withAnimation(.interactiveSpring(response: 0.8,dampingFraction: 0.8,blendDuration: 0.8)) {
+                            Data[index].animate = true
+                        }
+                    }
+                }
+            }
+
+
+        }
+            
+                
+           
+        
+      
+        }
+    
+    
+        
+    }
+
+struct VenueChart: View {
+    
+    
+    @State var Data: [GraphChart] = DataChartFive
+    
+    @Environment(\.colorScheme) var colorScheme
+    var venue: VenueElement
+    
+    var body: some View {
+        
+
+        VStack() {
+            HStack{
+                Text("Population of " + venue.venue_name)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
+                
+            }
+            
+            
+            Chart {
+                ForEach(Data) { element in
+                    BarMark(
+                        x: .value("Time", element.time),
+                        y: .value("Total Count", element.animate ?  element.Populationcount : 0)
+                    )
+                    .foregroundStyle(Color.white)
+                    
+                    
+                }
+            }
+            .background(Color("Jenni"))
+            .frame(width:390,height:170)
+            .onAppear {
+                for (index,_) in Data.enumerated() {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.05) {
+                        withAnimation(.interactiveSpring(response: 0.8,dampingFraction: 0.8,blendDuration: 0.8)) {
+                            Data[index].animate = true
+                        }
+                    }
+                }
+            }
+            .chartXAxis {
+              AxisMarks(values: .automatic) { _ in
+                AxisValueLabel()
+                      .foregroundStyle(.white)
+              }
+              
+            }
+            
+            .chartYAxis {
+              AxisMarks(values: .automatic) { value in
+                AxisGridLine(centered: true, stroke: StrokeStyle(dash: [1, 2]))
+                  .foregroundStyle(Color.white)
+                AxisTick(centered: true, stroke: StrokeStyle(lineWidth: 2))
+                  .foregroundStyle(Color.red)
+                AxisValueLabel() {
+                  if let intValue = value.as(Int.self) { // HERE
+                    Text("\(intValue)")
+                      .font(.system(size: 10))
+                      .foregroundColor(.white)
+                    }
+                }
+              }
+            }
+            
+
+            
+
+
+        }
+            
+                
+           
+        
+      
+        }
+    
+    
+        
+    }
+
+
     
     
     func getCurrentDay() -> String {
@@ -101,7 +243,10 @@ struct SchoolVenueChart: View {
     
     struct PopulationChart_Previews: PreviewProvider {
         static var previews: some View {
-            SchoolVenueChart(school: dev.schoolVenue)
+            ZStack {
+                Color("Jenni")
+                EmptyVenueChart(school: dev.schoolVenue)
+            }
         }
     }
     
