@@ -2,7 +2,7 @@
 //  CircleButtonView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 12/11/22.
+//  
 //
 
 import SwiftUI

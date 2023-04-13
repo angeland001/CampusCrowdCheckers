@@ -2,7 +2,7 @@
 //  LocationDetailView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 1/3/23.
+//  
 //
 
 import SwiftUI
@@ -14,6 +14,7 @@ struct LocationDetailView: View {
     let Venue: VenueElement
     @State var isOpen = false
     @EnvironmentObject var vm: MapViewModel
+    
     
     
     
@@ -36,7 +37,7 @@ struct LocationDetailView: View {
             
         }
         .ignoresSafeArea()
-        .background(Color.theme.Background)
+        .background(Color("Jenni"))
         .overlay(backButton, alignment: .topLeading)
     }
 }
@@ -52,9 +53,11 @@ extension LocationDetailView {
             
                 .font(.largeTitle)
                 .fontWeight(.semibold)
-//            Text(Venue.venue_address)
-//                .font(.title)
-//                .foregroundColor(.secondary)
+            Text(Venue.venue_address)
+                .font(.caption)
+
+                //.foregroundColor(.secondary)
+
                 
         }
         .foregroundColor(Color.theme.text)
@@ -78,21 +81,33 @@ extension LocationDetailView {
                     
                         HStack {
                             Image(systemName: isOpen ? "clock.fill" : "clock")
+                                
                                 .resizable()
                                 .frame(width:30,height:30)
                                 .animation(.none)
+                                .foregroundColor(Color.white)
                             Spacer()
                             VStack(alignment:.leading, spacing:10) {
-                                Text("Open Now")
-                                    .foregroundColor(Color.theme.green)
+                                Text("Current Hours")
+                                    .foregroundColor(Color.white)
+                                    .fontWeight(.bold)
                                     .font(.headline)
                                     
                                 if isOpen {
                                     HStack{
                                         let day = getCurrentDay()
                                         let dayAsInt = getCurrentDayAsInteger()
+
+                                        let OpeningHours = convertMiltaryTimetoStandard(Time: (Venue.venue_foot_traffic_forecast?[dayAsInt].day_info?.venueOpen)!)
+                                        let ClosingHours = convertMiltaryTimetoStandard(Time: (Venue.venue_foot_traffic_forecast?[dayAsInt].day_info?.venueClosed)!)
                                         Text("Hours for \(day)")
-                                        Text("\(Venue.venue_foot_traffic_forecast?[dayAsInt].day_info?.day_rank_max ?? 0)")
+                                            .foregroundColor(Color.white)
+                                        Text("\(OpeningHours):00 AM")
+                                            .foregroundColor(Color.white)
+                                        Text("\(ClosingHours):00 PM")
+                                            .foregroundColor(Color.white)
+
+
                                     }
                                     
                                 }
@@ -107,6 +122,7 @@ extension LocationDetailView {
                                 .resizable()
                                 .frame(width:10,height:15)
                                 .animation(.none)
+                                .foregroundColor(Color.white)
                             
                         }
                         .padding(.horizontal)
@@ -160,33 +176,49 @@ extension LocationDetailView {
     }
 }
 
-private func getCurrentDayAsInteger() -> Int {
-    let currentDay = getCurrentDay()
-    switch currentDay {
-    case "Monday":
-        return 0
-    case "Tuesday":
-        return 1
-    case "Wednesday":
-        return 2
-    case "Thursday":
-        return 3
-    case "Friday":
-        return 4
-    case "Saturday":
-        return 5
-    case "Sunday":
-        return 6
-    default:
-        return 0
+
     
+    private func convertMiltaryTimetoStandard(Time: Int) -> String  {
+        let HoursOfDay:[Int:String] = [0:"6:00 AM", 1: "7:00 AM", 2:"8:00 AM", 3: "9:00 AM", 4: "10:00 AM", 5:"11:00 AM",6: "12:00 PM",7:"1:00 PM",8: "2:00 PM", 9: "3:00 PM", 10: "4:00 PM", 11: "5:00 PM", 12: "6:00 PM", 13: "7:00 PM", 14: "8:00 PM", 15: "9:00 PM", 16: "10:00 PM", 17: "11:00 PM", 18:"12:00 AM", 19: "1:00 AM", 20: "2:00 AM", 21: "3:00 AM", 22: "4:00 AM", 23: "5:00 AM"]
+        
+        if let value = HoursOfDay[Time] {
+            return value
+        }
+        else {
+            return "Null"
+        }
+        
+        
+        
     }
-}
-
-struct LocationDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        LocationDetailView(Venue: dev.Venue)
+    
+    private func getCurrentDayAsInteger() -> Int {
+        let currentDay = getCurrentDay()
+        switch currentDay {
+        case "Monday":
+            return 0
+        case "Tuesday":
+            return 1
+        case "Wednesday":
+            return 2
+        case "Thursday":
+            return 3
+        case "Friday":
+            return 4
+        case "Saturday":
+            return 5
+        case "Sunday":
+            return 6
+        default:
+            return 0
+            
+        }
     }
-}
-
+    
+    struct LocationDetailView_Previews: PreviewProvider {
+        static var previews: some View {
+            LocationDetailView(Venue: dev.Venue)
+        }
+    }
+    
 

@@ -2,7 +2,7 @@
 //  SchoolInformationView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 12/24/22.
+//  
 //
 
 import SwiftUI
@@ -26,26 +26,20 @@ struct SchoolInformationView: View {
                             .offset(y:-350)
             VStack {
                 ZStack(alignment: .top) {
-                    Wave(yOffset: -0.35)
-                        .fill(Color.white).opacity(0.8)
-                        .frame(height: 150)
-                        .shadow(radius: 4)
+                    Rectangle()
                         .ignoresSafeArea()
-                    Wave(yOffset: 0.35)
-                        .fill(Color.white)
-                        .frame(height: 150)
-                        .shadow(radius: 4)
-                        .ignoresSafeArea()
-                    
+                        .foregroundColor(Color.white)
+                        .frame(width: .infinity, height: 60)
                     
                     HStack(alignment: .center){
                         Image(school.name)
+                            
                             .resizable()
                             .frame(width:60,height:60)
                             
                         Text(school.name)
                             
-                            .fontWeight(.semibold)
+                            
                             .font(.title)
                             
                         
@@ -67,6 +61,7 @@ struct SchoolInformationView: View {
                         
                     }
                 }
+                
                 
                 //.ignoresSafeArea()
                 

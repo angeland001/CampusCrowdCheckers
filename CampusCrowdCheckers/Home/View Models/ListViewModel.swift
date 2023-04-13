@@ -2,7 +2,7 @@
 //  ListViewModel.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andres Angel on 4/2/23.
+//  
 //
 
 import Foundation
