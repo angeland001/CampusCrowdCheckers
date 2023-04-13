@@ -2,7 +2,7 @@
 //  Database.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 11/18/22.
+//  
 //
 
 import Foundation
@@ -144,11 +144,11 @@ func generateRandomNumbers(size: Int) -> [Int] {
 
 
 
-func updateDataSheet() -> [GraphChart] {
+func updateDataSheet(NameOfFile: String) -> [GraphChart] {
     
     var arrayOfData: [GraphChart] = []
 
-    let datasheet = loadCSV(from: "PandaData1")
+    let datasheet = loadCSV(from: NameOfFile)
 
     //y axis
     //array of population count
@@ -162,4 +162,9 @@ func updateDataSheet() -> [GraphChart] {
     return arrayOfData
 }
 
-var dataForPanda: [GraphChart] = updateDataSheet()
+var DataChartOne: [GraphChart] = updateDataSheet(NameOfFile: "ExampleDataOne")
+var DataChartTwo: [GraphChart] = updateDataSheet(NameOfFile: "ExampleDataTwo")
+var DataChartThree: [GraphChart] = updateDataSheet(NameOfFile: "ExampleDataThree")
+var DataChartFour: [GraphChart] = updateDataSheet(NameOfFile: "ExampleDataFour")
+var DataChartFive: [GraphChart] = updateDataSheet(NameOfFile: "ExampleDataFive")
+var EmptyChart: [GraphChart] = updateDataSheet(NameOfFile: "EmptyDataSheet")

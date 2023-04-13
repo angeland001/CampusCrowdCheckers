@@ -2,7 +2,7 @@
 //  UINavigationController.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 1/6/23.
+//  
 //
 
 import Foundation

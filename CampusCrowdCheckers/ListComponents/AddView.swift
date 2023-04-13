@@ -2,9 +2,10 @@
 //  AddView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andres Angel on 4/2/23.
+//  
 //
 
+import Foundation
 import SwiftUI
 
 struct AddView: View {
@@ -29,14 +30,21 @@ struct AddView: View {
                         .font(.headline)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
-                        .background(Color.accentColor)
+                        .background(Color.black)
                         .cornerRadius(14)
                 })
 
             }
             .padding(14)
         }
-        .navigationTitle("Add an item")
+        .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading:
+                    Button(action: { self.presentationMode.wrappedValue.dismiss()}) {
+                        Image(systemName: "arrow.backward")
+                        .foregroundColor(Color.black)
+
+                    })
+        .navigationTitle("Add an Item to Do")
         .alert(isPresented: $showAlert, content: getAlert)
     }
     
@@ -69,4 +77,3 @@ struct AddView_Previews: PreviewProvider {
         .environmentObject(ListViewModel())
     }
 }
-

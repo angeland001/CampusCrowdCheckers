@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 10/7/22.
+//  
 //
 
 
@@ -20,6 +20,7 @@ struct HomeView: View {
     @State var searchText = ""
     @State var loading: Bool = true
     @State var pageIndex: Int = 0
+    @State var selectedTab: Tab = .message
     
     
     
@@ -55,7 +56,7 @@ struct HomeView: View {
                             
                             
                             SearchBarView(searchText: $searchText)
-                                .offset(y:10)
+                                //.offset(y:20)
                                 .frame(width:420)
                             
                             
@@ -122,39 +123,23 @@ extension HomeView {
                         
                             .font(.headline)
                             .foregroundColor(Color("Jenni"))
-                            .offset(x:-68)
+                            
                         Text("CrowdCheck")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(Color("Jenni"))
                         
-                            .offset(x:-60)
+                            
                         
                     }
                     .italic()
                     
-                    .multilineTextAlignment(.leading)
+                    .multilineTextAlignment(.center)
                             
                     
                 }
                 
                 Spacer()
-                
-                CircleButtonView(iconName: showProfile ? "person.fill" : "person")
-
-                                    .onTapGesture {
-                                        withAnimation(.spring()) {
-                                            showProfile.toggle()
-                                        }
-                                    }
-                                
-                                    .background(
-                                        CircleButtonAnimationView(animate: $showProfile)
-
-                                    ) 
-
-                
-                
                 
                 
             }

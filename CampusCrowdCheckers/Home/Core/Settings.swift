@@ -2,7 +2,7 @@
 //  Settings.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 11/18/22.
+//  
 //
 
 import SwiftUI
@@ -11,11 +11,11 @@ import SwiftClockUI
 
 ////this uniquely identifies each link. Basically make it static
 enum Constants{
-    static let instagramOfCreator = "https://www.instagram.com/danielduggin"
+    static let instagramOfCreator = "https://www.instagram.com/campuscheckapp"
     static let emailOfCompany = "mailto:campuscrowdcheck@gmail.com"
-    static let instagramOfDeveloper = "https://www.instagram.com/a_ndres.a"
-    static let emailOfDeveloper = "mailto:rvj412@mocs.utc.edu"
-
+    static let WebsiteOfCompany = "https://campuscheckapp.com/"
+    
+    
 }
 
 
@@ -26,11 +26,13 @@ struct Settings: View {
                 .ignoresSafeArea()
         VStack {
             ZStack {
-                
-                
-                Wave(yOffset: -0.75)
+                Wave(yOffset: -0.55)
+                    .fill(Color.white).opacity(0.5)
+                    .frame(height: 150)
+                    .shadow(radius: 4)
+                    .ignoresSafeArea()
+                Wave(yOffset: 0.55)
                     .fill(Color.white)
-                //.fill(Color.theme.text)
                     .frame(height: 150)
                     .shadow(radius: 4)
                     .ignoresSafeArea()
@@ -50,7 +52,7 @@ struct Settings: View {
             
             List {
                 CreatorsSection
-                DevelopersSection
+                
                 TermsSection
             }
             .listStyle(.plain)
@@ -66,7 +68,7 @@ extension Settings {
     private var CreatorsSection: some View {
         Section(header: Text("Creator")){
             VStack(alignment: .leading) {
-                Image("leaf")
+                Image("CreatorImage")
                     .resizable()
                     .frame(width: 100,height: 100)
                     .clipShape(Circle())
@@ -114,54 +116,7 @@ extension Settings {
 
     }
 
-    private var DevelopersSection: some View {
-        Section(header: Text("Developer")){
-            VStack(alignment: .leading) {
-                Image("leaf")
-
-                    .resizable()
-                    .frame(width: 100,height: 100)
-                    .clipShape(Circle())
-
-                Text("Andres Angel")
-                    .fontWeight(.heavy)
-                Text("Lead Developer")
-                    .font(.callout)
-                    .fontWeight(.medium)
-                Text("Web Designer for UTC")
-                    .font(.callout)
-                    .fontWeight(.medium)
-
-            }
-            .foregroundColor(Color.black)
-            Link(destination: URL(string: Constants.instagramOfDeveloper)!,
-                                        label: {
-                HStack {
-                    Image("Instagram")
-                        .resizable()
-                        .frame(width: 25,height:25)
-                        .foregroundColor(Color.black)
-                    Text("Instagram")
-                }
-                .offset(x:4)
-
-                                })
-            .foregroundColor(Color.black)
-
-
-
-            Link(destination: URL(string: Constants.emailOfDeveloper)!,
-                                        label: {
-                                            Label("Email", systemImage: "envelope.open.fill")
-                                })
-            .foregroundColor(Color.black)
-
-
-        }
-        .foregroundColor(Color.white)
-        .listRowBackground(Color.white)
-        
-    }
+    
 
 
     private var TermsSection: some View {

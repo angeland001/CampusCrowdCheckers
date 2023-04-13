@@ -2,7 +2,7 @@
 //  Color.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 10/15/22.
+//  
 //
 
 import Foundation
@@ -30,6 +30,8 @@ extension Color {
                     return Color.theme.orange
                 case "pink":
                     return Color.pink
+                case "brown":
+                return Color.brown
                     
                 default:
                     return Color.accentColor
