@@ -2,7 +2,7 @@
 //  LoginScreen.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 10/15/22.
+// 
 //
 
 import SwiftUI

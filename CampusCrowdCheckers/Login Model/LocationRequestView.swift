@@ -2,7 +2,7 @@
 //  LocationRequestView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 12/4/22.
+//  
 //
 
 import SwiftUI

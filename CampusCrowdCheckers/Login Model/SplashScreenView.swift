@@ -2,7 +2,7 @@
 //  SplashScreenView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 10/13/22.
+// 
 //
 
 import SwiftUI

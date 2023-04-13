@@ -2,7 +2,7 @@
 //  RestaurantDetailModel.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 1/4/23.
+//  
 //
 
 
