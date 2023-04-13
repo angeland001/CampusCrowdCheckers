@@ -2,7 +2,7 @@
 //  CampusCrowdCheckersApp.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 10/7/22.
+//  
 //
 
 import SwiftUI

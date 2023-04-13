@@ -2,7 +2,7 @@
 //  SplashScreenView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 10/13/22.
+// 
 //
 
 import SwiftUI
@@ -26,9 +26,9 @@ struct SplashScreenView: View {
                 
                 VStack{
                     VStack(spacing:5){
-                        Image(systemName: "figure.2.and.child.holdinghands")
+                        Image(systemName: "graduationcap.circle.fill")
                             .font(.system(size: 80)).foregroundColor(.white)
-                        Text("Crowd Check")
+                        Text("Campus Check")
                             .font(Font.custom("Baskerville-Bold", size: 26))
                             .foregroundColor(Color.white)
                     }

@@ -2,7 +2,7 @@
 //  Database.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 11/18/22.
+//  
 //
 
 import Foundation
