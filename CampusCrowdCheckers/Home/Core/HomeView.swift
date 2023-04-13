@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 10/7/22.
+//  
 //
 
 
@@ -20,6 +20,7 @@ struct HomeView: View {
     @State var searchText = ""
     @State var loading: Bool = true
     @State var pageIndex: Int = 0
+    @State var selectedTab: Tab = .message
     
     
     
@@ -122,13 +123,13 @@ extension HomeView {
                         
                             .font(.headline)
                             .foregroundColor(Color("Jenni"))
-                            .offset(x:-68)
+                            .offset(x:-110)
                         Text("CrowdCheck")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(Color("Jenni"))
                         
-                            .offset(x:-60)
+                            .offset(x:-110)
                         
                     }
                     .italic()
@@ -139,22 +140,6 @@ extension HomeView {
                 }
                 
                 Spacer()
-                
-                CircleButtonView(iconName: showProfile ? "person.fill" : "person")
-
-                                    .onTapGesture {
-                                        withAnimation(.spring()) {
-                                            showProfile.toggle()
-                                        }
-                                    }
-                                
-                                    .background(
-                                        CircleButtonAnimationView(animate: $showProfile)
-
-                                    ) 
-
-                
-                
                 
                 
             }

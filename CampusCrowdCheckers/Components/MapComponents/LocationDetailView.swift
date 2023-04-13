@@ -2,7 +2,7 @@
 //  LocationDetailView.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 1/3/23.
+//  
 //
 
 import SwiftUI
@@ -36,7 +36,7 @@ struct LocationDetailView: View {
             
         }
         .ignoresSafeArea()
-        .background(Color.theme.Background)
+        .background(Color("Jenni"))
         .overlay(backButton, alignment: .topLeading)
     }
 }
@@ -52,9 +52,9 @@ extension LocationDetailView {
             
                 .font(.largeTitle)
                 .fontWeight(.semibold)
-//            Text(Venue.venue_address)
-//                .font(.title)
-//                .foregroundColor(.secondary)
+            Text(Venue.venue_address)
+                .font(.caption)
+                //.foregroundColor(.secondary)
                 
         }
         .foregroundColor(Color.theme.text)
@@ -78,9 +78,11 @@ extension LocationDetailView {
                     
                         HStack {
                             Image(systemName: isOpen ? "clock.fill" : "clock")
+                                
                                 .resizable()
                                 .frame(width:30,height:30)
                                 .animation(.none)
+                                .foregroundColor(Color.white)
                             Spacer()
                             VStack(alignment:.leading, spacing:10) {
                                 Text("Open Now")
@@ -91,8 +93,16 @@ extension LocationDetailView {
                                     HStack{
                                         let day = getCurrentDay()
                                         let dayAsInt = getCurrentDayAsInteger()
+                                        let OpeningHours = convertMiltaryTimetoStandard(Time: (Venue.venue_foot_traffic_forecast?[dayAsInt].day_info?.venueOpen)!)
+                                        let ClosingHours = convertMiltaryTimetoStandard(Time: (Venue.venue_foot_traffic_forecast?[dayAsInt].day_info?.venueClosed)!)
                                         Text("Hours for \(day)")
-                                        Text("\(Venue.venue_foot_traffic_forecast?[dayAsInt].day_info?.day_rank_max ?? 0)")
+                                            .foregroundColor(Color.white)
+                                        Text("\(OpeningHours):00 AM")
+                                            .foregroundColor(Color.white)
+                                        Text("\(ClosingHours):00 PM")
+                                            .foregroundColor(Color.white)
+//                                        Text("\(Venue.venue_foot_traffic_forecast?[dayAsInt].day_info?.venueOpen ?? 0)")
+//                                            .foregroundColor(Color.white)
                                     }
                                     
                                 }
@@ -107,6 +117,7 @@ extension LocationDetailView {
                                 .resizable()
                                 .frame(width:10,height:15)
                                 .animation(.none)
+                                .foregroundColor(Color.white)
                             
                         }
                         .padding(.horizontal)
@@ -158,6 +169,11 @@ extension LocationDetailView {
         }
 
     }
+}
+
+private func convertMiltaryTimetoStandard(Time: Int) -> Int  {
+    return Time - 12
+    
 }
 
 private func getCurrentDayAsInteger() -> Int {

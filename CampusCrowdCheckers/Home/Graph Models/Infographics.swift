@@ -2,7 +2,7 @@
 //  Infographics.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 11/9/22.
+//  
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  UniversityModel.swift
 //  CampusCrowdCheckers
 //
-//  Created by Andrew on 12/17/22.
+//  
 //
 
 import Foundation
